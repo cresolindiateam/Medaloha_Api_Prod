@@ -1,0 +1,127 @@
+
+{
+  "_Home Page Start":"Start Here",
+          "Choose": "Choose3",
+          "How":"How3",
+          "Extra":"Extra3",
+          "Holistic":"Find Your Holistic Specialist3" ,
+          "Holistic_Discover" :"Discover Practitioners in Your Preferred Field.3",
+          "Featured_Specialists":"Featured Specialists3",
+          "Featured_Specialists_Because":"Because Your Satisfaction is Our Drive3.",
+          "ContactUS":"Contact Us3",
+          "SupportDeserve":"The support you deserve3",
+          "ProfessionalityNeed":"The professionality you need.3",
+          "FlexibilityWant":"The flexibility you want.3",
+          "TermsConditions":"Terms and Conditions3",
+          "Privacy":"Privacy Policy3",
+          "CookiePolicy":"Cookie Policy3",
+    "_Home Page End ":"End Here",
+
+    "Howitworks Page Start":"Start Here", 
+        "LOGINREGISTER":"LOGIN/REGISTER3",
+        "LOGINREGISTERContent":"Login/Register & get full access to the website’s functionalities. Updates will be provided both via your personal area & by email 3", 
+        "ChooseContent":"Choose the language in which you would like to have your consultation done. Choose holistic field & specialist of interest 3.", 
+        "BOOK":"BOOK3", 
+        "BOOKContent":"Book your spot on specialist’s profile. Types of consultations3", 
+        "BOOKContentLi1":"Written: you can write/voice message the specialist about a specific subject3", 
+        "BOOKContentLi2":"Video: audio/video sessions3", 
+        "BOOKContentLi3":"In-person: in-person consultation.Check where the specialist is consulting3", 
+        "BOOKContentLi3P":"Modes can be SHORT (exploratory contact), COMPLETE (full session) & CYCLE (a pack of complete sessions bookable within 3 months from payment)3", 
+        "PAYONLINE":"PAY ONLINE3",
+        "PAYONLINEContent":"Pay online, by paypal or card systems3",
+        "LEAVEAREVIEW":"LEAVE A REVIEW3",
+        "LEAVEAREVIEWContent":"Leave a review about the consultation. This step is strongly recommended to support our community choose their specialists wisely. Thanks for your collaboration3",
+        "CONSULT":"CONSULT3",
+        "CONSULTContent":"Access the consultation:3",
+        "CONSULTContentLi1":"Written: you will get a written/voice answer to your query (by 7 days time).3",
+        "CONSULTContentLi2":"Video: you will get the link to connect at the booked time.3",
+        "CONSULTContentLi3":"In-person: exact location may be provided privately depending on the specialist.3",
+        "CONSULTContentLiP":"* Cancellations: a full money refund is available up to 24 hrs before consultation (21% charge after this time). In case of net issues, please rebook the session or contact the specialist3",
+    "Howitworks Page End ":"End Here" ,
+
+
+    "About Page Start":"Start Here", 
+      "Anysuggestion":"Any suggestion3 ..?", 
+      "AnysuggestionContent":"Tell us how to improve, suggest us your favourite health professionals (or inform them about MedAloha) &amp; get in touch with us for any other need.3",
+      "Newsletter":"Newsletter3",
+      "NewsletterContent":"Sign up for our Dose of Inspiration3",
+      "FAQTitle":"Frequently Asked Questions (FAQ) 3" , 
+
+    "FaqQuestion1":"What is MedAloha?3",
+    "FaqQuestion2":"What kind of specialists can be found in the platform?3",
+    "FaqQuestion3":"In which language can the consultation take place?3",
+    "FaqQuestion4":"What type of consultation can be booked?3",
+    "FaqQuestion5":"How much does a consultation cost?3",
+    "FaqQuestion6":"What payment methods are accepted?3",
+    "FaqQuestion7":"Do I need special equipment or software for video consulting?3",
+    "FaqQuestion8":"What is the MedAloha mission?3",
+
+       "FaqResponse1":"MedAloha is a multilanguage holistic platform that aims to connect integrative health professionals with people seeking for an holistic -from greek ὅλος “all, entire”- approach to the individual. We believe that taking care of our health is a comprehensive phenomenon that encompasses dealing with many levels of our being (e.g. physical, spiritual), while taking full responsibility for our preferences & choices to support our path towards well-being.3",
+    "FaqResponse2":"Professionals like doctors & recognized practitioners with an holistical perspective can access the system, if approved by our team. From our side we want to provide our community with the widest range of integrative approaches, for everyone’s sake, together with a high quality of professionals (by evaluating curriculums, feedbacks, interviews…). Please inform us in case of any discrepancy, always considering that the ultimate guarantee is finally one’s own perception & sensitivity.3",
+    "FaqResponse3":"We currently have specialists working in: English, Italian, Spanish, French, Greek.3",
+    "FaqResponse4":"Different consultation types are possible, depending on the specialist’s availability:3",
+    "FaqResponse41":"Written/Voice message: you can write/voice message the specialist about one specific subject (condition/symptom/situation…)3",
+    "FaqResponse42":"Audio/Video online session: SHORT (preliminary, exploratory contact), COMPLETE (full session), CYCLE of sessions (number chosen by the specialist) are optional for each specialist; the specialist must show if using Audio mode only3",
+    "FaqResponse43":"Live session: check where the specialist is consulting (exact location may be provided by private message) or search by location inserting the name of the city where you would like to get the consultation done (please consider that this function can be reduced at the moment where you are located, since MedAloha may be there in a developing phase).3",
+     "FaqResponse5":"Prices change depending on the specialist. If you access the specialist’s personal page, you can visualize prices for each type of consultation provided.3",
+    "FaqResponse6":"We accept PayPal payments, Mastercard & Visa cards.3",
+    "FaqResponse7":"All you need is a desktop computer/laptop (with a browser installed among Chrome, Firefox, Safari, Edge, Internet Explorer) or smartphone (Android or iOS), a microphone, speakers & a working front camera (unless you are fine with an Audio mode session). Make sure you have a good connection & carry out the Audio/Video consultation in a quiet & peaceful place.3",
+    "FaqResponse8":"Our aim is to provide a user-friendly service to support people & health professionals connecting & working together by different modes, despite the moment of social distancing. MedAloha wishes its users to get to know themselves deeper & to gradually awaken their self-healing capabilities. If this can improve thanks to a MedAloha consutation, we could definitely be satisfied to exist.3",
+    "AboutBoxContent":"In MedAloha we do not search for healers, nor we want to substitute the conventional medical approach, which we always recommend you first, being said that once & for all. Our target is to provide instead the customer & the practitioner an occasion to meet & share, in a space of freedom & personal responsibility.3",
+    "About Page End":"End Here",
+
+
+    "Term Page Start":"Start Here",
+       "TermsMainTitle":"MedAloha Terms and Conditions3", 
+    "Term Page End":"End Here",
+
+    "Privacy Page Start":"Start Here",
+       "PrivacyPolicyMainTitle":"MedAloha Privacy Policy3", 
+    "Privacy Page End":"End Here",
+
+     "Cookie Page Start":"Start Here",
+       "CookieMainTitle":"MedAloha Cookie Policy3", 
+    "Cookie Page End":"End Here",
+
+    "Spec Private Start":"Start Here",
+    "SpecMainTitle":"Profile3",
+    "SpecMainTitleSetting":"Private & Public Profile3",
+    "SpecSubTitleSetting":"The following sections serve to setup your profile. Empty fields will be ignored. *Mandatory information3",
+    "SpecInstructionSettingButton":"Instruction3",
+    "SpecText1":"Go to sections:3",
+       "SpecTabText1":"Bookings3",
+    "SpecTabText2":"Messages3",
+    "SpecTabText3":"Reviews3",
+    "SpecTabText4":"Settings3", 
+    "SpecText2":"Information for the staff of MedAloha only.3",
+    "SpecText3" :"Subsections3",
+    "Spec Private End":"End Here",
+
+    "Spec Public Start":"Start Here", 
+      "SpecPublicText1":"Information for the public profile.3",
+    "Spec Public End":"End Here",
+
+     "Spec Intro Start":"Start Here", 
+         "SpecIntroText1":"Information appearing in the profile preview3",
+      "Spec Intro End":"End Here",
+    
+    "Spec Extra Start":"Start Here",
+       "SpecExtraText1":"This information is mostly suggested for operative holistic centres, or to give an idea of scheduling times available3",
+    "Spec Extra End":"End Here"
+
+     ,
+    "Spec Degree Start":"Start Here",
+       "SpecDegreeText1":"Add details about your degrees3",
+    "Spec Degree End":"End Here",
+
+    "Spec Consultation Start":"Start Here", 
+    "SpecConsultationText":" Consultations to be offered in your profile3.",
+  "Spec Consultation End":"End Here",
+
+"Spec overview Start":"Start Here", 
+"SpecOverviewText":"Fill in your overview details3",
+"Spec overview End":"End Here"
+
+
+  }
+  

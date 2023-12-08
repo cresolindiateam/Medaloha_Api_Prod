@@ -1,0 +1,2850 @@
+﻿<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Your Profile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="assets\img\favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets\css\bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\fontawesome.min.css">
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\all.min.css">
+		
+		<!-- Datetimepicker CSS -->
+		<link rel="stylesheet" href="assets\css\bootstrap-datetimepicker.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets\css\style.css">
+		
+		<link rel="stylesheet" href="assets\css\boom.css">
+
+		
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+       
+		<style>
+  
+a.closebtn.p-0.m-0 {
+	content:"x";
+	color: #757575;
+    font-weight: bold;
+    font-size: 22px;
+}
+.header-navbar-rht li .dropdown-menu .dropdown-item{color:#757575;}
+.header-navbar-rht .dropdown-menu .dropdown-item:hover
+{
+color:#507edc;
+}
+
+.user-tabs .nav-tabs > li >a{color:#757575}
+		 	.modal-content
+		{
+			height: 250px;
+			padding: 10px;
+		}
+   
+		#modal1
+		{
+			width: 50%;
+    right: 0;
+    left: -1px;
+    margin-left: auto;
+    margin-right: auto;
+		}
+
+        .icon-tab{margin-right:5px;}
+	</style>
+		  <style type="text/css">
+
+.select2-container--default .select2-selection--single .select2-selection__arrow
+{
+	top:7px!important;
+}
+.select2-container--default .select2-selection--single
+{
+	height: 46px!important;padding:6px 10px!important;
+}
+
+		  .select2-dropdown, .select2{border-color: #dcdcdc!important;
+    color: #333!important;
+    font-size: 15px!important;
+   
+    width:100px!important}
+ .select2-dropdown{height: 98px!important;overflow-y: scroll!important;}
+.flag-text { margin-left: 10px; }
+.select2-container--default .select2-results>.select2-results__options{overflow-y:unset!important}
+
+		 	.bg-orange{background: orange; text-align: center; color:white;border:1px #999 dashed;}
+		 	.green{color:green;font-weight: bold;}
+		 	.orange{color:orange;font-weight: bold;}
+		 	.blue{color:blue;font-weight: bold;}
+		 	.green{color:green;font-weight: bold;}
+		 	.orange{color:orange;font-weight: bold;}
+		 	 
+		 	.bg-blue{
+		 		background: blue;
+			    text-align: center;
+			    color: white;
+			    border: 1px #999 dashed;
+		 	}
+		 	.doc-only::before{
+		 		content:"";
+		 		background-image: url(assets\icon\medicine.png);
+		 		background-repeat: no-repeat;
+		 		opacity: 5
+		 	}
+
+
+
+                                  /* .tooltip {
+  position: relative;
+  display: inline-block;
+  
+  opacity: 1;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 330px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px 5px;
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  left: 185%; 
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -2%;
+  left: 25%;
+  margin-left: -5px;
+
+  border-color: #555 transparent transparent transparent;
+
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #555;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+} */
+
+.doctor-widget .doc-name {
+ 
+    margin-bottom: 0.2rem;
+}
+.mainimg {
+    height: auto;
+    width: 100%!important;
+}
+.profile-widget .fav-btn {
+    height: 40px;
+    width: 40px;
+}
+.doctor-img {
+    flex: 0 0 198px;
+    /* margin-right: 20px; */
+    width: 198px;
+}
+.item
+{
+	display: inline;
+}
+
+@media only screen and (max-width: 767.98px)
+{
+	.item
+{
+	display: block;
+}
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -2%;
+    left: 25%;
+    margin-left: -5px;
+    border-color: #555 transparent transparent transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #555;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 330px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    left: 185%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.toolnotes::after
+{
+top:-17%!important;
+}
+
+.fa-stack {
+    display: inline-block;
+    height: 1.3em!important;
+     line-height: 1!important;
+    position: relative;
+    vertical-align: middle;
+    width: 1.2em!important;
+   
+    font-size: inherit;
+
+}
+
+i.fas.fa-user-cog{width:1.4rem!important;}
+i.fas.fa-heart{width:1.4rem!important;}
+i.fas.fa-sign-out-alt{width:1.4rem!important;}
+
+
+.fa-stack1 {
+    display: inline-block;
+    position: absolute;
+    height: 0em!important;
+     line-height: unset!important;
+    position: relative;
+    vertical-align: middle;
+    width: 1.2em!important;
+   
+    font-size: 18px;
+
+}
+
+
+.fa-stack[data-count]:after {
+    position: absolute;
+    right: 0%;
+    top: -22%;
+    content: attr(data-count);
+    font-size: 13px;
+    padding: 0em;
+    border-radius: 20px;
+    /* line-height: .75em; */
+    color: white;
+    background: #ff0a60;
+    text-align: center;
+    width: 1em;
+    height: 1.1em;
+    min-width: 1.1em;
+    font-weight: bold;
+}
+
+.fa-stack1[data-count]:after {
+    position: absolute;
+    left: 200%;
+    top: 25%;
+    content: attr(data-count);
+    font-size: 50%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: white;
+    background: #ff0a60;
+    text-align: center;
+    min-width: 2em;
+    font-weight: bold;
+}
+
+.fa-stack2[data-count]:after {
+    position: absolute;
+    left: 60%;
+    top: 30%;
+    content: attr(data-count);
+    font-size: 13px;
+    padding: 0em;
+    border-radius: 999px;
+    line-height: 1.5em;
+    color: white;
+    background: #ff0a60;
+    text-align: center;
+    width: 1.5em;
+    height: 1.5em;
+    min-width: 1.2em;
+    font-weight: bold;
+}
+.fas1{text-align: center; font-size:1.2rem; height:unset!important;}
+		 </style>
+
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<link rel="stylesheet" href="assets\css\boom.css">
+			  <header class="header">
+				 <nav class="navbar navbar-expand-lg header-nav" style="background:#fff">
+				    <div class="row" style="width:100%">
+				        <div class="col-md-3 col-3">
+				      	<div class="navbar-header mt-4 hidden-xs hidden-sm">
+    						<a class="mt-5" id="mobile_btn" href="javascript:void(0);">
+    							<span class="bar-icon">
+    								<span></span>
+    								<span></span>
+    								<span></span>
+    							</span>
+    						</a>
+    						<a href="index.html" class="hidden-xs hidden-sm navbar-brand logo">
+    							<img src="assets\img\logo.png" class="img-fluid" alt="Logo">
+    						</a>
+    					</div>
+
+                          <div class="navbar-header mt-5 hidden-md hidden-lg">
+    						<a class="" id="mobile_btn" href="javascript:void(0);">
+    							<span class="bar-icon">
+    								<span></span>
+    								<span></span>
+    								<span></span>
+    							</span>
+    						</a>
+    						<a href="index.html" class="hidden-xs hidden-sm navbar-brand logo">
+    							<img src="assets\img\logo.png" class="img-fluid" alt="Logo">
+    						</a>
+    					</div>
+				      </div>
+				      
+				        <div class="col-md-5 col-5 mt-3">
+				        	<center>
+				        	<a href="index.html" class="menu-logo hidden-lg hidden-md">
+								<img src="assets\img\logo.png" class="  mt-3  img-fluid" alt="Logo">
+							</a>
+						</center>
+				         </div>
+				        
+				        <div class="col-md-4 col-4 pr-0 pt-2">
+				      <ul class="nav d-flex header-navbar-rht float-right">
+					  
+					    <li class="nav-item hidden-xs hidden-sm">
+							<button class="nav-link header-login btn btn-success bg-transparent text-dark">
+								<a href="login.html" class="">LOGIN</a> /
+								<a href="register.html" class="">REGISTER </a>
+							</button>
+						</li>
+						
+						<!-- User Menu -->
+
+
+<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+                                
+                                <span class="user-img">
+                                    <span class="fa-stack2 fa-1x has-badge" data-count="9"> </span>
+									<img class="rounded-circle" src="assets\img\doctors\doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+                               
+                                </span>
+							</a> 
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<!--<div class="avatar avatar-sm">
+										<span class="fa-stack1 fa-1x has-badge" data-count="9"></span>
+										<img src="assets\img\doctors\doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle" >
+									</div>-->
+									<div class="user-text" style="text-align:left;">
+										<h6 style="color:#ff0a60;">Ellisa Alloa</h6>
+										<p class="text-muted mb-0">Specialist</p>
+									</div>
+								</div>
+						 	
+								<a class="dropdown-item" href="patiient-profile.html">
+									<i class="fas fas1 fa-calendar-check fa-stack fa-1x has-badge" style="margin-right:6px" data-count="4"></i><span>Bookings</span> 
+									 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html">
+
+<i class="fas fas1 fa-comments fa-stack fa-1x has-badge" data-count="3" style="margin-right:6px"></i><span>Messages</span>
+								 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html"><i style="margin-right:6px" class="fas fas1 fa-heart"></i><span>Favourites</span>
+								 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html">
+
+	<i class="fas fas1 fa-star fa-stack fa-1x has-badge" data-count="2" style="margin-right:6px"></i><span >Reviews</span>
+								 
+								</a>
+
+								<!--<a  href="javascript:void(0)" class="btn modal-trigger dropdown-item" data-target="modal1" target="javascript:void(0)">
+<span class="fa-stack fa-1x has-badge" data-count="2">
+
+<i class="fa fa-bell "></i>
+</span>
+<span >Notifications </span>
+								 
+								</a>-->
+
+                                <a class="dropdown-item" href="patiient-profile.html">
+                                    <i class="fas fas1 fa-user-cog" style="margin-right:6px"></i>
+                                    <span>Settings</span>  
+                               </a>
+								<a class="dropdown-item" href="login.html"><i class="fas fas1 fa-sign-out-alt" style="margin-right:6px"></i><span>LOGOUT</span>
+								 
+								</a>
+							</div>
+						</li>
+
+
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets\img\doctors\doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a> 
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets\img\doctors\doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Ellisa Alloa</h6>
+										<p class="text-muted mb-0">Client</p>
+									</div>
+								</div>
+						 	 <a class="dropdown-item "   href="javascript:void(0)"  onclick="activaTab('#pro-setting')">
+						 	 	<i class="fas fa-user-cog" style="margin-right:5px"></i>
+						 	 	<span>Settings</span>  
+ 							</a>
+								<a class="dropdown-item" href="javascript:void(0)" onclick="activaTab('#pat_appointments')"><i class="fas fa-calendar-check" style="margin-right:10px"></i><span>Bookings</span> 
+									 
+								</a>
+								<a class="dropdown-item"  href="javascript:void" onclick="activaTab('#pres')">
+
+<i class="fas fa-comments" style="margin-right:5px"></i><span>Messages</span>
+								 
+								</a>
+								<a class="dropdown-item"  href="javascript:void" onclick="activaTab('#medical')"><i style="margin-right:8px" class="fas fa-heart"></i><span>Favourites</span>
+								 
+								</a>
+								<a class="dropdown-item"  href="javascript:void" onclick="activaTab('#billing')"><i class="fas fa-star" style="margin-right:5px"></i><span >Reviews</span>
+								 
+								</a>
+
+								
+								<a class="dropdown-item" href="login.html"><i class="fas fas1 fa-sign-out-alt" style="margin-right:5px"></i><span>Logout</span>
+								 
+								</a>
+							</div>
+						</li>
+
+						<!--<li class="nav-item dropdown has-arrow logged-item hidden-xs hidden-md">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+								<span class="user-img">
+									<img src="assets/icon/euro.png" alt="User Image" class="avatar-img" style="width: 30px;">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" style="min-width: 70px;">
+								 
+						 	   <a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/euro.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+								<a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/dollor.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+ 
+								 <a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/pound.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+								 
+								 
+							</div>
+						</li>-->
+
+					</ul>
+					
+					 </div>
+					
+				    </div>
+
+ <div id="modal1" class="modal">
+  <div class="modal-content">
+    <a href="#!" class=" text-right modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    <h4 class="text-muted text-center">Notification</h4>
+
+    <div>
+ <h5> Notification for Specialist Booking</h5>
+   <p> Session 10-11 Booked by demo User of Specialist Test</p>
+    </div>
+
+<div>
+ <h5> Notification for Cancel Booking</h5>
+   <p> Session 10-11 Booked by Demo User of Specialist Test</p>
+    </div>
+    
+    
+    
+    <button class="btn btn-primary btn-block " type="submit">All</button>
+
+
+    
+										
+  </div>
+
+</div> 
+
+
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index.html" class="menu-logo">
+								<img src="assets\img\logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+
+						</div>
+						
+						<!--Mobile Menu-->
+					
+
+
+						<ul class="main-nav">
+							  <li class="login-link">
+								<div class="d-flex p-2 "> 
+								 <a class="ml-4" href="login.html"> 
+									<img src="assets/icon/EN last2.png " alt="User Image" class="" style="width: 46px;">
+								</a>
+								 
+							 
+								<a class="ml-4" href="login.html"> 
+									<img src="assets/icon/IT last2.png" alt="User Image" class="" style="width: 47px;">
+								</a>
+  							 
+								 <a class="ml-4" href="login.html"> 
+									<img src="assets/icon/ES last2.png" alt="User Image" class="" style="width: 48px; margin-top: 1px;">
+								</a>
+							</div>
+							</li>
+						<!--  <li class="login-link">
+								<a href="login.html">LOGIN / REGISTER</a>
+							</li> -->
+							
+                              <li class="login-link"> 
+                              									<a href="login.html">
+<img style="width:24px;" src="/assets/images/choose-white.png">
+<span style="
+    margin-left: 12px;
+">Choose</span></a>
+							</li>
+							<li class="login-link">
+						
+								<a href="how-it-works.html">
+	<img style="width:26px;" src="/assets/images/how-white.png">
+								<span style="
+    margin-left: 10px;
+">How</span></a>
+							 </li>
+							<!--<li class="login-link"> 
+								 
+								<a href="more.html"><img style="width:28px;" src="/assets/images/more-white.png"><span style="
+    margin-left: 10px;
+">More</span></a>
+							</li>-->
+							<li class="login-link">
+								 
+								<a href="about.html"> <img style="width:28px;" src="/assets/images/about-white.png"><span style="
+    margin-left: 12px;
+">Extra</span></a> 
+							</li>
+							<li class="login-link">
+								
+								<a href="login.html"> <img style="width:28px;" src="/assets/images/about-white.png"><span style="
+    margin-left: 13px;
+">FAQ</span></a>
+							</li>
+
+							<li class="login-link">
+								<a href="login.html"><span><i class="fas fa-calendar-check" style="width:28px;text-align: center;"></i></span><span style="
+    margin-left: 10px;
+">Bookings</span></a>
+							</li>
+							<li class="login-link">
+								<a href="login.html"><span><i class="fas fa-comments" style="width:28px;text-align: center;"></i></span><span style="
+    margin-left: 10px;
+">Messages</span></a>
+							</li>
+							<li class="login-link">
+								<a href="login.html"><span><i class="fas fa-heart" style="width:28px;text-align: center;"></i></span><span style="
+    margin-left: 14px;
+">Favourites</span></a>
+							</li>
+							<li class="login-link">
+								<a href="login.html"><span><i class="fas fa-star" style="width:24px;text-align: center;"></i></span><span style="
+    margin-left: 14px;
+">Reviews</span></a>
+							</li>
+                            
+                            <li class="login-link">
+								<a href="login.html"> 
+
+<span ><i class="fas fa-user-cog" style="width:28px;text-align: center;"></i></span><span style="
+    margin-left: 14px;
+">Settings</span></a>
+							</li>
+							<li class="login-link">
+								<a href="login.html"><span><i class="fas fas1 fa-sign-out-alt" style="width:28px;text-align: center;"></i></span><span style="
+    margin-left: 12px;
+">LOGOUT</span></a>
+							</li>
+							 
+						</ul>	 
+						<!--End Mobile Menu-->
+					</div>		 
+				
+
+				 </nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar" style="background: #ff0a60;">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							 
+							<h2 class="breadcrumb-title">Profile</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content bg-theme">
+				<div class="container-fluid">
+
+					<div class="row">
+					
+						<div class="col-md-12 col-lg-12 col-xl-12 dct-appoinment">
+							 <div class="card">
+								<div class="card-body pt-0 pl-0 pr-0">
+									<div class="user-tabs">
+
+<ul class="nav nav-tabs nav-tabs-bottom nav-justified flex-wrap hidden-lg hidden-md">
+											
+											<li class="nav-item">
+												<a class="nav-link" href="#pat_appointments" data-toggle="tab"><div style="
+    display: inline;
+    /* padding: 10px; */
+    position: absolute;
+    left: 0;
+    right: 74px;
+"><i class="fas fa-calendar-check"></i></div> <div style="
+    display: inline;
+    margin-left: 12px;
+"><span>  Bookings</span></div></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#pres" data-toggle="tab"><div style="
+    display: inline;
+    position: absolute;
+    left: 0px;
+    right: 74px;
+"><i class="fas fa-comments"></i></div> <div style="
+    display: inline;
+    margin-left: 17px;
+"><span>Messages</span></div></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#medical" data-toggle="tab">
+
+												<div style="
+    display: inline;
+    position: absolute;
+    left: 0px;
+    right: 74px;
+"><i class="fas fa-heart"></i></div> <div style="
+    display: inline;
+    margin-left: 20px;
+"><span>Favourites</span></div></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#billing" data-toggle="tab"><div style="
+    display: inline;
+    position: absolute;
+    top: left;
+    /* top: 0; */
+    right: 74px;
+    left: 0px;
+"><i class="fas fa-star"></i></div>  <div style="
+    display: inline;
+     margin-left: 5px; 
+"><span>Reviews	</span></div></a>
+                                            </li> 
+                                            
+                                            <li class="nav-item">
+												<a class="nav-link active" href="#pro-setting" data-toggle="tab"><div style="
+    display: inline;
+    position: absolute;
+    left: 0px;
+    right: 72px;
+"><i class="fas fas fa-user-cog"></i></div><div style="
+    display: inline;
+    margin-left: 5px;
+"><span>Settings</span></div></a>
+											</li>
+										</ul>
+
+
+
+										<ul class="nav test1 nav-tabs nav-tabs-bottom nav-justified flex-wrap hidden-sm hidden-xs">
+											
+											<li class="nav-item">
+												<a class="nav-link" href="#pat_appointments" data-toggle="tab"><i class="fas fa-calendar-check icon-tab"></i> <span>  Bookings</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#pres" data-toggle="tab"><i class="fas fa-comments icon-tab"></i> <span>Messages</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#medical" data-toggle="tab">
+
+												<i class="fas fa-heart icon-tab"></i> <span >Favourites</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#billing" data-toggle="tab"><i class="fas fa-star icon-tab"></i>  <span>Reviews	</span></a>
+                                            </li> 
+                                            
+                                            <li class="nav-item">
+												<a class="nav-link active" href="#pro-setting" data-toggle="tab"><i class="fas fas fa-user-cog icon-tab"></i><span>Settings</span></a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										
+										<!-- Appointment Tab -->
+							<div id="pro-setting" class="tab-pane fade show active">
+								<div class="card border-0">
+								<div class="card-body">
+					<h6 class="text-center">Filled information is only visible to the specialist that you reserve a consultation with. * Mandatory fields</h6>
+						
+									<!-- Profile Settings Form -->
+				<form>
+						<div class="row form-row">
+					<div class="col-12 col-md-12">
+					<div class="form-group">
+			<div class="change-avatar">
+				<div class="profile-img">
+					<img src="assets/img/patients/patient.jpg" alt="User Image">
+				</div>
+				<div class="upload-img">
+					<div class="change-photo-btn">
+						<span><i class="fa fa-upload"></i> Upload Photo</span>
+						<input type="file" class="upload">
+					</div>
+					<small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of 2MB</small>
+				</div>
+			</div>
+		</div>
+	</div>
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>First Name *</label>
+													<input type="text" class="form-control" value="Richard">
+												</div>
+											</div>
+
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Surname *</label>
+													<input type="text" class="form-control" value="Wilson">
+												</div>
+											</div>
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Email ID *</label>
+													<input type="email" class="form-control" value="richard@example.com">
+												</div>
+											</div>
+											<div class="col-12 col-md-6">
+												<label>Mobile </label>
+				<div class="input-group mb-3">
+													<div class="input-group-prepend">
+														<select name="country"></select>
+					<!--<select>
+						<option>+91</option>
+						<option>+01</option>
+						<option>+44</option>
+					</select>-->
+				</div>
+				<input class="form-control" type="text" placeholder="202-555-0125">
+			 </div>
+		</div>
+		
+		 
+		<div class="col-12 col-md-6">
+			<div class="form-group">
+				<label>
+					
+					<!--fa fa-street-view-->
+				
+				Country * (find location by GPS<a href="javascript:void(0)">
+                    <!--fa fa-street-view-->
+                    <i style="margin-left:5px;" class="fas fa-map-marker-alt"></i>
+                        </a>)</label>
+				<select class="form-control">
+					<option>Select Country</option>
+				</select>
+				 
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="form-group">
+				<label>City *</label>
+				<select class="form-control">
+					<option>Select City</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="form-group">
+				<label>Your Time Zone
+					<span class="small">
+				(keep your location updated in order for your Time Zone to be correct)
+					</span>
+				</label>
+				
+					<input type="text" class="form-control" value="UTC+05:45" disabled="disabled">
+				
+			</div>
+		</div>
+
+	
+		<div class="col-12 col-md-6">
+			<div class="form-group">
+				<label>Date of Birth</label>
+				<div class="cal-icon">
+					<input type="text" class="form-control datetimepicker" value="24-07-1983">
+				</div>
+			</div>
+		</div>
+					
+						<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Languages for consultation </label>
+													<input type="text" class="form-control" value="english,italian">
+													<span class="small">
+				(you can type multiple languages separating by comma, e.g. english, italian...)
+					</span>
+												</div>
+											</div>					 
+											 
+										</div>
+			<div class="row"> 
+				<div class="col-md-6">
+					<div class="submit-section">
+				<center>
+					<button type="submit" class="btn btn-primary submit-btn mb-4">Save Changes</button>
+				</center>
+					</div>
+					
+				</div>
+				<div class="col-md-6">
+					<div class="card border rounded p-2">
+						<div class="card-title border-bottom p-3">
+							Change Password
+						</div>
+						<div class="card-body">
+							
+								<div class="row mb-4">
+									<div class="col-md-4">
+									<label class=" mt-2 font-weight-bold">Current *</label>
+									</div>
+									<div class="col-md-8">
+									<input type="password" placeholder="******" class="form-control ml-3 w-100">
+									</div>
+									
+								</div>
+								<div class="row mb-4">
+									<div class="col-md-4">
+									<label class=" mt-2 font-weight-bold">New</label>
+									</div>
+									<div class="col-md-8">
+									<input type="password" placeholder="" class="form-control ml-3 w-100">
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+									<label class="mt-2 font-weight-bold">Re-Type New</label>
+									</div>
+									<div class="col-md-8">
+									<input type="password" placeholder="" class="form-control ml-3 w-100">
+									</div>
+									
+								</div>
+								 
+								<div class="submit-section mt-3 col-md-12">
+								<center><button type="submit" class="btn btn-primary submit-btn"> Change Password</button></center>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+				
+									</form>
+									<!-- /Profile Settings Form -->
+									
+								</div>
+							</div>
+							</div>
+
+							<div id="pat_appointments" class="tab-pane fade search-box">
+                                                
+                                <h3 class="text-danger text-center">Manage your consultations here:</h3>
+							<div class="card card-table mb-0 mt-2">
+							<div class="card-body">
+							
+						<!-- 	<h3 class="hidden-lg hidden-md text-center text-dark mb-2 mt-2">Notes by specialist</h3> -->
+							   
+<div class="col-md-3 mt-2">
+										<div class="form-group search-info w-100 mb-2">
+										<input type="text" class="form-control sspf" placeholder="Search">
+										<!-- <span class="form-text">E.g. : Naturopath </span> -->
+								
+										</div>
+									</div>
+
+									<div class="col-md-1 sbutton hidden-lg hidden-md hidden-sm" style="display:none">
+											
+									<button type="submit" class="btn btn-primary search-btn mb-4"><i class="fas fa-search"></i> <span>Search</span></button>
+									</div>
+
+							<div class="table-responsive">
+							<table class="table table-hover table-striped table-center mb-0">
+							<thead>
+							<tr class="text-center">
+								<th>Status <div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext" style="text-align:left;"><ul style="font-size: 1rem;margin-bottom: 0px; 
+"><li>BOOKED: reservation confirmed.</li><li>DONE: the session has been completed. Payment will be delivered to the specialist after 10 days.</li><li>REBOOK: <!-- in-person consultation. -->a new session date can be booked (available up to 24 h before the consultation or in case of a connection issue for Audio/Video consultations).</li><li>CANCEL: <!-- in-person consultation. -->full restitution available up to 24 h before the consultation. After this, a 21% penalty will be applied.</li><li>PAST: <!-- in-person consultation. -->Record of a past consultation.</li></ul>
+
+</span>
+</div></th>
+								<th>Type</th> 
+								<th>Specialist</th>
+								<th>Booking</th>
+								<th>Session Date</th>
+								<th>Link</th>
+								<th>Notes by specialist
+<div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext toolnotes" style="text-align:left;width:275px;">See here communications provided by the specialist about the consultation
+
+</span>
+</div>
+								</th>
+								<th>Private Records
+<div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext toolnotes" style="text-align:left;width:275px;">Keep here your records about the consultation. This file is only visible to you
+
+</span>
+</div>
+		
+								</th>
+								<th>Price/Invoice</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td class="pr-0 pl-1">
+									<select class="w-100"> 
+										<option class="text-success">Booked</option>
+										<option class="text-success">Done</option>
+								 		<option class="text-danger">Cancel</option>
+								 		<option class="text-info">Rebook</option>
+								 		<option class="text-dark">Past</option>
+									</select>
+								 	
+								</td>
+								<td> Written SHORT</td>
+								<td>Ellisa Alloha</td>
+								<td>16 Nov 2019</td>
+								<td class="text-center">-</td>
+								<td>
+									<center><a href="javascript:void(0)"
+onclick="activaTab('#pres')"
+
+									 class="btn btn-info btn-sm" style="background: #ff0a60;border: 1px #ff0a60 solid;">GO TO QUERY</a>
+									</center>
+								</td>
+								<td class="text-center">
+								<textarea class="form-control" placeholder="Notes" disabled="disabled" style="height:38px;min-width:150px;"></textarea>
+								</td>
+								<td>
+									<!--<p class="text-center" ><a href=""  target="_blank" style="color:green">Records.docs </a>
+									</p>-->
+
+									<textarea class="form-control" placeholder="Notes" style="height:38px" disabled="disabled"></textarea> 
+								</td>
+								<td>
+									<p class="text-center">45/<a href="" class="text-primary" target="_blank">Invoice.docs </a>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="pr-0 pl-1">
+									<select class="w-100"> 
+										<option class="text-success">Done</option>
+										<option class="text-success">Booked</option>
+								 		<option class="text-danger">Cancel</option>
+								 		<option class="text-info">Rebook</option>
+								 		<option class="text-dark">Past</option>
+									</select>
+								 	
+								</td>
+								<td> Written COMPL</td>
+								<td>Ellisa Alloha</td>
+								<td>16 Nov 2019</td>
+								<td class="text-center">-</td>
+								<td>
+									<a href="" class="btn btn-secondary text-dark btn-sm">
+										EXP ONLINE SESSION
+									</a>
+								</td>
+								<td class="text-center">
+									<textarea class="form-control" placeholder="Notes" disabled="disabled" style="height:38px"></textarea>
+								</td>
+								<td>
+									<!--<p class="text-center" ><a href="" style="color:green" target="_blank">Records.docs </a>
+									</p>-->
+
+									<textarea class="form-control" placeholder="Notes" style="height:38px" disabled="disabled"></textarea> 
+								</td>
+								<td>
+									<p class="text-center">45/<a href="" class="text-primary" target="_blank">Invoice.docs </a>
+									</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td class="pr-0 pl-1">
+									<select class="w-100"> 
+								 		<option class="text-danger">Cancel</option>
+										<option class="text-success">Booked</option>
+										<option class="text-success">Done</option>
+								 		<option class="text-info">Rebook</option>
+								 		<option class="text-dark">Past</option>
+									</select>
+								 	
+								</td>
+								<td> Video PACK 2</td>
+								<td>Ellisa Alloha</td>
+								<td>16 Nov 2019</td>
+								<td class="text-center"> 23 Nov 2020, 3:30 PM</td>
+								<td>
+									<a href="" class="btn btn-secondary text-dark btn-sm">
+										JOIN ONLINE SESSION
+									</a>
+								</td>
+								<td class="text-center">
+									<textarea class="form-control" placeholder="Notes" disabled="disabled" style="height:38px"></textarea> 
+								</td>
+								<td>
+									<!--<p class="text-center" ><a style="color:green" href=""  target="_blank">Records.docs </a>
+									</p>-->
+
+									<textarea class="form-control" placeholder="Notes" style="height:38px" disabled="disabled"></textarea> 
+								</td>
+								<td>
+									<p class="text-center">45/<a href="" class="text-primary" target="_blank">Invoice.docs </a>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="pr-0 pl-1">
+									<select class="w-100"> 
+								 		<option class="text-info">Rebook</option>
+										<option class="text-success">Booked</option>
+										<option class="text-success">Done</option>
+								 		<option class="text-danger">Cancel</option>
+								 		<option class="text-dark">Past</option>
+									</select>
+								 	
+								</td>
+								<td> In-person PACK 3</td>
+								<td>Ellisa Alloha</td>
+								<td>16 Nov 2019 </td>
+								<td class="text-center">
+									<input type="text" class="text-center form-control" style="width:175px;padding-left:10px" disabled="disabled" placeholder="" value="23 Nov 2020, 3:30 PM">
+								  </td>
+								<td>
+									<center><a href="javascript:void(0)" onclick="activaTab('#pres')" class="btn btn-info btn-sm" style="background: #ff0a60;border: 1px #ff0a60 solid;">
+										GO TO QUERY
+									</a></center>
+								</td>
+								<td class="text-center" >
+									<textarea class="form-control" placeholder="Notes" style="height:38px" disabled="disabled"></textarea> 
+								</td>
+								<td>
+									<textarea class="form-control" placeholder="Notes" style="height:38px" disabled="disabled"></textarea> 
+									<!--<p class="text-center" ><a href="" style="color:green" target="_blank">Records.docs </a>
+									</p>-->
+								</td>
+								<td>
+									<p class="text-center" >45/<a href="" class="text-primary" target="_blank">Invoice.docs </a>
+									</p>
+								</td>
+							</tr>
+						
+							</tbody>
+							</table>
+							</div>
+							</div>
+							</div>
+										</div>
+										<!-- /Appointment Tab -->
+										
+										<!-- Prescription Tab -->
+	<div class="tab-pane fade" id="pres">
+		 
+		<div class="col-xl-12">
+							<div class="chat-window">
+							  <!-- Chat Left -->
+								<div class="chat-cont-left">
+									<div class="chat-header">
+										<span>Chats</span>
+										<a href="javascript:void(0)" class="chat-compose">
+											<i class="material-icons">control_point</i>
+										</a>
+									</div>
+									<form class="chat-search">
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<i class="fas fa-search"></i>
+											</div>
+											<input type="text" class="form-control" placeholder="Search">
+										</div>
+									</form>
+									<div class="chat-users-list">
+										<div class="chat-scroll">
+											<a href="javascript:void(0);" class="media">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-away">
+														<img src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Ruby Perrin</div>
+														<div class="user-last-chat">Hey, How are you?</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">2 min</div>
+														<div class="badge badge-success badge-pill">15</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat active">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-online">
+														<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Darren Elder</div>
+														<div class="user-last-chat">I'll call you later </div>
+													</div>
+													<div>
+														<div class="last-chat-time block">8:01 PM</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-away">
+														<img src="assets/img/doctors/doctor-thumb-03.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Deborah Angel</div>
+														<div class="user-last-chat">Give me a full explanation about our project</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">7:30 PM</div>
+														<div class="badge badge-success badge-pill">3</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-online">
+														<img src="assets/img/doctors/doctor-thumb-04.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Sofia Brient</div>
+														<div class="user-last-chat">That's very good UI design</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">6:59 PM</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-offline">
+														<img src="assets/img/doctors/doctor-thumb-05.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Marvin Campbell</div>
+														<div class="user-last-chat">Yesterday i completed the task</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">11:21 AM</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-online">
+														<img src="assets/img/doctors/doctor-thumb-06.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Katharine Berthold</div>
+														<div class="user-last-chat">What is the major functionality?</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">10:05 AM</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-away">
+														<img src="assets/img/doctors/doctor-thumb-07.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Linda Tobin</div>
+														<div class="user-last-chat">This has allowed me to showcase not only my technical skills</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">Yesterday</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-offline">
+														<img src="assets/img/doctors/doctor-thumb-08.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Paul Richard</div>
+														<div class="user-last-chat">Let's talk briefly in the evening. </div>
+													</div>
+													<div>
+														<div class="last-chat-time block">Sunday</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-online">
+														<img src="assets/img/doctors/doctor-thumb-09.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. John Gibbs </div>
+														<div class="user-last-chat">Do you have any collections? If so, what of?</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">Saturday</div>
+													</div>
+												</div>
+											</a>
+											<a href="javascript:void(0);" class="media read-chat">
+												<div class="media-img-wrap">
+													<div class="avatar avatar-away">
+														<img src="assets/img/doctors/doctor-thumb-10.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+												</div>
+												<div class="media-body">
+													<div>
+														<div class="user-name">Dr. Olga Barlow</div>
+														<div class="user-last-chat">Connect the two modules with in 1 day.</div>
+													</div>
+													<div>
+														<div class="last-chat-time block">Friday</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- /Chat Left -->
+							
+								<!-- Chat Right -->
+								<div class="chat-cont-right">
+									<div class="chat-header">
+										<a id="back_user_list" href="javascript:void(0)" class="back-user-list">
+											<i class="material-icons">chevron_left</i>
+										</a>
+										<div class="media">
+											<div class="media-img-wrap">
+												<div class="avatar avatar-online">
+													<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+												</div>
+											</div>
+											<div class="media-body">
+												<div class="user-name">Dr. Darren Elder</div>
+												<div class="user-status">online</div>
+											</div>
+										</div>
+										<div class="chat-options">
+											<a href="javascript:void(0)" data-toggle="modal" data-target="#voice_call"> 
+											<i class="fa fa-file-word h4 mt-2 text-muted"></i>
+											</a>
+											<a href="javascript:void(0)" data-toggle="modal" data-target="#voice_call">
+												<i class="material-icons">local_phone</i>
+											</a>
+											<a href="javascript:void(0)" data-toggle="modal" data-target="#video_call">
+												<i class="material-icons">videocam</i>
+											</a>
+											 
+										</div>
+									</div>
+									<div class="chat-body">
+										<div class="chat-scroll">
+											<ul class="list-unstyled">
+												<li class="media sent">
+													<div class="media-body">
+														<div class="msg-box">
+															<div>
+																<p>Hello. What can I do for you?</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:30 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="media received">
+													<div class="avatar">
+														<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+													<div class="media-body">
+														<span style="color: green;">Written consultation</span>
+														<div class="msg-box">
+
+															<div style="border: 2px solid #85ff00;">
+																<p>I'm just looking around.</p>
+																<p>Will you tell me something about yourself?</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:35 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="msg-box">
+															<div>
+																<p>Are you there? That time!</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:40 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="msg-box">
+															<div>
+																<div class="chat-msg-attachments">
+																	<div class="chat-attachment">
+																		<img src="assets/img/img-02.jpg" alt="Attachment">
+																		<div class="chat-attach-caption">placeholder.jpg</div>
+																		<a href="#" class="chat-attach-download">
+																			<i class="fas fa-download"></i>
+																		</a>
+																	</div>
+																	<div class="chat-attachment">
+																		<img src="assets/img/img-03.jpg" alt="Attachment">
+																		<div class="chat-attach-caption">placeholder.jpg</div>
+																		<a href="#" class="chat-attach-download">
+																			<i class="fas fa-download"></i>
+																		</a>
+																	</div>
+																</div>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:41 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="media sent">
+													<div class="media-body">
+														<div class="msg-box">
+															<div style="    border: 2px solid #85ff00;">
+																<p>Where?</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:42 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="msg-box">
+															<div>
+																<p>OK, my name is Limingqiang. I like singing, playing basketballand so on.</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:42 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="msg-box">
+															<div>
+																<div class="chat-msg-attachments">
+																	<div class="chat-attachment">
+																		<img src="assets/img/img-04.jpg" alt="Attachment">
+																		<div class="chat-attach-caption">placeholder.jpg</div>
+																		<a href="#" class="chat-attach-download">
+																			<i class="fas fa-download"></i>
+																		</a>
+																	</div>
+																</div>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:50 AM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="media received">
+													<div class="avatar">
+														<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+													<div class="media-body">
+														<div class="msg-box">
+															<div>
+																<p>You wait for notice.</p>
+																<p>Consectetuorem ipsum dolor sit?</p>
+																<p>Ok?</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>8:55 PM</span>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="chat-date">Today</li>
+												<li class="media received">
+													<div class="avatar">
+														<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+													<div class="media-body">
+														<div class="msg-box">
+															<div>
+																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>10:17 AM</span>
+																		</div>
+																	</li>
+																	<li><a href="#">Edit</a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="media sent">
+													<div class="media-body">
+														<div class="msg-box">
+															<div>
+																<p>Lorem ipsum dollar sit</p>
+																<div class="chat-msg-actions dropdown">
+																	<a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																		<i class="fe fe-elipsis-v"></i>
+																	</a>
+																	<div class="dropdown-menu dropdown-menu-right">
+																		<a class="dropdown-item" href="#">Delete</a>
+																	</div>
+																</div>
+																<ul class="chat-msg-info">
+																	<li>
+																		<div class="chat-time">
+																			<span>10:19 AM</span>
+																		</div>
+																	</li>
+																	<li><a href="#">Edit</a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="media received">
+													<div class="avatar">
+														<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+													</div>
+													<div class="media-body">
+														<div class="msg-box">
+															<div>
+																<div class="msg-typing">
+																	<span></span>
+																	<span></span>
+																	<span></span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="chat-footer">
+										<div class="input-group d-flex">
+											<div class="input-group-prepend">
+												<div class="btn-file btn">
+													<i class="fa fa-paperclip"></i>
+													<input type="file">
+												</div>
+											</div>
+											 <img src="assets/icon/microfono.png" style="height: 42px;">
+											<input type="text" class="input-msg-send ml-0 form-control" placeholder="Type here">
+											<div class="input-group-append">
+												<button type="button" class="btn msg-send-btn ml-0"><i class="fab fa-telegram-plane"></i></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Chat Right -->
+								
+							</div>
+						</div>
+	</div>
+										<!-- /Prescription Tab -->
+
+										<!-- Medical Records Tab -->
+						<div class="tab-pane fade" id="medical">
+											 <h3 class="text-danger text-center">List of Favourite Professionals:</h3>
+									
+							 	
+							<div class="card">
+										<div class="card-body">
+
+									 <div class="text-right ">
+										<a href="javascript:void(0)" class="closebtn p-0 m-0" onclick="closeNav()"> <span class="p-2 text-dark rounded h2">×</span></a>
+									</div>	
+
+
+	<div class="doctor-widget">
+										<div class="col-md-8">
+
+											<div class="media sp-media">
+
+
+ 
+									
+									
+									<div class="profile-widget doctor-img" style="background-color:unset;border: unset;border-radius: unset;margin-bottom: unset; position: unset;padding: unset;" >
+ 							 <h4 class=" font-size-21" style="color:#ff0a60">
+ 							 Elisa ALLOA
+ 							 </h4>
+ 							 <img src="assets\icon\medicine.png" class="img-fluid search-pic se-pic1" alt="User Image" style="z-index:100000">
+ 							 <div class="doc-img">
+													<a href="specialist-profile.html" class="d-flex">
+														
+								<img src="assets\img\specialist\spc-02.jpg" class="img-fluid  mainimg" alt="User Image">
+													</a>
+													<a href="javascript:void(0)" class="fav-btn" tabindex="0" style="top:10px;left:150px">
+											<i class="far fa-bookmark"></i>
+										</a>
+												</div></div>
+							
+
+
+ 												
+						 <div class="media-body hidden-xs hidden-sm mt-4">
+												    
+							 <div class="doc-info-cont mt-1">
+								 <h4 class="doc-name"><a href="specialist-profile.html" class="text-dark">GNM & Naturopathy Practitioner
+								</a></h4>
+								 <p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+								 <!-- <h6 class="text-muted">3 years experience overall</h6> -->
+								 <h6 class="text-muted"><!-- 15 consultations done --> 
+								<!-- (since Nov '20) --> </h6>
+								<a href="#"> <h6 class="text-info mb-3">Ayurveda, Antroposophy</h6></a>
+								 <h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+							 
+								 <div class="rating">
+									 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star"></i>
+										 <span class="d-inline-block average-rating">(17)
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99% &nbsp;
+												</span>
+							 <span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												 
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<!-- <a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a> -->
+													
+												</div>
+												<div  style="max-width:300px">
+								 <a class="btn view-btn" href="specialist-profile.html" >View Profile</a>
+											</div>
+											</div>
+
+												  </div>
+
+ 										</div>
+
+											
+											<div class="doc-info-cont hidden-md hidden-lg text-center">
+												<h4 class="doc-name"><a href="specialist-profile.html" class="text-muted">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<!-- <h6 class="text-muted">3 years experience overall</h6> -->
+												<h6 class="text-muted"><!-- 15 consultations done  --><!-- ( --><!-- since Nov '20) --> </h6>
+												 <a href="#"> <h6 class="text-info">Ayurveda, Antroposophy</h6></a>
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+												
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99%
+										 </span>
+										 <span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<!-- <a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a> -->
+													
+												</div>
+												
+											<div class="" style="max-width:300px">
+								 <a class="btn view-btn" href="specialist-profile.html" >View Profile</a>
+											</div>
+											</div>
+
+										</div>
+					<div class="co-md-4" >
+						 <div class="clinic-services">
+						 	<div class="row">
+						 		<div class="col-md-12"> 
+						 			<h6 class="font-weight-bold text-center mt-2 hidden-xs hidden-sm">Available Consultations
+
+<div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext" style="text-align:left;"><h4 style="text-align: center;color: white; margin-bottom:0.2rem;">Types of consultations:</h4>
+<hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+">
+  	<ul style="font-size: 1rem;margin-bottom: 0px;
+"><li>Written: you can write/voice message the specialist about a specific subject</li><li>Video: audio/video sessions</li><li>In-person: <!-- in-person consultation. -->check where the specialist is consulting</li></ul><h5 style="text-align: justify;color: white;padding:5px;"> Modes can be SHORT (exploratory contact), COMPLETE (full session) &amp; CYCLE (a pack of complete sessions bookable within 3 months from payment)</h5>
+<div style="text-align:center;">
+<a href="how-it-work.html" style="color: #fff;font-size:16px;border: 1px solid #f6a400;padding: 5px;">How it works</a> 
+</div>
+</span>
+</div>
+
+
+						 			 </h6>
+
+						 			<h6 class="font-weight-bold text-center mt-3 hidden-md hidden-lg">Available Consultations <div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext" style="text-align:left;"><h4 style="text-align: center;color: white;">Types of consultations:</h4>
+<hr style="
+    border: 1px solid;
+    width: 160px;
+    text-align: center;
+    margin-top: 5px;
+   
+">
+
+
+  	<ul style="font-size: 1rem;margin-bottom: 0px;
+"><li>Written: you can write/voice message the specialist about a specific subject</li><li>Video: audio/video sessions</li><li>In-person: <!-- in-person consultation. -->check where the specialist is consulting</li></ul><h5 style="text-align: justify;color: white;padding:5px;"> Modes can be SHORT (exploratory contact), COMPLETE (full session) &amp; CYCLE (a pack of complete sessions bookable within 3 months from payment)</h5>
+<div style="text-align:center;">
+<a href="how-it-work.html" style="color: #fff;font-size:16px;border: 1px solid #f6a400;padding: 5px;">How it works</a> 
+</div>
+</span>
+</div>
+</h6>
+						 		</div>
+						 		
+						 	</div>
+						 	<div class="card flex-fill mt-0 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex">
+                                        <img src="assets/images/written.png" style="width: 40px;height:40px;">
+									<h6 class="written_text_color ml-2" style="margin-top: 0.7rem; width: 150px;">Written</h6>
+									<button class="w-100 written_box_color text-white font-weight-bold" style="font-size:10px;   ">
+										Make your request now
+				  
+									</button>
+								</li>
+								<li class="list-group-item d-flex">
+                                    <img src="assets/images/video.png" style="width: 40px;height:40px;">
+									<h6 class="orange ml-2" style="margin-top: 0.7rem; width: 150px;">Video</h6>
+									<button class="w-100 bg-orange" style="   font-size: 10px;
+   										 font-weight: bold;">
+										Next Availability: 17 Nov
+									</button>
+								</li>
+								  
+ 								<li class="list-group-item d-flex">
+                                    <img src="assets/images/live.png" style="width: 40px;height:40px;">
+									<h6 class="blue ml-2" style="margin-top: 0.7rem; width: 150px;">&nbsp;In-person</h6>
+									<button class="w-100 bg-blue text-white font-weight-bold" style="font-size:11px;   ">
+										No free shots: <i class="fa fa-bell"></i> Alert
+				  <!-- <span class="border-0 font-weight-bold" style="color: #ff0a60; font-size:11px;padding: 2px 4px;">here</span> -->
+									</button>
+								</li>
+								
+								 
+								  
+								
+							</ul>
+						</div>
+						</div>
+						<!-- <center>
+							<a href="specialist-profile.html#avlcon" class="btn book-btn w-75 mt-4 h6">Go To Booking </a>
+						</center>	 --> 
+					</div> 
+				</div>
+
+									<!--<div class="doctor-widget">
+										<div class="col-md-8">
+
+											<div class="media">
+ 												<div class="doctor-img">
+ 							 <h4 class=" font-size-21">
+ 							 <a href="specialist-profile.html" class="text-primary">Elisa ALLOA</a>
+ 							 </h4>
+													<a href="specialist-profile.html" class="d-flex">
+														<img src="assets\icon\medicine.png" class="img-fluid search-pic" alt="User Image">
+								<img src="assets\img\doctors\doctor-thumb-01.jpg" class="img-fluid" alt="User Image">
+													</a>
+												</div>
+						 <div class="media-body hidden-xs hidden-sm mt-4">
+												    
+							 <div class="doc-info-cont mt-1">
+								 <h4 class="doc-name"><a href="specialist-profile.html" class="text-muted">GNM &amp; Naturopathy Practitioner
+								</a></h4>
+								 <p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+								 <h6 class="text-muted">3 years experience overall</h6>
+								 <h6 class="text-muted">15 consultations done 
+								(since Nov'20) </h6>
+								 <h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+							 <a href="#"> <h4 class="text-info">Ayurveda, Antroposophy</h4></a>
+								 <div class="rating">
+									 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star"></i>
+										 <span class="d-inline-block average-rating">(17)
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99% &nbsp;
+												</span>
+							 <span class="text-muted">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												 
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-0"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													
+												</div>
+												<div class="mt-3" style="max-width:300px">
+								 <a class="btn view-btn" href="specialist-profile.html" style="margin-top: 18px;">View Profile</a>
+											</div>
+											</div>
+
+												  </div>
+
+ 										</div>
+
+											
+											<div class="doc-info-cont hidden-md hidden-lg text-center">
+												<h4 class="doc-name"><a href="specialist-profile.html" class="text-muted">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<h6 class="text-muted">3 years experience overall</h6>
+												<h6 class="text-muted">15 consultations done ( since Nov'20) </h6>
+												 
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+												<a href="#"> <h4 class="text-info">Ayurveda, Antroposophy</h4></a>
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99%
+										 </span>
+										 <span class="text-muted">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-0"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													
+												</div>
+												
+											<div class="" style="max-width:300px">
+								 <a class="btn view-btn" href="specialist-profile.html">View Profile</a>
+											</div>
+											</div>
+
+										</div>
+					<div class="co-md-4">
+						 <div class="clinic-services">
+						 	<div class="row">
+						 		<div class="col-md-12">
+						 			<h6 class="font-weight-bold text-center mt-2 hidden-xs hidden-sm">Available Consultations <i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+
+						 			<h6 class="font-weight-bold text-center mt-3 hidden-md hidden-lg">Available Consultations <i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+						 		</div>
+						 		
+						 	</div>
+						 	<div class="card flex-fill mt-0 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex">
+                                        <img src="assets/images/written.png" style="width: 40px;height:40px;">
+									<h6 class="green" style="margin-top: 0.7rem;">&nbsp; Written</h6>
+								</li>
+								<li class="list-group-item d-flex">
+                                    <img src="assets/images/video.png" style="width: 40px;height:40px;">
+									<h6 class="orange ml-2" style="margin-top: 0.7rem;">&nbsp;Video</h6>
+									<button class="w-100 bg-orange" style="margin-left: 1.9rem!important;    font-size: 10px;
+   										 font-weight: bold;">
+										Next Availability: 17 Nov
+									</button>
+								</li>
+								 
+ 								<li class="list-group-item d-flex">
+                                    <img src="assets/images/live.png" style="width: 40px;height:40px;">
+									<h6 class="blue ml-2" style="margin-top: 0.7rem;">&nbsp;Live</h6>
+									<button class="w-100 bg-blue text-white font-weight-bold" style="font-size:11px;    margin-left: 2.4rem;">
+										No free shots: <i class="fa fa-bell"></i> Alert
+				  <!-- <span class="border-0 font-weight-bold" style="color: #ff0a60; font-size:11px;padding: 2px 4px;">here</span> -->
+									<!--</button>
+								</li>
+								
+								 
+								  
+								
+							</ul>
+						</div>
+						</div>
+						<center>
+							<a href="specialist-profile.html#avlcon" class="btn book-btn w-75 mt-4 h6">Go To Booking </a>
+						</center>	 
+					</div>
+				</div>-->
+			</div>
+		</div>
+
+
+<div class="card">
+										<div class="card-body">
+ 
+											<div class="text-right ">
+												<a href="javascript:void(0)" class="closebtn p-0 m-0" onclick="closeNav()"> <span class="p-2 text-dark rounded h2">×</span> </a>
+											</div>
+
+									<div class="doctor-widget">
+										<div class="col-md-8">
+
+											<div class="media sp-media">
+ 												<div class="profile-widget doctor-img" style="background-color:unset;border: unset;border-radius: unset;margin-bottom: unset; position: unset;padding: unset;">
+ 													<h4 class=" font-size-21" style="color:#ff0a60">Elisa ALLOA</h4>
+<a href="specialist-profile.html" class="d-flex">
+														<img src="assets\icon\University_degree.png" class="img-fluid search-pic" alt="User Image" style="height:45px;margin-left:-26px;z-index:100000">
+														
+													</a>
+ 													<div class="doc-img">
+													<a href="specialist-profile.html" class="d-flex">
+														
+								<img src="assets\img\specialist\spc-01.jpg" class="img-fluid mainimg" alt="User Image" style="min-height: 198px;">
+													</a>
+													<a href="javascript:void(0)" class="fav-btn" tabindex="0" style="top:10px;left:153px">
+											<i class="far fa-bookmark"></i>
+										</a>
+												</div>
+													
+												</div>
+												  <div class="media-body">
+												    
+								 <div class="doc-info-cont hidden-xs hidden-sm mt-4">
+									 <h4 class="doc-name"><a href="specialist-profile.html" class="text-dark">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<a href="#"> <h6 class="text-info mb-3">Ayurveda, Antroposophy</h6></a>
+												<!-- <h6 class="text-muted">3 years experience overall</h6> -->
+												<h6 class="text-muted"><!-- 15 consultations done  -->
+												<!-- (since Nov '20) --> </h6>
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+			
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+														&nbsp;
+													<span class="text-muted">
+													<i class="fa fa-thumbs-up text-muted"></i> 99%
+												</span>
+												<span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<a href="how-it-work.html">
+														<!-- <h6 class="text-info">How It Works</h6> -->
+													</a>
+													
+												</div>
+												<div class="" style="max-width:300px">
+								 <a class="btn view-btn" href="specialist-profile.html">View Profile</a>
+											</div>
+											</div>
+
+
+												  </div>
+											</div>
+											<div class="doc-info-cont hidden-md hidden-lg text-center">
+												<h4 class="doc-name"><a href="specialist-profile.html" class="text-dark">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-2 ">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												 <a href="#"> <h6 class="text-info mb-3">Ayurveda, Antroposophy</h6></a>
+												<!-- <h6 class="text-muted">3 years experience overall</h6> -->
+												<h6 class="text-muted"><!-- 15 consultations done  -->
+												<!-- (since Nov '20)  --></h6>
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+		
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+														&nbsp;
+													<span class="text-muted">
+													<i class="fa fa-thumbs-up text-muted"></i> 99%
+												</span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+												<!-- 	<a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a> -->
+													
+												</div>
+												
+							 <div class="" style="max-width:300px">
+								 <a class="btn view-btn mt-2" href="specialist-profile.html">View Profile</a>
+											</div>
+											</div>
+											
+											
+										</div>
+					<div class="co-md-4">
+						 <div class="clinic-services">
+						 	<div class="row w-100">
+						 		<div class="col-md-12">
+						 			<h6 class="font-weight-bold mt-2">Available Consultations
+                                      <div class="tooltip"><i class="fas fa-info-circle" title=""></i>
+  <span class="tooltiptext" style="text-align:left;"><h4 style="text-align: center;color: white;">Types of consultations:</h4> 
+
+<hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+">
+
+  	<ul style="font-size: 1rem;margin-bottom: 0px;
+"><li>Written: you can write/voice message the specialist about a specific subject</li><li>Video: audio/video sessions</li><li>In-person: <!-- in-person consultation. --> check where the specialist is consulting</li></ul><h5 style="text-align: justify;color: white;padding:5px;">Modes can be SHORT (exploratory contact), COMPLETE (full session) &amp; CYCLE (a pack of complete sessions bookable within 3 months from payment)</h5>
+<div style="text-align:center;">
+<a href="how-it-work.html" style="color: #fff;font-size:16px;border: 1px solid #f6a400;padding: 5px;">How it works</a> 
+</div>
+</span>
+</div>
+						 			</h6>
+						 		</div>
+						 		 
+						 	</div>
+						 	<div class="card flex-fill mt-3 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex">
+                                        <!-- <i class="fa fa-comment-dots green " style="font-size: 32px;"></i> -->
+						 			<!-- <h6 class="green mt-2">&nbsp; Written</h6> -->
+
+						 			 <img src="assets/images/written.png" style="width: 40px;height:40px;">
+									<h6 class="written_text_color ml-2" style="margin-top: 0.7rem; width: 150px;">Written</h6>
+
+									<button class="w-100 written_box_color text-white font-weight-bold" style="font-size:10px;   ">
+										Make your request now
+				  
+									</button>
+								</li>
+								<li class="list-group-item d-flex">
+									<!-- <h6 class="orange text-left">
+									<img src="assets/icon/audio.png" style="width: 34px;"> &nbsp; &nbsp;Online 
+									</h6>
+ -->
+
+									<img src="assets/images/audio.png" style="width: 40px;height:40px;">
+									<h6 class="orange ml-2" style="margin-top: 0.7rem; width: 150px;">Audio</h6>
+									<button class="w-100 bg-orange" style="   font-size: 10px;
+   										 font-weight: bold;">
+										Next Availability: 17 Nov
+									</button>
+								</li>
+								
+ 				
+								<!-- <li class="list-group-item bg-orange">National Availability on Tue, 17 Nov</li> -->
+								
+									<li class="list-group-item d-flex">
+                                 <!--    <i class="fa fa-male blue " style="font-size: 32px;"></i>&nbsp;
+                                        <i class="fa fa-male blue" style="font-size: 32px;"></i>
+									<h6 class="blue mt-2 ml-2">&nbsp;In-person</h6> -->
+									<!-- <i class="fa fa-male blue " style="font-size: 32px;"></i>&nbsp;
+                                        <i class="fa fa-male blue" style="font-size: 32px;"></i>
+									<h6 class="blue mt-2 ml-2">&nbsp;In-person</h6> -->
+									 <img src="assets/images/live.png" style="width: 40px;height:40px;">
+									<h6 class="blue ml-2" style="margin-top: 0.7rem; width: 150px;">&nbsp;In-person</h6>
+									<button class="w-100 bg-blue text-white font-weight-bold" style="font-size:11px;   ">
+										No free shots: <i class="fa fa-bell"></i> Alert
+				  <!-- <span class="border-0 font-weight-bold" style="color: #ff0a60; font-size:11px;padding: 2px 4px;">here</span> -->
+									</button>
+								</li>
+
+
+								
+								<!--  <li class="list-group-item bg-info text-white text-center">Next Availability on Mon, 16 Nov</li> -->
+								
+							</ul>
+						</div>
+						</div>
+							 
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+										</div>
+										<!-- /Medical Records Tab -->
+										
+										<!-- Billing Tab -->
+					<div class="tab-pane" id="billing">
+						 <div class="write-review container">
+						<h4 class="text-center font-weight-bold">Write a review about your consultation with:</h4>
+										
+										<!-- Write Review Form -->
+										<form>
+											
+											 
+											<div class="form-group">
+                                                <!--<label class="font-weight-bold">Ellisa Alloa</label>-->
+                                                <label class="font-weight-bold font-size-21" style="color:#ff0a60">Elisa ALLOA</label>
+												<textarea id="review_desc" maxlength="100" class="form-control bg-light" style="height: 150px;" placeholder="Your review"></textarea>
+											  <p class="recommend-btn mt-3">
+												<span class="mr-2 h4">Recommend?</span>
+												<a href="#" class="like-btn">
+													<i class="far fa-thumbs-up"></i> Yes
+												</a>
+												<a href="#" class="dislike-btn">
+													&nbsp;<i class="far fa-thumbs-down"></i> No
+												</a>
+											</p>
+											<div class="form-group d-flex">
+											 <span class="h4 mr-2">Consultation quality?</span>
+												<div class="star-rating">
+													
+
+													<input id="star-5" type="radio" name="rating" value="star-5">
+													<label for="star-5" title="5 stars">
+														<i class="active fa fa-star"></i>
+													</label>
+													<input id="star-4" type="radio" name="rating" value="star-4">
+													<label for="star-4" title="4 stars">
+														<i class="active fa fa-star"></i>
+													</label>
+													<input id="star-3" type="radio" name="rating" value="star-3">
+													<label for="star-3" title="3 stars">
+														<i class="active fa fa-star"></i>
+													</label>
+													<input id="star-2" type="radio" name="rating" value="star-2">
+													<label for="star-2" title="2 stars">
+														<i class="active fa fa-star"></i>
+													</label>
+													<input id="star-1" type="radio" name="rating" value="star-1">
+													<label for="star-1" title="1 star">
+														<i class="active fa fa-star"></i>
+													</label>
+												</div>
+											</div>
+											   
+											</div>
+											<hr>
+											<div class="form-group">
+												<div class="terms-accept">
+													<div class="custom-checkbox">
+													   <span class="mr-2 h4">I would like to appear as:</span>
+													   <div class="item">
+													   <input type="checkbox" id="terms_accept" style="vertical-align: middle;">
+													   <label for="terms_accept" class="mr-3">Name only </label>
+													  </div>
+                                                        <div class="item">
+													   <input type="checkbox" id="terms_accept" style="vertical-align: middle;">
+													   <label for="terms_accept" class="mr-3">Name Surname & Picture </label>
+                                                       </div>
+                                                       <div class="item">
+													   <input type="checkbox" id="terms_accept" style="vertical-align: middle;">
+													   <label for="terms_accept" class="mr-3">Anonym </label>
+													</div>
+													</div>
+												</div>
+											</div>
+											<div class="submit-section">
+												<center>
+												<button type="submit" class="btn btn-primary submit-btn mb-4">Add Review</button>
+											</center>
+											</div>
+										</form>
+										<!-- /Write Review Form -->
+										
+									</div>
+
+						 <div class="widget review-listing mt-3">
+						 	<h2 class="text-center font-weight-bold">Your past reviews:</h2>
+										<ul class="comments-list">
+										
+							 
+			<li class=" bg-white container">
+				<div class="comment p-3">
+					<img class="avatar avatar-sm rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
+					<div class="comment-body">
+						<div class="meta-data">
+							<span class="comment-author">Travis Trimble</span>
+							<span class="comment-date">Nov 2020, Written Consultation</span>
+							<p class="comment-content">
+									<span class="text-danger"><i class="far fa-thumbs-down text-danger" style="font-size: 20px"></i> I do not recommend this Specialist
+									</span>
+									</p>
+							<div class="review-count rating">
+								<i class="fas fa-star filled"></i>
+								<i class="fas fa-star filled"></i>
+								<i class="fas fa-star filled"></i>
+								<i class="fas fa-star filled"></i>
+								<i class="fas fa-star"></i>
+							</div>
+						</div>
+						<p class="comment-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation.
+							Curabitur non nulla sit amet nisl tempus
+						</p>
+						 
+					</div>
+
+				</div>
+				<ul class="comments-reply pl-5">
+					<li>
+						<div class="comment">
+							<img class="avatar avatar-sm rounded-circle" alt="User Image" src="assets\img\patients\patient1.jpg">
+							<div class="comment-body">
+								<div class="meta-data">
+									<span class="comment-author">Charlene Reed</span>
+									<span class="comment-date">Specialist</span>
+									 
+								</div>
+								
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam.
+									Curabitur non nulla sit amet nisl tempus
+								<p></p>
+								
+							</div>
+						</div>
+					</li>
+				</ul>
+ 			</li>
+			<!-- /Comment List -->
+			
+		</ul>
+		
+		 </div>
+						 
+					</div>
+										<!-- Billing Tab -->
+												
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			 <footer class="footer">
+			
+			  <div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+							
+						
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="assets/img/footer-logo.png" alt="logo">
+										<p class="text-white">Follow us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+
+										</div>
+									</div>
+									</div>
+									<div class="footer-about-content">
+										<p class="text-white">Share us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-messenger"></i> </a>
+												</li>
+                                                <li>
+													<a href="#" target="_blank"><i class="fab fa-whatsapp"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<!-- <li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li> -->
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+										</div>
+										
+								</div>
+						
+								
+							</div>
+							
+							<div class="col-lg-6 col-md-6 mt-5">
+							    
+							    	
+							    	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+										    <p class="comment-content" style="color:#333;">
+												"I was already planning private consultations by myself with health practitioners, by contacting and asking them for online sessions, but it took time and efforts…  MedAloha is exactly what I was waiting for." 
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author"><strong>Elisa</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+                                          	
+										    <p class="comment-content" style="color:#333;">
+												"Super intuitive and user-friendly.!"
+											</p>
+											<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Andreas</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content"  style="color:#333;">
+											"Discovering here new stuff about holistics and cool specialists from all over the world, will try more sessions soon." 
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Julie</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content" style="color:#333;">
+											"As a practitioner, MedAloha is the best way –especially in these covid times- to comfortably and easily connect from home with people from everywhere and to share my passion for holistic health."
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Eros</strong></span>
+											</div>
+                                        </div>
+                                      </div>
+                                    </div>
+							    </div>
+						 
+							
+							<div class="col-lg-3 col-md-3">
+							
+							
+								<div class="footer-widget footer-contact  float-right">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p class=""> 3556  Beech Street, San Francisco,<br> California, CA 94108 </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+1 315 369 5943
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											doccure@example.com
+										</p>
+									</div>
+								</div>
+							
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+			
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+				
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0">&copy; 2020 Doccure. All rights reserved.</p>
+									</div>
+								</div>
+								
+								 
+								<div class="col-md-6 col-lg-6">
+								
+								
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="term-condition.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Privacy Policy</a></li>
+										</ul>
+									</div>
+								
+									
+								</div>
+							</div>
+						</div>
+				 
+						
+					</div>
+				</div> 
+			 
+				
+			</footer>  
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+		
+		<!-- Add Medical Records Modal -->
+		<div class="modal fade custom-modal" id="add_medical_records">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">Medical Records</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<form>					
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Date</label>
+								<input type="text" class="form-control datetimepicker" value="31-10-2019">
+							</div>
+							<div class="form-group">
+								<label>Description ( Optional )</label>
+								<textarea class="form-control"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Upload File</label> 
+								<input type="file" class="form-control">
+							</div>	
+							<div class="submit-section text-center">
+								<button type="submit" class="btn btn-primary submit-btn">Submit</button>
+								<button type="button" class="btn btn-secondary submit-btn" data-dismiss="modal">Cancel</button>							
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Medical Records Modal -->
+	  
+		<!-- jQuery -->
+		<script src="assets\js\jquery.min.js"></script>
+
+		<script src="assets\js\jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets\js\popper.min.js"></script>
+		<script src="assets\js\bootstrap.min.js"></script>
+		
+		<!-- Datetimepicker JS -->
+		<script src="assets\js\moment.min.js"></script>
+		<script src="assets\js\bootstrap-datetimepicker.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets\plugins\theia-sticky-sidebar\ResizeSensor.js"></script>
+        <script src="assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets\js\script.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+       
+		<script>
+			(function($) {
+				$(function() {
+					var isoCountries = [
+					/*	{ id: 'AF', text: 'Afghanistan'},
+						{ id: 'AX', text: 'Aland Islands'},
+						{ id: 'AL', text: 'Albania'},
+						{ id: 'DZ', text: 'Algeria'},
+						{ id: 'AS', text: 'American Samoa'},
+						{ id: 'AD', text: 'Andorra'},
+						{ id: 'AO', text: 'Angola'},
+						{ id: 'AI', text: 'Anguilla'},
+						{ id: 'AQ', text: 'Antarctica'},
+						{ id: 'AG', text: 'Antigua And Barbuda'},
+						{ id: 'AR', text: 'Argentina'},
+						{ id: 'AM', text: 'Armenia'},
+						{ id: 'AW', text: 'Aruba'},
+						{ id: 'AU', text: 'Australia'},
+						{ id: 'AT', text: 'Austria'},
+						{ id: 'AZ', text: 'Azerbaijan'},
+						{ id: 'BS', text: 'Bahamas'},
+						{ id: 'BH', text: 'Bahrain'},
+						{ id: 'BD', text: 'Bangladesh'},
+						{ id: 'BB', text: 'Barbados'},
+						{ id: 'BY', text: 'Belarus'},
+						{ id: 'BE', text: 'Belgium'},
+						{ id: 'BZ', text: 'Belize'},
+						{ id: 'BJ', text: 'Benin'},
+						{ id: 'BM', text: 'Bermuda'},
+						{ id: 'BT', text: 'Bhutan'},
+						{ id: 'BO', text: 'Bolivia'},
+						{ id: 'BA', text: 'Bosnia And Herzegovina'},
+						{ id: 'BW', text: 'Botswana'},
+						{ id: 'BV', text: 'Bouvet Island'},
+						{ id: 'BR', text: 'Brazil'},
+						{ id: 'IO', text: 'British Indian Ocean Territory'},
+						{ id: 'BN', text: 'Brunei Darussalam'},
+						{ id: 'BG', text: 'Bulgaria'},
+						{ id: 'BF', text: 'Burkina Faso'},
+						{ id: 'BI', text: 'Burundi'},
+						{ id: 'KH', text: 'Cambodia'},
+						{ id: 'CM', text: 'Cameroon'},
+						{ id: 'CA', text: 'Canada'},
+						{ id: 'CV', text: 'Cape Verde'},
+						{ id: 'KY', text: 'Cayman Islands'},
+						{ id: 'CF', text: 'Central African Republic'},
+						{ id: 'TD', text: 'Chad'},
+						{ id: 'CL', text: 'Chile'},
+						{ id: 'CN', text: 'China'},
+						{ id: 'CX', text: 'Christmas Island'},
+						{ id: 'CC', text: 'Cocos (Keeling) Islands'},
+						{ id: 'CO', text: 'Colombia'},
+						{ id: 'KM', text: 'Comoros'},
+						{ id: 'CG', text: 'Congo'},
+						{ id: 'CD', text: 'Congo}, Democratic Republic'},
+						{ id: 'CK', text: 'Cook Islands'},
+						{ id: 'CR', text: 'Costa Rica'},
+						{ id: 'CI', text: 'Cote D\'Ivoire'},
+						{ id: 'HR', text: 'Croatia'},
+						{ id: 'CU', text: 'Cuba'},
+						{ id: 'CY', text: 'Cyprus'},
+						{ id: 'CZ', text: 'Czech Republic'},
+						{ id: 'DK', text: 'Denmark'},
+						{ id: 'DJ', text: 'Djibouti'},
+						{ id: 'DM', text: 'Dominica'},
+						{ id: 'DO', text: 'Dominican Republic'},
+						{ id: 'EC', text: 'Ecuador'},
+						{ id: 'EG', text: 'Egypt'},
+						{ id: 'SV', text: 'El Salvador'},
+						{ id: 'GQ', text: 'Equatorial Guinea'},
+						{ id: 'ER', text: 'Eritrea'},
+						{ id: 'EE', text: 'Estonia'},
+						{ id: 'ET', text: 'Ethiopia'},
+						{ id: 'FK', text: 'Falkland Islands (Malvinas)'},
+						{ id: 'FO', text: 'Faroe Islands'},
+						{ id: 'FJ', text: 'Fiji'},
+						{ id: 'FI', text: 'Finland'},*/
+						{ id: 'FR', text: '+33'},
+					/*   { id: 'GF', text: 'French Guiana'},
+						{ id: 'PF', text: 'French Polynesia'},
+						{ id: 'TF', text: 'French Southern Territories'},
+						{ id: 'GA', text: 'Gabon'},
+						{ id: 'GM', text: 'Gambia'},
+						{ id: 'GE', text: 'Georgia'},
+						{ id: 'DE', text: 'Germany'},
+						{ id: 'GH', text: 'Ghana'},
+						{ id: 'GI', text: 'Gibraltar'},
+						{ id: 'GR', text: 'Greece'},
+						{ id: 'GL', text: 'Greenland'},
+						{ id: 'GD', text: 'Grenada'},
+						{ id: 'GP', text: 'Guadeloupe'},
+						{ id: 'GU', text: 'Guam'},
+						{ id: 'GT', text: 'Guatemala'},
+						{ id: 'GG', text: 'Guernsey'},
+						{ id: 'GN', text: 'Guinea'},
+						{ id: 'GW', text: 'Guinea-Bissau'},
+						{ id: 'GY', text: 'Guyana'},
+						{ id: 'HT', text: 'Haiti'},
+						{ id: 'HM', text: 'Heard Island & Mcdonald Islands'},
+						{ id: 'VA', text: 'Holy See (Vatican City State)'},
+						{ id: 'HN', text: 'Honduras'},
+						{ id: 'HK', text: 'Hong Kong'},
+						{ id: 'HU', text: 'Hungary'},
+						{ id: 'IS', text: 'Iceland'},*/
+						{ id: 'IN', text: '+91'},
+					  /* { id: 'ID', text: 'Indonesia'},
+						{ id: 'IR', text: 'Iran}, Islamic Republic Of'},
+						{ id: 'IQ', text: 'Iraq'},
+						{ id: 'IE', text: 'Ireland'},
+						{ id: 'IM', text: 'Isle Of Man'},
+						{ id: 'IL', text: 'Israel'},
+						{ id: 'IT', text: 'Italy'},
+						{ id: 'JM', text: 'Jamaica'},
+						{ id: 'JP', text: 'Japan'},
+						{ id: 'JE', text: 'Jersey'},
+						{ id: 'JO', text: 'Jordan'},
+						{ id: 'KZ', text: 'Kazakhstan'},
+						{ id: 'KE', text: 'Kenya'},
+						{ id: 'KI', text: 'Kiribati'},
+						{ id: 'KR', text: 'Korea'},
+						{ id: 'KW', text: 'Kuwait'},
+						{ id: 'KG', text: 'Kyrgyzstan'},
+						{ id: 'LA', text: 'Lao People\'s Democratic Republic'},
+						{ id: 'LV', text: 'Latvia'},
+						{ id: 'LB', text: 'Lebanon'},
+						{ id: 'LS', text: 'Lesotho'},
+						{ id: 'LR', text: 'Liberia'},
+						{ id: 'LY', text: 'Libyan Arab Jamahiriya'},
+						{ id: 'LI', text: 'Liechtenstein'},
+						{ id: 'LT', text: 'Lithuania'},
+						{ id: 'LU', text: 'Luxembourg'},
+						{ id: 'MO', text: 'Macao'},
+						{ id: 'MK', text: 'Macedonia'},
+						{ id: 'MG', text: 'Madagascar'},
+						{ id: 'MW', text: 'Malawi'},
+						{ id: 'MY', text: 'Malaysia'},
+						{ id: 'MV', text: 'Maldives'},
+						{ id: 'ML', text: 'Mali'},
+						{ id: 'MT', text: 'Malta'},
+						{ id: 'MH', text: 'Marshall Islands'},
+						{ id: 'MQ', text: 'Martinique'},
+						{ id: 'MR', text: 'Mauritania'},
+						{ id: 'MU', text: 'Mauritius'},
+						{ id: 'YT', text: 'Mayotte'},
+						{ id: 'MX', text: 'Mexico'},
+						{ id: 'FM', text: 'Micronesia}, Federated States Of'},
+						{ id: 'MD', text: 'Moldova'},
+						{ id: 'MC', text: 'Monaco'},
+						{ id: 'MN', text: 'Mongolia'},
+						{ id: 'ME', text: 'Montenegro'},
+						{ id: 'MS', text: 'Montserrat'},
+						{ id: 'MA', text: 'Morocco'},
+						{ id: 'MZ', text: 'Mozambique'},
+						{ id: 'MM', text: 'Myanmar'},
+						{ id: 'NA', text: 'Namibia'},
+						{ id: 'NR', text: 'Nauru'},
+						{ id: 'NP', text: 'Nepal'},
+						{ id: 'NL', text: 'Netherlands'},
+						{ id: 'AN', text: 'Netherlands Antilles'},
+						{ id: 'NC', text: 'New Caledonia'},
+						{ id: 'NZ', text: 'New Zealand'},
+						{ id: 'NI', text: 'Nicaragua'},
+						{ id: 'NE', text: 'Niger'},
+						{ id: 'NG', text: 'Nigeria'},
+						{ id: 'NU', text: 'Niue'},
+						{ id: 'NF', text: 'Norfolk Island'},
+						{ id: 'MP', text: 'Northern Mariana Islands'},
+						{ id: 'NO', text: 'Norway'},
+						{ id: 'OM', text: 'Oman'},
+						{ id: 'PK', text: 'Pakistan'},
+						{ id: 'PW', text: 'Palau'},
+						{ id: 'PS', text: 'Palestinian Territory}, Occupied'},
+						{ id: 'PA', text: 'Panama'},
+						{ id: 'PG', text: 'Papua New Guinea'},
+						{ id: 'PY', text: 'Paraguay'},
+						{ id: 'PE', text: 'Peru'},
+						{ id: 'PH', text: 'Philippines'},
+						{ id: 'PN', text: 'Pitcairn'},
+						{ id: 'PL', text: 'Poland'},
+						{ id: 'PT', text: 'Portugal'},
+						{ id: 'PR', text: 'Puerto Rico'},
+						{ id: 'QA', text: 'Qatar'},
+						{ id: 'RE', text: 'Reunion'},
+						{ id: 'RO', text: 'Romania'},
+						{ id: 'RU', text: 'Russian Federation'},
+						{ id: 'RW', text: 'Rwanda'},
+						{ id: 'BL', text: 'Saint Barthelemy'},
+						{ id: 'SH', text: 'Saint Helena'},
+						{ id: 'KN', text: 'Saint Kitts And Nevis'},
+						{ id: 'LC', text: 'Saint Lucia'},
+						{ id: 'MF', text: 'Saint Martin'},
+						{ id: 'PM', text: 'Saint Pierre And Miquelon'},
+						{ id: 'VC', text: 'Saint Vincent And Grenadines'},
+						{ id: 'WS', text: 'Samoa'},
+						{ id: 'SM', text: 'San Marino'},
+						{ id: 'ST', text: 'Sao Tome And Principe'},
+						{ id: 'SA', text: 'Saudi Arabia'},
+						{ id: 'SN', text: 'Senegal'},
+						{ id: 'RS', text: 'Serbia'},
+						{ id: 'SC', text: 'Seychelles'},
+						{ id: 'SL', text: 'Sierra Leone'},
+						{ id: 'SG', text: 'Singapore'},
+						{ id: 'SK', text: 'Slovakia'},
+						{ id: 'SI', text: 'Slovenia'},
+						{ id: 'SB', text: 'Solomon Islands'},
+						{ id: 'SO', text: 'Somalia'},
+						{ id: 'ZA', text: 'South Africa'},
+						{ id: 'GS', text: 'South Georgia And Sandwich Isl.'},
+						{ id: 'ES', text: 'Spain'},
+						{ id: 'LK', text: 'Sri Lanka'},
+						{ id: 'SD', text: 'Sudan'},
+						{ id: 'SR', text: 'Suriname'},
+						{ id: 'SJ', text: 'Svalbard And Jan Mayen'},
+						{ id: 'SZ', text: 'Swaziland'},
+						{ id: 'SE', text: 'Sweden'},
+						{ id: 'CH', text: 'Switzerland'},
+						{ id: 'SY', text: 'Syrian Arab Republic'},
+						{ id: 'TW', text: 'Taiwan'},
+						{ id: 'TJ', text: 'Tajikistan'},
+						{ id: 'TZ', text: 'Tanzania'},
+						{ id: 'TH', text: 'Thailand'},
+						{ id: 'TL', text: 'Timor-Leste'},
+						{ id: 'TG', text: 'Togo'},
+						{ id: 'TK', text: 'Tokelau'},
+						{ id: 'TO', text: 'Tonga'},
+						{ id: 'TT', text: 'Trinidad And Tobago'},
+						{ id: 'TN', text: 'Tunisia'},
+						{ id: 'TR', text: 'Turkey'},
+						{ id: 'TM', text: 'Turkmenistan'},
+						{ id: 'TC', text: 'Turks And Caicos Islands'},
+						{ id: 'TV', text: 'Tuvalu'},
+						{ id: 'UG', text: 'Uganda'},
+						{ id: 'UA', text: 'Ukraine'},
+						{ id: 'AE', text: 'United Arab Emirates'},*/
+						{ id: 'GB', text: '+44'},
+						{ id: 'US', text: '+1'},
+						/*{ id: 'UM', text: 'United States Outlying Islands'},
+						{ id: 'UY', text: 'Uruguay'},
+						{ id: 'UZ', text: 'Uzbekistan'},
+						{ id: 'VU', text: 'Vanuatu'},
+						{ id: 'VE', text: 'Venezuela'},
+						{ id: 'VN', text: 'Viet Nam'},
+						{ id: 'VG', text: 'Virgin Islands}, British'},
+						{ id: 'VI', text: 'Virgin Islands}, U.S.'},
+						{ id: 'WF', text: 'Wallis And Futuna'},
+						{ id: 'EH', text: 'Western Sahara'},
+						{ id: 'YE', text: 'Yemen'},
+						{ id: 'ZM', text: 'Zambia'},
+						{ id: 'ZW', text: 'Zimbabwe'}
+						*/
+					];
+					
+					function formatCountry (country) {
+					  if (!country.id) { return country.text; }
+					  var $country = $(
+						'<span class="flag-icon flag-icon-'+ country.id.toLowerCase() +' flag-icon-squared"></span>' +
+						'<span class="flag-text">'+ country.text+"</span>"
+					  );
+					  return $country;
+					};
+					 
+					//Assuming you have a select element with name country
+					// e.g. <select name="name"></select>
+					
+					$("[name='country']").select2({
+						placeholder: "Select a country",
+						templateResult: formatCountry,
+						data: isoCountries
+					});
+					
+					
+				});
+			})(jQuery);     
+			</script>       
+
+
+<script>
+
+
+
+
+ 
+
+function activaTab(tab='#pro-setting'){
+	alert(tab);
+  $('.test1 a[href="' + tab + '"]').tab('show');
+
+$(".nav-link").removeClass('active');
+
+console.log('.nav-link[href="' + tab + '"]');
+     
+$('.nav-link[href="'+tab+'"]').addClass('active');
+
+};
+</script>
+		<!-- Bootstrap Core JS -->
+		<script src="assets\js\popper.min.js"></script>
+		<script src="assets\js\bootstrap.min.js"></script>
+		
+		<!-- Datetimepicker JS -->
+		<script src="assets\js\moment.min.js"></script>
+		<script src="assets\js\bootstrap-datetimepicker.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets\plugins\theia-sticky-sidebar\ResizeSensor.js"></script>
+        <script src="assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets\js\script.js"></script>
+		
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script> $('.modal').modal();</script>
+
+	</body>
+</html>

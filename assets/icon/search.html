@@ -1,0 +1,837 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Search Results</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="assets\img\favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets\css\bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\fontawesome.min.css">
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\all.min.css">
+		
+		<!-- Datetimepicker CSS -->
+		<link rel="stylesheet" href="assets\css\bootstrap-datetimepicker.min.css">
+		
+		<!-- Select2 CSS -->
+		<link rel="stylesheet" href="assets\plugins\select2\css\select2.min.css">
+		
+		<!-- Fancybox CSS -->
+	<link rel="stylesheet" href="assets\plugins\fancybox\jquery.fancybox.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets\css\style.css">
+			  <link rel="stylesheet" href="assets\css\boom.css">
+		
+		 <style type="text/css">
+		 	.bg-orange{background: orange; text-align: center; color:white;border:1px #999 dashed;}
+		 	.green{color:green;font-weight: bold;}
+		 	.orange{color:orange;font-weight: bold;}
+		 	.blue{color:blue;font-weight: bold;}
+		 	.bg-blue{
+		 		background: blue;
+			    text-align: center;
+			    color: white;
+			    border: 1px #999 dashed;
+		 	}
+		 	.doc-only::before{
+		 		content:"";
+		 		background-image: url(assets\icon\medicine.png);
+		 		background-repeat: no-repeat;
+		 		opacity: 5
+		 	}
+
+		 	.doctor-img img
+		 	{
+		 		width: unset;
+		 		
+		 	}
+		 </style>
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			  <header class="header">
+				 <nav class="navbar navbar-expand-lg header-nav" style="background:#fff">
+				    <div class="row" style="width:100%">
+				        <div class="col-md-3 col-3">
+				          <div class="navbar-header mt-4">
+    						<a class="mt-5" id="mobile_btn" href="javascript:void(0);">
+    							<span class="bar-icon">
+    								<span></span>
+    								<span></span>
+    								<span></span>
+    							</span>
+    						</a>
+    						<a href="index.html" class="hidden-xs hidden-sm navbar-brand logo">
+    							<img src="assets\img\logo.png" class="img-fluid" alt="Logo">
+    						</a>
+    					</div>
+				      </div>
+				      
+				        <div class="col-md-5 col-5 mt-3">
+				        	<center>
+				        	<a href="index.html" class="menu-logo hidden-lg hidden-md">
+								<img src="assets\img\logo.png" class="  mt-3  img-fluid" alt="Logo">
+							</a>
+						</center>
+				         </div>
+				        
+				        <div class="col-md-4 col-4 pr-0 pt-2">
+				      <ul class="nav d-flex header-navbar-rht float-right">
+					  
+					    <li class="nav-item hidden-xs hidden-sm">
+							<button class="nav-link header-login btn btn-success bg-transparent text-dark">
+								<a href="login.html" class="">LOGIN</a> /
+								<a href="register.html" class="">REGISTER </a>
+							</button>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets\img\doctors\doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets\img\doctors\doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Ellisa Alloa</h6>
+										<p class="text-muted mb-0">Specialist</p>
+									</div>
+								</div>
+						 	 <a class="dropdown-item" href="patiient-profile.html">
+						 	 	Profile Settings  
+ 							</a>
+								<a class="dropdown-item" href="patiient-profile.html">Appointment 
+									 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html">Message
+								 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html">Favourites
+								 
+								</a>
+								<a class="dropdown-item" href="patiient-profile.html">Reviews
+								 
+								</a>
+								<a class="dropdown-item" href="login.html">Logout
+								 
+								</a>
+							</div>
+						</li>
+
+						<li class="nav-item dropdown has-arrow logged-item hidden-xs hidden-md">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+								<span class="user-img">
+									<img src="assets/icon/euro.png" alt="User Image" class="avatar-img" style="width: 30px;">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" style="min-width: 70px;">
+								 
+						 	   <a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/euro.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+								<a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/dollor.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+ 
+								 <a class="dropdown-item" href="login.html"> 
+									<img src="assets/icon/pound.png" alt="User Image" class="" style="width: 30px;">
+								</a>
+								 
+								 
+							</div>
+						</li>
+
+					</ul>
+					
+					 </div>
+					
+				    </div>
+
+
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index.html" class="menu-logo">
+								<img src="assets\img\logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+
+						</div>
+						
+						<!--Mobile Menu-->
+						<ul class="main-nav">
+							  <li class="login-link">
+								<div class="d-flex p-2 "> 
+								 <a class="ml-4" href="login.html"> 
+									<img src="assets/icon/euro.png" alt="User Image" class="" style="width: 35px;">
+								</a>
+								 
+							 
+								<a class="ml-4" href="login.html"> 
+									<img src="assets/icon/dollor.png" alt="User Image" class="" style="width: 35px;">
+								</a>
+  							 
+								 <a class="ml-4" href="login.html"> 
+									<img src="assets/icon/pound.png" alt="User Image" class="" style="width: 35px;">
+								</a>
+							</div>
+							</li>
+						 <li class="login-link">
+								<a href="login.html">LOGIN / REGISTER</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html"> Settings</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">Bookings</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">Messages</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">Favourites</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">Reviews</a>
+							</li>
+							
+							<li class="login-link">
+								<a href="login.html">LOGOUT</a>
+							</li>
+							 
+						</ul>		 
+						<!--End Mobile Menu-->
+					</div>		 
+				
+
+				 </nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar" style="background: #ff0a60;">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-4 mb-2 col-12">
+							<h2 class="h3 text-white mb-0">22 matches found for: <span>Ayurveda</span></h2>
+						</div>
+					<div class="col-md-3 mb-2 col-12 d-flex">
+					<input type="checkbox" style="margin-top:5px;"> 
+					<span class="text-white">
+			    	<img src="assets\icon\medicine.png" class="img-fluid  doc-only hidden-xs hidden-sm" alt="User Image">
+			    	<img src="assets\icon\medicine.png" class="img-fluid  doc-only-mob hidden-lg hidden-md" alt="User Image">
+			    	<!-- <span style="margin-left: 33px;"> Doctors only</span> -->
+<span style="margin-left: 33px;">Healthcare University Degree</span>
+
+
+			    	<!-- <span style="margin-left: 33px;"> Doctors only</span> -->
+
+
+
+			    	
+				</span>
+<input type="checkbox" style="margin-top:5px;"> 
+<span class="text-white">
+<img src="assets\icon\University_degree.png" class="img-fluid  doc-only-mob hidden-lg hidden-md" alt="User Image">
+			    	<img src="assets\icon\University_degree.png" class="img-fluid  doc-only hidden-xs hidden-sm" alt="User Image">
+			    	<img src="assets\icon\University_degree.png" class="img-fluid  doc-only-mob hidden-lg hidden-md" alt="User Image">
+<span style="margin-left: 33px;">Other University Degree</span>
+</span>
+							 
+						</div>
+						<div class="col-md-2 col-12">
+							<div class="mb-2">
+								<span class="text-white">Sort by</span>
+								<span class="sortby-fliter">
+									<select class="w-100">
+										<option>Select</option>
+										<option class="sorting" selected>Surname</option>
+										<option class="sorting">Rating </option> 
+										<option class="sorting">Price </option> <option class="sorting">Written consutations </option>
+										<option class="sorting">Video consutations </option>
+										<option class="sorting">In-person consultations </option>
+
+									</select>
+									 <!-- <div class="card w-auto">
+									    <div class="card-content">
+									    <center><img src="assets/icon/euro.png" style="width: 50px;"></center>
+									    <br>
+									    <center><img src="assets/icon/dollor.png" style="width: 50px;"></center>
+									    <br>
+									    <center><img src="assets/icon/pound.png" style="width: 50px;"></center>
+									    </div>
+									</div> -->
+								</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-12">
+							<i class="fa fa-calendar" aria-hidden="true" style="color:#fff"></i>
+							<span class="text-white"> Date</span> <input type="date">  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content bg-theme">
+				<div class="container-fluid">
+
+					<div class="row">
+					
+						<div class="col-md-12 col-lg-12 col-xl-12">
+							
+							  <div class="card">
+										<div class="card-body">
+
+									 
+
+
+									<div class="doctor-widget">
+										<div class="col-md-8">
+
+											<div class="media">
+
+
+ 
+									
+									
+									<div class="profile-widget doctor-img" style="background-color:unset;border: unset;border-radius: unset;margin-bottom: unset; position: unset;padding: unset;" >
+ 							 <h4 class=" font-size-21" >
+ 							 Elisa ALLOA
+ 							 </h4>
+ 							 <img src="assets\icon\medicine.png" class="img-fluid search-pic" alt="User Image" style="z-index:100000">
+ 							 <div class="doc-img">
+													<a href="doctor-profile.html" class="d-flex">
+														
+								<img src="assets\img\doctors\doctor-thumb-01.jpg" class="img-fluid" alt="User Image">
+													</a>
+													<a href="javascript:void(0)" class="fav-btn" tabindex="0" style="top:10px;left:150px">
+											<i class="far fa-bookmark"></i>
+										</a>
+												</div></div>
+							
+
+
+ 												
+						 <div class="media-body hidden-xs hidden-sm mt-4">
+												    
+							 <div class="doc-info-cont mt-1">
+								 <h4 class="doc-name"><a href="doctor-profile.html" class="text-dark">GNM & Naturopathy Practitioner
+								</a></h4>
+								 <p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+								 <!-- <h6 class="text-muted">3 years experience overall</h6> -->
+								 <h6 class="text-muted"><!-- 15 consultations done --> 
+								(since Nov '20) </h6>
+								 <h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+							 <a href="#"> <h6 class="text-info">Ayurveda, Antroposophy</h6></a>
+								 <div class="rating">
+									 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star filled"></i>
+										 <i class="fas fa-star"></i>
+										 <span class="d-inline-block average-rating">(17)
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99% &nbsp;
+												</span>
+							 <span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												 
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<a href="how-it-work.html">
+														<!-- <h6 class="text-info">How It Works</h6> -->
+													</a>
+													
+												</div>
+												<div class="mt-3" style="max-width:300px">
+								 <a class="btn view-btn" href="doctor-profile.html" style="margin-top: 18px;">View Profile</a>
+											</div>
+											</div>
+
+												  </div>
+
+ 										</div>
+
+											
+											<div class="doc-info-cont hidden-md hidden-lg text-center">
+												<h4 class="doc-name"><a href="doctor-profile.html" class="text-muted">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-2 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<h6 class="text-muted">3 years experience overall</h6>
+												<h6 class="text-muted">15 consultations done (since Nov '20) </h6>
+												 
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+												<a href="#"> <h6 class="text-info">Ayurveda, Antroposophy</h6></a>
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+
+													&nbsp;
+										 <span class="text-muted">
+										 <i class="fa fa-thumbs-up text-muted"></i> 99%
+										 </span>
+										 <span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a>
+													
+												</div>
+												
+											<div class="" style="max-width:300px">
+								 <a class="btn view-btn" href="doctor-profile.html" >View Profile</a>
+											</div>
+											</div>
+
+										</div>
+					<div class="co-md-4" >
+						 <div class="clinic-services">
+						 	<div class="row">
+						 		<div class="col-md-12"> 
+						 			<h6 class="font-weight-bold text-center mt-2 hidden-xs hidden-sm">Available Consultations
+
+<div class="tooltip"><i class="fas fa-info-circle"  title=""></i>
+  <span class="tooltiptext"><h5 style="text-align: center;color: white;">Types of consultations:</h5><ul style="font-size: 1rem;margin-bottom: 0px;
+"><li>Written: you can write/voice message the specialist about a specific subject</li><li>Online: audio/video sessions</li><li>In-person: in-person consultation.</li></ul><h5 style="text-align: center;color: white;">Check where the specialist is consulting Modes can be SHORT (exploratory contact), COMPLETE (full session) &amp; CYCLE (a pack of complete sessions bookable within 3 months from payment)</h5>
+<a href="how-it-work.html" style="color: #fff;border: 1px solid #f6a400;padding: 5px;">How it works</a> 
+</span>
+</div>
+
+
+						 			 </h6>
+
+						 			<h6 class="font-weight-bold text-center mt-3 hidden-md hidden-lg">Available Consultations <i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+						 		</div>
+						 		
+						 	</div>
+						 	<div class="card flex-fill mt-0 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex">
+                                        <img src="assets/images/written.png" style="width: 40px;height:40px;">
+									<h6 class="written_text_color ml-2" style="margin-top: 0.7rem; width: 150px;">Written</h6>
+									<button class="w-100 written_box_color text-white font-weight-bold" style="font-size:10px;   ">
+										Make your request now
+				  
+									</button>
+								</li>
+								<li class="list-group-item d-flex">
+                                    <img src="assets/images/video.png" style="width: 40px;height:40px;">
+									<h6 class="orange ml-2" style="margin-top: 0.7rem; width: 150px;">Video</h6>
+									<button class="w-100 bg-orange" style="   font-size: 10px;
+   										 font-weight: bold;">
+										Next Availability: 17 Nov
+									</button>
+								</li>
+								  
+ 								<li class="list-group-item d-flex">
+                                    <img src="assets/images/live.png" style="width: 40px;height:40px;">
+									<h6 class="blue ml-2" style="margin-top: 0.7rem; width: 150px;">&nbsp;In-person</h6>
+									<button class="w-100 bg-blue text-white font-weight-bold" style="font-size:11px;   ">
+										No free shots: <i class="fa fa-bell"></i> Alert
+				  <!-- <span class="border-0 font-weight-bold" style="color: #ff0a60; font-size:11px;padding: 2px 4px;">here</span> -->
+									</button>
+								</li>
+								
+								 
+								  
+								
+							</ul>
+						</div>
+						</div>
+						<center>
+							<a href="doctor-profile.html#avlcon" class="btn book-btn w-75 mt-4 h6">Go To Booking </a>
+						</center>	 
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+										<div class="card-body">
+ 
+
+
+									<div class="doctor-widget">
+										<div class="col-md-8">
+
+											<div class="media">
+ 												<div class="doctor-img">
+ 													<h4 class=" font-size-21">Elisa ALLOA</h4>
+													<a href="doctor-profile.html" class="d-flex">
+														<img src="assets\icon\medicine.png" class="img-fluid search-pic" alt="User Image">
+														<img src="assets\img\doctors\doctor-thumb-01.jpg" class="img-fluid" alt="User Image">
+													</a>
+												</div>
+												  <div class="media-body">
+												    
+								 <div class="doc-info-cont hidden-xs hidden-sm mt-4">
+									 <h4 class="doc-name"><a href="doctor-profile.html" class="text-dark">GNM & Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-0 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<h6 class="text-muted">3 years experience overall</h6>
+												<h6 class="text-muted">15 consultations done 
+												(since Nov '20) </h6>
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+			<a href="#"> <h6 class="text-info">Ayurveda, Antroposophy</h6></a>
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+														&nbsp;
+													<span class="text-muted">
+													<i class="fa fa-thumbs-up text-muted"></i> 99%
+												</span>
+												<span class="text-muted reviews">
+									<u>14 Reviews</u>
+								 </span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a>
+													
+												</div>
+												<div class="" style="max-width:300px">
+								 <a class="btn view-btn" href="doctor-profile.html">View Profile</a>
+											</div>
+											</div>
+
+
+												  </div>
+											</div>
+											<div class="doc-info-cont hidden-md hidden-lg text-center">
+												<h4 class="doc-name"><a href="doctor-profile.html">GNM &amp; Naturopathy Practitioner
+												</a></h4>
+												<p class="doc-speciality mb-0 font-weight-bold">PhD in Chemistry, Naturopathy, Antroposophy</p>
+												<h6 class="text-muted">3 years experience overall</h6>
+												<h6 class="text-muted">15 consultations done 
+												(since Nov '20) </h6>
+												<h6 class="text-muted"><i class="far fa-money-bill-alt"></i> $50 - $300 
+	<i class="fas fa-info-circle" data-toggle="tooltip" title="" data-original-title="Range price for all types of consultations"></i></h6>
+		 <a href="#"> <h6 class="text-info">Ayurveda, Antroposophy</h6></a>
+												<div class="rating">
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star filled"></i>
+													<i class="fas fa-star"></i>
+													<span class="d-inline-block average-rating">(17)
+														&nbsp;
+													<span class="text-muted">
+													<i class="fa fa-thumbs-up text-muted"></i> 99%
+												</span>
+													</span>
+												</div>
+												<div class="clinic-details mb-0">
+													<p class="doc-location mb-2"><i class="fas fa-map-marker-alt"></i> Florida, USA</p>
+													<a href="how-it-work.html">
+														<h6 class="text-info">How It Works</h6>
+													</a>
+													
+												</div>
+												
+							 <div class="" style="max-width:300px">
+								 <a class="btn view-btn mt-2" href="doctor-profile.html">View Profile</a>
+											</div>
+											</div>
+											
+											
+										</div>
+					<div class="co-md-4" >
+						 <div class="clinic-services">
+						 	<div class="row w-100">
+						 		<div class="col-md-12">
+						 			<h6 class="font-weight-bold mt-2">Available Consultations</h6>
+						 		</div>
+						 		 
+						 	</div>
+						 	<div class="card flex-fill mt-3 mb-0">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex">
+                                        <i class="fa fa-comment-dots green " style="font-size: 32px;"></i>
+						 			<h6 class="green mt-2">&nbsp; Written</h6>
+								</li>
+								<li class="list-group-item ">
+									<h6 class="orange text-left">
+									<img src="assets/icon/audio.png" style="width: 34px;"> &nbsp; &nbsp;Online 
+									</h6>
+								</li>
+								
+ 				
+								<li class="list-group-item bg-orange">National Availability on Tue, 17 Nov</li>
+								
+									<li class="list-group-item d-flex">
+                                    <i class="fa fa-male blue " style="font-size: 32px;"></i>&nbsp;
+                                        <i class="fa fa-male blue" style="font-size: 32px;"></i>
+									<h6 class="blue mt-2 ml-2">&nbsp;In-person</h6>
+									 
+								</li>
+
+
+								
+								 <li class="list-group-item bg-info text-white text-center">Next Availability on Mon, 16 Nov</li>
+								
+							</ul>
+						</div>
+						</div>
+							 
+					</div>
+				</div>
+			</div>
+		</div>
+
+							<!-- Doctor Widget -->
+					
+							<!-- /Doctor Widget -->
+							
+							<!-- /Doctor Widget -->
+
+							<div class="load-more text-center">
+								<a class="btn btn-primary btn-sm" href="javascript:void(0);">Load More</a>	
+							</div>	
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			 <footer class="footer">
+			
+			  <div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+							
+						
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="assets/img/footer-logo.png" alt="logo">
+										<p class="text-white">Follow us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+
+										</div>
+									</div>
+									</div>
+									<div class="footer-about-content">
+										<p class="text-white">Share us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+										</div>
+										
+								</div>
+						
+								
+							</div>
+							
+							<div class="col-lg-6 col-md-6 mt-5">
+							    
+							    	
+							    	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+										    <p class="comment-content" style="color:#333;">
+												"I was already planning private consultations by myself with health practitioners, by contacting and asking them for online sessions, but it took time and efforts…  MedAloha is exactly what I was waiting for." 
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author"><strong>Elisa</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+                                          	
+										    <p class="comment-content" style="color:#333;">
+												"Super intuitive and user-friendly.!"
+											</p>
+											<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Andreas</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content"  style="color:#333;">
+											"Discovering here new stuff about holistics and cool specialists from all over the world, will try more sessions soon." 
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Julie</strong></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content" style="color:#333;">
+											"As a practitioner, MedAloha is the best way –especially in these covid times- to comfortably and easily connect from home with people from everywhere and to share my passion for holistic health."
+											</p>
+                                          	<div class="meta-data mb-0">
+												<span class="comment-author" style="color:#000"><strong>Eros</strong></span>
+											</div>
+                                        </div>
+                                      </div>
+                                    </div>
+							    </div>
+						 
+							
+							<div class="col-lg-3 col-md-3">
+							
+							
+								<div class="footer-widget footer-contact  float-right">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p class=""> 3556  Beech Street, San Francisco,<br> California, CA 94108 </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+1 315 369 5943
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											doccure@example.com
+										</p>
+									</div>
+								</div>
+							
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+			
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+				
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0">&copy; 2020 Doccure. All rights reserved.</p>
+									</div>
+								</div>
+								
+								 
+								<div class="col-md-6 col-lg-6">
+								
+								
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="term-condition.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Privacy Policy</a></li>
+										</ul>
+									</div>
+								
+									
+								</div>
+							</div>
+						</div>
+				 
+						
+					</div>
+				</div> 
+			 
+				
+			</footer>  
+
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets\js\jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets\js\popper.min.js"></script>
+		<script src="assets\js\bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets\plugins\theia-sticky-sidebar\ResizeSensor.js"></script>
+        <script src="assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js"></script>
+		
+		<!-- Select2 JS -->
+		<script src="assets\plugins\select2\js\select2.min.js"></script>
+		
+		<!-- Datetimepicker JS -->
+		<script src="assets\js\moment.min.js"></script>
+		<script src="assets\js\bootstrap-datetimepicker.min.js"></script>
+		
+		<!-- Fancybox JS -->
+		<script src="assets\plugins\fancybox\jquery.fancybox.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets\js\script.js"></script>
+		
+	</body>
+</html>

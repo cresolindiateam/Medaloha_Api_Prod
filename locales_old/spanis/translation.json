@@ -1,0 +1,58 @@
+
+{
+  "_Home Page Start":"Start Here",
+          "Choose": "Choose3",
+          "How":"How3",
+          "Extra":"Extra3",
+          "Holistic":"Find Your Holistic Specialist3" ,
+          "Holistic_Discover" :"Discover Practitioners in Your Preferred Field.3",
+          "Featured_Specialists":"Featured Specialists3",
+          "Featured_Specialists_Because":"Because Your Satisfaction is Our Drive3.",
+          "ContactUS":"Contact Us3",
+          "SupportDeserve":"The support you deserve3",
+          "ProfessionalityNeed":"The professionality you need.3",
+          "FlexibilityWant":"The flexibility you want.3",
+          "TermsConditions":"Terms and Conditions3",
+          "Privacy":"Privacy Policy3",
+          "CookiePolicy":"Cookie Policy3",
+    "_Home Page End ":"End Here",
+
+    "Howitworks Page Start":"Start Here",
+ 
+        "LOGINREGISTER":"LOGIN/REGISTER3",
+        "LOGINREGISTERContent":"Login/Register & get full access to the website’s functionalities. Updates will be provided both via your personal area & by email 3", 
+        "ChooseContent":"Choose the language in which you would like to have your consultation done. Choose holistic field & specialist of interest 3.", 
+        "BOOK":"BOOK3", 
+        "BOOKContent":"Book your spot on specialist’s profile. Types of consultations3", 
+        "BOOKContentLi1":"Written: you can write/voice message the specialist about a specific subject3", 
+        "BOOKContentLi2":"Video: audio/video sessions3", 
+        "BOOKContentLi3":"In-person: in-person consultation.Check where the specialist is consulting3", 
+        "BOOKContentLi3P":"Modes can be SHORT (exploratory contact), COMPLETE (full session) & CYCLE (a pack of complete sessions bookable within 3 months from payment)3", 
+        "PAYONLINE":"PAY ONLINE3",
+        "PAYONLINEContent":"Pay online, by paypal or card systems3",
+        "LEAVEAREVIEW":"LEAVE A REVIEW3",
+        "LEAVEAREVIEWContent":"Leave a review about the consultation. This step is strongly recommended to support our community choose their specialists wisely. Thanks for your collaboration3",
+        "CONSULT":"CONSULT3",
+        "CONSULTContent":"Access the consultation:3",
+        "CONSULTContentLi1":"Written: you will get a written/voice answer to your query (by 7 days time).3",
+        "CONSULTContentLi2":"Video: you will get the link to connect at the booked time.3",
+        "CONSULTContentLi3":"In-person: exact location may be provided privately depending on the specialist.3",
+        "CONSULTContentLiP":"* Cancellations: a full money refund is available up to 24 hrs before consultation (21% charge after this time). In case of net issues, please rebook the session or contact the specialist3",
+ 
+    "Howitworks Page End ":"End Here" ,
+
+
+    "About Page Start":"Start Here",
+
+      "Anysuggestion":"Any suggestion3 ..?", 
+      "AnysuggestionContent":"Tell us how to improve, suggest us your favourite health professionals (or inform them about MedAloha) &amp; get in touch with us for any other need.3",
+      "Newsletter":"Newsletter3",
+      "NewsletterContent":"Sign up for our Dose of Inspiration3",
+      "FAQTitle":"Frequently Asked Questions (FAQ) 3" , 
+
+
+    "About Page End":"Start Here"
+
+
+  }
+  

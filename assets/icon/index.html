@@ -1,0 +1,3212 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<title>Search Specialist | MedAloha</title> 
+		<link type="image/x-icon" href="assets\img\favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets\css\bootstrap.min.css"> 
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\fontawesome.min.css">
+		<link rel="stylesheet" href="assets\plugins\fontawesome\css\all.min.css"> 
+		<link rel="stylesheet" href="assets\css\style.css">
+		<link rel="stylesheet" href="assets\css\boom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		
+		 <style>
+
+
+
+.language_btn
+{
+    
+    padding:0.2rem 0.3rem!important;
+}
+
+
+			 .language_section {
+				 margin-top: 0px!important;
+				margin-left:0!important;
+
+			 }
+
+             .language_section1 {
+				
+                 color:#757575;
+                 margin-top: 18px!important;
+    color: #757575;
+    border: 1px solid;
+    width: 50%;
+    border-radius: 5px;
+			
+
+			 }
+
+			 .consult_text {
+    /* color: #ff0a60; */
+    color: white!important;
+}
+
+.lan_select {
+	padding:3px 2px!important;
+    color: white!important;
+	border: 1px solid white!important;
+	background-color: #757575!important;
+
+	
+
+	}
+
+		 	.goog-te-gadget{display: none;}
+		 	body
+		 	{
+		 		top: 0!important;
+		 	}
+
+		 	.goog-te-banner-frame
+		 	{
+		 		height: 1px!important;
+		 		border-bottom: unset!important;
+		 	}
+
+.tooltip .tooltiptext::after
+{
+	top: 100%;
+}
+
+.tooltip .tooltiptext::after
+{
+border-top:10px solid #555;
+border-bottom: unset;
+}
+		 	.tooltip .tooltiptext
+		 	{
+		 		top: -167px;
+		 		width: 200px;
+		 		
+		 	}
+		    
+		    .tooltiptext{left:50%!important;}
+
+		    span.tooltiptext>h5
+		    {
+		    	font-size: 0.7rem;
+		    	margin-bottom: 0px;
+		    }
+		     .mag-border{border: 2px #ff0a60 solid;}
+		    }
+		    
+			.mag-border:hover{border: 2px #bf0747 solid;}
+			.text-mag:hover{color:#bf0747;}
+			.text-mag{color:#ff0a60;}
+			.mt-55{margin-top: 3.5rem!important;}
+			.doc-pics{
+				height: 56px;
+			    position: absolute;
+			    margin-left: -14px;
+			    margin-top: -244px;
+			    z-index: 1; 
+			}
+
+
+ .profile-widget .fav-btn{height:50px; width: 50px;}
+
+@media only screen and (max-width: 767.98px){
+
+	.lan_select{color: #ff0a60!important; border:1px solid #ff0a60!important;  background:#fffeed!important;}
+
+	.consult_text{color:#ff0a60!important;}
+.tooltip .tooltiptext::after {
+    left: 50%;
+}
+}
+.cb--input {
+    width: 90%;
+}
+
+.cb--select
+{
+	top: 68%;
+	width: 90%;
+	z-index: 1000;
+}
+
+.icon_down
+{
+	font-size: 12px!important;
+    pointer-events: none;
+    position: absolute;
+    top: 36%!important;
+    line-height: 0.1;
+    color: #507edc;
+
+}
+@media only screen and (max-width: 767.98px){
+
+.mobile_footer_top
+{
+	margin-top: 1.5rem;
+}
+
+.cb--input
+{
+	width: 100%!important;
+}
+.cb--select{width:100%!important; top:72%!important;}
+
+.icon_down{right:5%!important;}
+	.tooltip .tooltiptext::after {
+   border-top: 5px solid #555;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;}
+	span.tooltiptext>div>a {
+    padding: 2px;
+    font-size: 0.5rem!important;
+}
+.tooltip .tooltiptext {
+    width: 150px;
+    top: -136px;
+    margin-left: -70px;
+}
+span.tooltiptext>h5 {
+    font-size: 0.5rem;
+    margin-bottom: 0px;
+}
+}
+ 
+ .cb--option
+ {
+ 	color: #507edc;
+ }
+
+
+
+select:focus{outline: 5px;}
+
+
+
+.search-input[required] + label {
+
+   
+    color: #858585;
+	font-size: 14px;
+   
+    /* font-size: .8em; */
+    /* position: relative; */
+    left: 44px;
+    top: 14px;
+    position: absolute;
+}
+
+.search-input[required] + label:after {
+    content:'  Tag';
+    color: #507edc;
+}
+
+
+
+
+.search-input[required]:invalid+label {
+  display: inline-block;
+}
+
+
+/* hide the placeholder when input has some text typed in */
+
+.search-input[required]:valid+label {
+  display: none;
+}
+
+
+.tooltip
+{
+	font-family: unset!important;
+	    font-style: unset!important; 
+     font-weight: unset!important; 
+     line-height: unset!important; 
+     text-align: unset!important; 
+     text-align: unset!important; 
+     text-decoration: unset!important; 
+     text-shadow: unset!important; 
+     text-transform: unset!important; 
+     letter-spacing: unset!important; 
+     word-break: unset!important; 
+     word-spacing: unset!important; 
+     white-space: unset!important; 
+     line-break: unset!important; 
+     font-size: unset!important; 
+     word-wrap: unset!important; 
+     opacity: unset!important;
+}
+
+.tooltip .tooltiptext
+{
+	padding: 3px 0px!important;
+}
+span.tooltiptext>h5
+{
+	padding: 3px!important;
+}
+span.tooltiptext>h4
+{
+	display: none;
+}
+
+span.tooltiptext>div>a
+{
+padding: 2px!important;
+}
+
+
+.fa-hashtag:before {
+    
+    font-size: 16px;
+}
+
+.search-box .form-control
+		 </style>
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header --> 
+		<link rel="stylesheet" href="assets\css\boom.css">
+
+		 <header class="header hidden-xs hidden-sm border-bottom" style=" padding-left: 20px;
+   /*  border-bottom: 5px solid #d0ddf7;  */
+/* box-shadow: 5px 5px 1px #eaeaea; */
+      position: fixed;
+    /* margin-top: 96px; */
+    width: 100%;
+  
+    z-index: 99999; box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);">
+				
+				
+				 <div class="row hidden-xs hidden-sm" style="background: #fff;max-height: 63px;">
+				    <div class="col-md-3 col-2 pr-0 mt-2" style="padding-left:10px;padding-right:10px;">
+				    	<a href="index.html">
+<img src="assets\img\logo.png" class="img-fluid" alt="Logo1">
+</a>
+</div>
+    <div class="col-md-5">
+        <div class="row">
+<div class="col-md-4 col-4" style="padding-left:10px;padding-right:10px;">
+				           <ul class="nav d-flex header-navbar-rht justify-content-center" style="border:0px;border-bottom:4px solid #507edc;">
+					            <li class="nav-item">
+									<a class="nav-link header-login border-0" href="index.html" style="margin-top:0.5rem;margin-bottom:0.5rem">
+									    <img src="assets\images\choose1-blue.png"  class="img-fluid choose_icon" alt="choose">
+									    <span class="choose_icon_size">Choose</span> 
+									 </a>
+							  	</li>  
+						   </ul>
+					</div>
+					<div class="col-md-4 col-4" style="padding-left:10px;padding-right:10px;">
+				           <ul class="nav d-flex header-navbar-rht justify-content-center" style="border:0px;">
+					           <li class="nav-item">
+									<a class="nav-link header-login border-0" href="how-it-works.html" style="margin-top:0.5rem; margin-bottom:0.5rem">
+									   <!--  <img src="assets\images\how1.png"  class="img-fluid how_icon " alt="how"> -->
+									     <img src="assets\images\how-gray.png"  class="img-fluid how_icon " alt="how">
+									    <span class="text-muted how_icon_size">How</span>   
+									 </a>
+							  	</li> 
+						   </ul>
+					</div> 
+					<!-- <div class="col-md-3 col-3" style="padding-left:10px;padding-right:10px;">
+				           <ul class="nav d-flex header-navbar-rht justify-content-center" style="border:0px;"> -->
+					          <!-- <li class="nav-item">
+									<a class="nav-link header-login border-0" href="more.html" style="margin-top:0.3rem;">
+									  <!--   <img src="assets\images\more1.png"  class="img-fluid more_icon" alt="more"> -->
+
+									    <!-- <img src="assets\images\more-gray.png"  class="img-fluid more_icon" alt="more">
+									    <span class="text-muted more_icon_size">More</span> 
+									 </a>
+							  	</li> -->
+						 <!--   </ul>
+					</div> -->
+					<div class="col-md-4 col-4" style="padding-left:10px;padding-right:10px;">
+				           <ul class="nav d-flex header-navbar-rht justify-content-center" style="border:0px;">
+					            <li class="nav-item">
+									<a class="nav-link header-login    border-0" href="about.html"  style="margin-top:0.5rem;margin-bottom:0.5rem;">
+									  <!--   <img src="assets\images\contacts1.png"  class="img-fluid about_icon " alt="contacts">
+ -->
+ <img src="assets\images\about-gray.png"  class="img-fluid about_icon " alt="contacts">
+									    <span class="text-muted about_icon_size">About</span> 
+									 </a>
+							  	</li> 
+						   </ul>
+					</div>
+        </div></div>
+<div class="col-md-4 col-4 ">
+				      <ul class="nav d-flex flex-content header-navbar-rht ">
+					  
+					    <li class="nav-item hidden-xs hidden-sm ">
+							<button  class="nav-link header-login btn btn-success bg-transparent text-dark" style="margin-bottom:12px;border:1px solid #757575;">
+								<a href="login.html" class="">LOGIN</a> <span class="text-muted">|</span>
+								<a href="register.html" class="">REGISTER </a>
+							</button>
+						</li>
+						
+						<!-- User Menu -->
+			 <li class="nav-item dropdown has-arrow logged-item" style="margin-top: -9px;">
+							<a style="padding:0px 0px 0px 0px" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets\img\doctors\doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" style="">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets\img\doctors\doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Ellisa Alloa</h6>
+										<p class="text-muted mb-0">Specialist</p>
+									</div>
+								</div>
+						 	 <a class="dropdown-item" href="personal-profile.html">
+						 	 	 Settings  
+						 	 	 
+ 							</a>
+								<a class="dropdown-item" href="personal-profile.html">Bookings 
+									 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html">Messages
+									 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html">Favourites
+									 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html">Reviews
+									 
+								</a>
+								<a class="dropdown-item" href="login.html">LOGOUT
+								 
+								</a>
+							</div>
+						</li>
+
+						<li class="nav-item dropdown has-arrow logged-item hidden-xs hidden-md" style="margin-top: -9px;">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+								<span class="user-img">
+									<img src="assets/icon/EN last2.png" alt="User Image" class="avatar-img" style="width: 40px;">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" style="min-width: 70px;">
+								 
+						 	   <a class="dropdown-item" href="login.html">
+								<span class="user-img">
+									<img src="assets/icon/EN last2.png" alt="User Image" class="" style="width: 40px;">
+								</span> 
+								</a>
+								<a class="dropdown-item" href="login.html"> 
+							
+									<span class="user-img">
+									<img src="assets/icon/IT last2.png" alt="User Image" class="" style="width: 40px;">
+								</span>
+								</a>
+ 
+								 <a class="dropdown-item" href="login.html"> 
+									<span class="user-img">
+									<img src="assets/icon/ES last2.png" alt="User Image" class="" style="width: 40px;">
+								</span>
+								</a>
+								 
+								 
+							</div>
+						</li>
+ 					</ul>
+					
+					 </div>
+
+
+<!--<div class="col-md-2 col-2 pl-0">
+<!--	<div style="
+    width: 100%;
+    /* display:flex; */
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+    color:#f0425e!important;
+    text-shadow:0px -1px rgb(255, 255, 255,0.7), 1px 0px rgb(255, 255, 255,0.7), 0px 1px rgb(255, 255, 255,0.7), -1px 0px rgb(255, 255, 255,0.7)
+"><b>Language</b></div>-->
+	
+<!--<div style="width:100%;margin-top:4px;float:left;text-align:right;padding-right:5px;" class="consult_section">
+					    <span class=" consult_text" >Consult in: </span>
+                      </div>--> 
+	<!--<div class="language_section1 dropdown"   style=" text-align:center; margin:0 auto;"> 
+	
+
+        <button class="btn language_btn 
+                    dropdown-toggle" type="button" 
+                    id="dropdownMenuButton" 
+                    data-toggle="dropdown"
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+					<img src=
+"assets/icon/EN last2.png"
+                    width="20" height="15">
+            </button>
+                        	<!-- <b><span  style="color:black">Language</span></b> </span> -->
+				<!--<select class="lan_select" id="lan_select" style="
+					    background: transparent; 
+					    
+					   
+					    border-radius: 3px;"
+					      onchange="translateLanguage();">
+					    
+       
+
+					    <option value="English"><img src='assets/icon/EN last2.png'/></option>
+					    <option value="Italian"><img src='assets/icon/IT last2.png'/></option>
+					    <option value="Spanish"><img src='assets/icon/ES last2.png'/></option>
+					   
+					   
+					</select>
+
+
+                    <ul class="dropdown-menu" 
+                aria-labelledby="dropdownMenuButton">
+                <li class="dropdown-item">
+                    <img src=
+"assets/icon/EN last2.png"
+                    width="20" height="15"> </li>
+                <li class="dropdown-item">
+                    <img src=
+"assets/icon/IT last2.png" 
+                    width="20" height="15"> </li>
+                <li class="dropdown-item">
+                    <img src=
+"assets/icon/ES last2.png" 
+                    width="20" height="15"> </li>
+              
+            </ul>
+
+					</div>-->
+</div>
+
+
+				</div>
+				
+				
+				
+			</header>
+
+
+			 <header class="header">
+				<nav class="navbar navbar-expand-lg header-nav hidden-md hidden-lg" style="background:#fff">
+				    <div class="row w-100" style="margin:0px">
+				        <div class="col-md-3 col-3">
+				          <div class="navbar-header mt-5">
+    						<a id="mobile_btn" href="javascript:void(0);">
+    							<span class="bar-icon">
+    								<span></span>
+    								<span></span>
+    								<span></span>
+    							</span>
+    						</a>
+    						 
+    					</div>
+				      </div>
+				      
+				        <div class="col-md-6 col-6 hidden-lg hidden-md mt-3">
+				        	<center>
+				        	<a href="index.html" class="menu-logo hidden-lg hidden-md">
+								<img src="assets\img\logo.png" class="  mt-3  img-fluid" alt="Logo">
+							</a>
+						</center>
+				            
+			            	 
+				        </div>
+				           
+				        <div class="col-md-3 col-3 pr-1 pt-1 hidden-md hidden-lg">
+				      <ul class="nav d-flex header-navbar-rht float-right">
+					  
+					    <li class="nav-item hidden-xs hidden-sm">
+							<button class="nav-link header-login btn btn-success bg-transparent text-dark">
+								<a href="login.html" class="">LOGIN</a> /
+								<a href="register.html" class="">REGISTER </a>
+							</button>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="margin-right: -20px !important;">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets\img\doctors\doctor-thumb-02.jpg" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets\img\doctors\doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Ellisa Alloa</h6>
+										<p class="text-muted mb-0">Specialist</p>
+									</div>
+								</div>
+						 	 <a class="dropdown-item" href="personal-profile.html">
+						 	 	<i class="fas fa-user-cog"></i> &nbsp; Settings  
+						 	 	 
+ 							</a>
+								<a class="dropdown-item" href="personal-profile.html"><i class="fas fa-calendar-check"></i>&nbsp; Bookings 
+								 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html"><i class="fas fa-comments"></i> &nbsp; Messages
+									 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html"><i class="fas fa-heart"></i> &nbsp; Favourites
+									 
+								</a>
+								<a class="dropdown-item" href="personal-profile.html"><i class="fas fa-star"></i> &nbsp; Reviews
+									 
+								</a>
+								<a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i>&nbsp; LOGOUT
+									 
+								</a>
+							</div>
+						</li>
+ 					</ul>
+					
+					 </div>
+					
+				    </div>
+				
+				
+				
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index.html" class="menu-logo">
+								<img src="assets\img\logo.png" class="img-fluid" alt="Logo1">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+
+						</div>
+						
+						<!--Mobile Menu-->
+						<ul class="main-nav">
+							  
+							<li class="login-link">
+  								<div class="d-flex p-2">
+  									<a class="nav-link header-login bg-success text-white " href="login.html">EN </a>
+        						  
+        							<a class="nav-link header-login  text-white" href="login.html">IT </a>
+        		 
+        							<a class="nav-link header-login ml-1 text-white" href="login.html">SP </a>
+        					 
+        							<!-- <a class="nav-link header-login  text-white" href="login.html">FR</a>
+        	 
+        							<a class="nav-link header-login  text-white" href="login.html">DE</a> -->
+        					 	</div>
+							</li>
+
+						 <li class="login-link">
+								<a href="login.html">LOGIN / REGISTER</a>
+							</li>
+							<li class="login-link"> 
+								<a href="login.html">Choose</a>
+							</li>
+							<li class="login-link">
+								<a href="how-it-works.html">How</a>
+							 </li>
+							<!-- <li class="login-link"> 
+								 
+								<a href="more.html">More</a>
+							</li> -->
+							<li class="login-link">
+								  
+								<a href="about.html">About</a>
+							</li>
+
+							<li class="login-link">
+								  
+								<a href="about.html#faq">FAQ</a>
+							</li>
+						</ul>		 
+						<!--End Mobile Menu-->
+					</div>		 
+				 </nav>
+				
+				 
+			 </header>
+			<!-- /Header -->
+			
+			<!-- Home Banner -->
+			<section class="section">
+				<div class="container-fluid bg-theme pl-0 pr-0">
+					<div class="banner-wrapper" style="max-width:unset;">
+				
+				<div style="background-image:url(assets/images/seacr-book-mobile.png);    background-size: cover;  height:250px; background-position: center center;
+    background-repeat: no-repeat;  width:100%; position: relative;" class="bg-img bg-img1 hidden-lg hidden-md ">
+    <h3 class=" mobile-home-title font-weight-bold font-size-heading hidden-lg hidden-md hidden-sm" style="
+    
+
+    position: absolute;
+    top: 15px;
+    color: #f0425e!important;
+    /* bottom: 0; */
+    text-align: center;
+    /* margin: 0 auto; */
+    align-items: center;
+    /* display: flex; */
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-shadow:0px -1px rgb(255, 255, 255,0.7), 1px 0px rgb(255, 255, 255,0.7), 0px 1px rgb(255, 255, 255,0.7), -1px 0px rgb(255, 255, 255,0.7); 
+">Your International Holistic Platform</h3>
+
+<h5 class="text-muted hidden-lg hidden-md hidden-sm" style="
+   position: absolute;
+    top: 40px;
+    /* bottom: 0; */
+    text-align: center;
+    /* margin: 0 auto; */
+    align-items: center;
+    /* display: flex; */
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #507edc!important;
+">Book Online. Consult Video &amp; In-Person.</h5>
+
+    </div>	 
+						 <div class="search-box">
+							<form action="search.html">
+							  	 
+							 <div class="row w-100      padding_bottom" style="margin-left:0px;padding-top:0rem;  padding-bottom: 0rem;">
+
+<div style="background-image:url(assets/images/seacr-book.png);    background-size: contain; background-position: center; height:430px;
+    background-repeat: no-repeat;  width:100%; position: relative;" class="bg-img bg-img1 hidden-xs hidden-sm big_image ">
+            	<h3 class="font-weight-bold font-size-heading hidden-lg hidden-md hidden-sm" style="
+    
+
+    position: absolute;
+    top: 8px;
+    color: #f0425e!important;
+    /* bottom: 0; */
+    text-align: center;
+    /* margin: 0 auto; */
+    align-items: center;
+    /* display: flex; */
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-shadow:0px -2px rgb(255, 255, 255,0.7), 2px 0px rgb(255, 255, 255,0.7), 0px 2px rgb(255, 255, 255,0.7), -2px 0px rgb(255, 255, 255,0.7);
+">Your International Holistic Platform</h3>
+
+<!-- <h5 class="text-muted hidden-lg hidden-md hidden-sm" style="
+   position: absolute;
+    top: 27px;
+    /* bottom: 0; */
+    text-align: center;
+    /* margin: 0 auto; */
+    align-items: center;
+    /* display: flex; */
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #507edc!important;
+">Book Online. Consult Video &amp; In-Person.</h5> -->
+
+            	  <div id="carouselExampleControls" class="hidden-xs hidden-sm carousel slide carosel_slide_text" data-ride="carousel" style="position: absolute;right:0px;" >
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <h4 class="text-right mr-2 text-white image_text">
+					       	<span class="font-weight-bold">The professionality you need.</span>
+					       </h4>
+					    </div>
+					    <div class="carousel-item">
+					     <h4 class="text-right mr-3 text-white image_text">
+					     	<span class="font-weight-bold">The support you deserve.</span>
+					     </h4>
+					    </div>
+					    <div class="carousel-item">
+					       <h4 class="text-right mr-3 text-white image_text">
+					       	<span class="font-weight-bold">The flexibility you want.</span>
+					       </h4>
+					    </div>
+					    
+					  </div>
+					  
+					</div>
+            	<!-- <div class="row">
+            		<div class="col-md-4"></div>
+            		<div class="col-md-4"></div>
+            		<div class="col-md-4">
+					
+					</div>
+				</div> -->
+
+            </div>
+<div class="bgclass">      
+
+									<div class="col-md-4 text-center ">
+    <!-- <h3 class="font-weight-bold font-size-heading">Find Your Holistic Specialist</h3> -->
+    <h3 class="font-weight-bold font-size-heading  hidden-xs" style="color:#f0425e!important;
+    text-shadow:0px -2px rgb(255, 255, 255,0.7), 2px 0px rgb(255, 255, 255,0.7), 0px 2px rgb(255, 255, 255,0.7), -2px 0px rgb(255, 255, 255,0.7)">Your International Holistic Platform</h3>
+
+    
+  <!--   <h5 class="text-muted">Book &amp; Consult online </h5> -->
+ <h5 class="text-muted pt-2 hidden-xs">Book Online. Consult Video & In-Person.</h5>
+
+</div>
+
+
+									<div class="col-md-5" style="padding:0px;
+   
+    /* margin: 0px; */
+">
+
+	<div class="mobile-search-menu mobile-search-menu2 form-group search-info  mb-1 margintop2" style="width:31%; margin-right:8px;float:left;">
+											<a href="" class="geo_icon_link geo_icon_link1"><i class="fas fa-map-marker-alt"></i>
+			 											</a>
+										<input  style="background:unset;background-color:#fff;"type="text" class="form-control" placeholder="Search Location">
+										<!-- <span class="form-text">
+										(Optional)</span> -->
+										</div>
+
+
+										<div class="mobile-search-menu mobile-search-menu2 form-group search-info  cb--container mb-2 margintop2" id="ComboBox" style="/* display: inline-block; *//* vertical-align: top; */position: relative;width: 41%; float:left; margin-right:8px;">
+
+
+                                     <input type="text" id="name" name="name" required="required" autocomplete="off" class="search-input form-control sspf cb--input" aria-label="Special inputfield with 11 prefilled options available, use the down/up arrow keys to chose one or write your own text." style="/* box-sizing: border-box; *//* height: 100%; */width: 100%;" placeholder="Specialist's Name/Field">
+    
+    
+
+										
+										
+
+										
+								
+										</div><div class="mobile-search-menu
+										mobile-search-menu2 form-group    cb--container mb-2 margintop2" id="ComboBox" style="display: inline-block;vertical-align: top;position: relative;width: 24%; float:left;">
+
+
+                                     
+    
+    
+
+										
+										
+
+										<a href="" class="geo_icon_link geo_icon_link1"><i class="fas fa-hashtag"></i>
+			 											</a><select class="form-control" autocomplete="off" aria-hidden="true" style="color: #507edc;padding-left:28px;font-size: 14px;">
+    
+
+      <option value="" selected="" class=" cb--option">Tag</option><option  class=" cb--option">addiction</option>
+      <option class=" cb--option">balance</option>
+      <option class=" cb--option">body pain</option> 
+      <option class=" cb--option">flu</option>
+      <option class=" cb--option">healthy lifestyle</option>
+      <option class=" cb--option">insecurity</option>
+      <option class=" cb--option">insomnia</option>
+      <option class=" cb--option">panic attack</option>
+      <option class=" cb--option">self-knowledge</option>
+      <option class=" cb--option">trauma</option>
+    </select>
+								
+										</div>
+									</div>
+								<!--	<div class="col-md-3" >
+										<div class="form-group search-info w-100 mb-2" id="ComboBox" >
+
+
+                                     <input type="text" id="name" name="name" required="required" autocomplete="off" class="search-input form-control sspf" />
+    <label for="name">Specialist's Name/Field |</label>
+    <br/>
+
+										<!--<input type="text" class="form-control sspf" placeholder="Search Specialist's Name/Field|Tags">-->
+										<!-- <span class="form-text">E.g. : Naturopath </span> -->
+
+									<!--	<select  class="#select2" autocomplete="off">
+    
+
+      <option selected="">addiction</option>
+      <option>balance</option>
+      <option>body pain</option> 
+      <option>flu</option>
+      <option>healthy lifestyle</option>
+      <option>insecurity</option>
+      <option>insomnia</option>
+      <option>panic attack</option>
+      <option>self-knowledge</option>
+      <option>trauma</option>
+    </select>
+								
+										</div>
+									</div>-->
+									<div class="col-md-1 sbutton " style="">
+											
+									<button type="submit" class="btn btn-primary search-btn mb-4"><i class="fas fa-search"></i> <span>Search</span></button>
+									</div>
+
+					<div class="col-md-2  text-center mb-4 " style="padding:0px;">
+
+<div style="
+    width: 100%;
+    /* display:flex; */
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+    color:#f0425e!important;
+    text-shadow:0px -1px rgb(255, 255, 255,0.7), 1px 0px rgb(255, 255, 255,0.7), 0px 1px rgb(255, 255, 255,0.7), -1px 0px rgb(255, 255, 255,0.7)
+"><b>Language</b></div>
+
+					<div style="width:50%;margin-top:5px;float:left;text-align:right;padding-right:5px;" class="consult_section">
+					    <span class=" consult_text" >Consult in: </span>
+                      </div>
+                    <div class="language_section"   style="float:right; text-align:left;"> 
+                        	<!-- <b><span  style="color:black">Language</span></b> </span> -->
+				<select class="lan_select" id="lan_select" style="
+					    background: transparent; 
+					    
+					   
+					    border-radius: 3px;"
+					      onchange="translateLanguage();">
+					    
+
+
+					    <option value="English">English</option>
+					    <option value="Italian">Italian</option>
+					    <option value="Spanish">Spanish</option>
+					    <option value="French">French</option>
+					   
+					</select>
+					</div>
+
+
+					</div>
+					</div>
+						
+								</div>
+							</form>
+						</div>
+
+				</div>
+			</section>
+			<!-- /Home Banner -->
+			
+            
+            <div class="section-header text-center bg-theme mb15" style="margin-bottom:0px;">
+            	<!-- <h2 class="">Specialties</h2> -->
+            	 <h3 class="font-weight-bold font-size-heading2 find_txt" style="color:#507edc">Find Your Holistic Specialist</h3>
+					<h5 class="text-muted" style="margin-bottom:0px">Discover Practitioners in Your Preferred Field.</h5>
+			  </div>
+		 
+			 <div class="row bg-theme">
+                <div class="container pt-2">
+                    		<div class="col-md-12 hidden-lg hidden-md">
+	            				 <div class="row">
+	            				 	<table class="table table-responsive hidden-lg hidden-md">
+	            				 		<tr>
+	            				 			<td>
+	            				 <div class="text-center">
+								<center>
+									<div class="speicality-img mag-border">
+										<a href="search.html">
+									    	<img src="assets\images\1.png" class="img-fluid" alt="Speciality">
+										 </a>	
+									</div>
+								
+								</center>
+<p class="mt-2">
+								<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold text-mag">All Specialists</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 2px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+</p>
+									</div>
+	            				 			</td>
+
+	            				 			<td>
+	            				 			 <div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\2.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+
+
+    
+								</center>
+									<p class="mt-2">
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Ayurveda</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 2px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>	
+								</div>
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+								 <center><div class="speicality-img ">
+									<a href="search.html">
+									<img src="assets\images\11.png" class="img-fluid" alt="Speciality"></a>
+									</div>
+
+
+
+								</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Antroposophy</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Antroposophy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+										<a href="search.html">
+										<img src="assets\images\12.png" class="img-fluid" alt="Speciality"></a>
+									</div>	
+
+
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Coaching</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Coaching</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+
+
+  
+	<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+										<a href="search.html">
+										<img src="assets\images\18.png" class="img-fluid" alt="Speciality"></a>
+									</div>	
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Couple & Sexuality</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Couple & Sexuality</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+
+
+
+
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\4.png" class="img-fluid" alt="Speciality">
+											</a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Dentosophy</a>
+ -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Dentosophy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:16px;border: 1px solid #f6a400;padding: 5px;"></a> 
+</div>
+</span>
+</div>
+
+									</p>	
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\22.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+
+
+
+								</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Femenine Care &amp; Pregnancy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Femenine Care &amp; Pregnancy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+<!-- <hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+"> -->
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:16px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class=" text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	
+										<img src="assets\images\5.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- a href="search.html" class="font-weight-bold">Flower Therapy</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Flower Therapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\8.png" class="img-fluid" alt="Speciality"></a>
+										  
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">German New Medicine & Biodecoding</a> -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">German New Medicine & Biodecoding</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 		</tr>
+
+	            				 		<tr>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\13.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Homeopathy</a> -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Homeopathy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+<!-- <hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+"> -->
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div> 
+	            				 			</td>
+
+	            				 			<td>   
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\6.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Naturopathy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Naturopathy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div> 
+	            				 			</td>
+
+	            				 				<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\14.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Nutrition</a>
+ -->
+									<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Nutrition</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+</p>
+								</div> 
+	            				 			</td>
+	            				 			<!-- <td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\6.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><a href="search.html" class="font-weight-bold">Naturopathy</a></p>
+								</div> 
+	            				 			</td> -->
+	            				 			<!-- <td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\14.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><a href="search.html" class="font-weight-bold">Nutrition</a></p>
+								</div> 
+	            				 			</td> -->
+
+	            				 		<!-- 	<td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\3.png" class="img-fluid" style="border-radius: 50%;" alt="Speciality">
+											</a>
+									 </div>	</center>
+									<p class="mt-2"><a href="search.html" class="font-weight-bold">Phytotherapy</a></p>	
+								</div> 
+	            				 			</td>
+ -->
+
+
+<td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\24.png" class="img-fluid" alt="Speciality">
+											</a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Integrative Medicine</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Integrative Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div> 
+	            				 			</td>
+
+	            				 			<td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\7.png" class="img-fluid" alt="Speciality">
+											</a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Puericulture -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Puericulture</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</a></p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\16.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Preventive Medicine</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Preventive Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\17.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Psychotherapy</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Psychotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\15.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Phytotherapy</a> -->
+									<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Phytotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+</p>
+								</div> 
+	            				 			</td>
+	            				 				<td>
+	            				 				<div class="text-center">
+									<center><div class="speicality-img ">
+										<a href="search.html">	<img src="assets\images\9.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2 "><!-- <a href="search.html" class="font-weight-bold">Shamanism</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Shamanism</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 		</tr>
+	            				 		
+	            				 		<tr>
+	            				 		
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\10.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Soul Wellness
+
+
+									</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Soul Wellness</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+								</p>
+								</div> 
+	            				 			</td>
+	            				 		
+	            				 			<td>
+	            				 			<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\19.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Somatic Resolution &amp; Hypnotherapy</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Somatic Resolution &amp; Hypnotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>	 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\20.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Traditional Chinese Medicine</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Traditional Chinese Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 			<td>
+	            				 				<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\21.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Transgenerational &amp; Constellations</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Transgenerational &amp; Constellations</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+	            				 			</td>
+	            				 		</tr>
+	            				 	</table>
+	            				 
+	            				 </div>
+            				</div>
+
+
+                      <div class="col-md-12 hidden-xs hidden-sm">
+            				 <div class="row">
+                            
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      	<div class="col-md-12" style="display: flex;">
+           <div class="col-md-2 col-3">
+                                <div class="text-center">
+								<center>
+									<div class="speicality-img mag-border">
+										<a href="search.html">
+									    	<img src="assets\images\1.png" class="img-fluid" alt="Speciality">
+										 </a>	
+									</div>
+								
+						
+								</center>
+
+
+<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Antroposophy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold text-mag">All Specialists</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+<!-- <hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+"> -->
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+</p>
+
+
+
+										</div>
+                             </div>
+
+
+                             <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\2.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>
+									<p class="mt-2"><div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Ayurveda</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div></p>	
+								</div>
+                             </div>
+                              <div class="col-md-2 col-3">
+                                 	<div class="  text-center">
+								 <center><div class="speicality-img ">
+									<a href="search.html">
+									<img src="assets\images\11.png" class="img-fluid" alt="Speciality"></a>
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Antroposophy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Antroposophy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+<!-- <hr style="
+    border: 1px solid;
+    width: 180px;
+    text-align: center;
+    margin-top: 5px;
+   
+"> -->
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div>
+                             </div>
+                             
+                            
+                             <div class="col-md-2 col-3">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+										<a href="search.html">
+										<img src="assets\images\12.png" class="img-fluid" alt="Speciality"></a>
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Coaching</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Coaching</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+
+									</p>
+								</div>
+                             </div>
+
+                                  <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\18.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Couple & Sexuality</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Couple & Sexuality</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+                             
+                             <div class="col-md-2 col-6">
+                                	<div class="  text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\4.png" class="img-fluid" alt="Speciality">
+											</a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Dentosophy</a> -->
+
+
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Dentosophy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+									</p>	
+								</div>	
+                             </div>
+                               <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\22.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Femenine Care & Pregnancy</a> -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Femenine Care & Pregnancy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div>
+                             </div>
+                          
+                             
+                          
+                         </div>
+
+                         
+                         <div class="col-md-12" style="display: flex;">
+
+	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\22.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Femenine Care &amp; Pregnancy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Femenine Care &amp; Pregnancy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div> 
+                         	   <div class="col-md-2 col-6">
+                                 <div class=" text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	
+										<img src="assets\images\5.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- < --><!-- a href="search.html" class="font-weight-bold">Flower Therapy</a> -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Flower Therapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div>	
+                             </div>
+                              <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\8.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">German New Medicine & Biodecoding</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">German New Medicine & Biodecoding</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>	
+                             </div>
+                             <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\13.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Homeopathy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Homeopathy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+
+
+                            
+
+
+	            				 			   <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\24.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Integrative Medicine</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Integrative Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>	
+                             </div>
+
+
+	            				 			   <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\23.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div></center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Natural Vet Care</a>
+ -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Natural Vet Care</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+
+
+									</p>
+								</div>	
+                             </div>
+                          
+
+                           
+                             
+                               </div>
+
+
+      </div>
+
+      <div class="carousel-item">
+       
+                  <div class="col-md-12" style="display: flex;">   
+
+   <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+										<a href="search.html">	<img src="assets\images\6.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+
+
+								</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Naturopathy</a> -->
+
+
+									</p>
+
+									<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Naturopathy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+								</div>	
+                             </div>
+                            
+     <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\14.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Nutrition</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Nutrition</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+                     <div class="col-md-2 col-6">
+                                 	<div class="text-center">
+									<center><div class="speicality-img">
+											<a href="search.html">
+											    <img src="assets\images\7.png" class="img-fluid" alt="Speciality">
+											</a>
+										 
+									</div>
+										</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Puericulture</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Puericulture</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>	
+                             </div>       
+                            <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\16.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Preventive Medicine</a> -->
+
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Preventive Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+
+									</p>
+
+								</div>
+                             </div>
+                             <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\17.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+
+
+
+								</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Psychotherapy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Psychotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+                             
+                             <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\15.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+						</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Phytotherapy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Psychotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+		
+
+
+
+									</p>
+								</div>
+                             </div>
+                             
+
+                             <div class="col-md-2 col-6">
+                                 <div class="text-center">
+									<center><div class="speicality-img ">
+										<a href="search.html">	<img src="assets\images\9.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+
+
+
+								</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Shamanism</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Shamanism</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+                         
+                             
+                            
+                        
+
+                             </div>
+                            
+                            <div class="col-md-12" style="display: flex;">
+                             <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\19.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Somatic Resolution & Hypnotherapy</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Somatic Resolution & Hypnotherapy</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div>
+                             </div>
+                             
+                                 <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\10.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>
+						</center>	
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Soul Wellness</a> -->
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Soul Wellness</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+		
+
+									</p>
+								</div>
+                             </div>
+                              <div class="col-md-2 col-6" style="padding:0px">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\20.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Traditional Chinese Medicine</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Traditional Chinese Medicine</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+									</p>
+								</div>
+                             </div>
+                             
+                              <div class="col-md-2 col-6">
+                                 	<div class="  text-center">
+									<center><div class="speicality-img ">
+											<a href="search.html"><img src="assets\images\21.png" class="img-fluid" alt="Speciality"></a>
+										 
+									</div>	
+
+
+								</center>
+									<p class="mt-2"><!-- <a href="search.html" class="font-weight-bold">Transgenerational & Constellations</a> -->
+
+<div class="tooltip">
+<a href="javascript:void(0)" class="font-weight-bold">Transgenerational & Constellations</a>
+<!-- <i class="fas fa-info-circle" title=""></i> -->
+  <span class="tooltiptext" style="text-align:left;left:-15%"><h4 style="text-align: center;color: white; margin-bottom:0.2rem; left:0%"></h4>
+
+  	<h5 style="text-align: justify;color: white;padding:5px;"> Ayurvedic medicine is one of the world's oldest holistic healing systems. It was developed more than 3,000 years ago in India. It’s based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit. Its main goal is to promote good health, not fight disease.</h5>
+<div style="text-align:center;">
+<a href="search.html" style="color: #fff; font-size:12px;border: 1px solid #f6a400;padding: 5px;">SEE SPECIALISTS</a> 
+</div>
+</span>
+</div>
+
+
+									</p>
+								</div>
+                             </div>
+                             </div>
+      </div>
+    </div>
+   <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="position: absolute;left: 0;top: 200px;">
+      <span class="fa fa-angle-left" style="width: 30px;height: 30px;font-size: 30px;font-weight: 800;"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="position: absolute;right: 0;top: 200px;">
+      <span class="fa fa-angle-right" style="width: 30px;height: 30px;font-size: 30px;font-weight: 800;"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  
+
+
+
+                            
+                             
+                           
+                          </div>
+                           
+                           
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+               <div class="bg-theme ">
+               	<h2>&nbsp;</h2>
+                <div class="section-header mb-3 text-center ">
+					 <h3 class=" font-weight-bold font-size-heading2 find_txt" style="color:#507edc">Best Rated Specialists</h3>
+
+					 <h5 class="text-muted">Because Your Satisfaction is Our Drive.</h5>
+				 </div>
+			<div class="row"> 
+				 
+			 	<div class="col-lg-12">
+						<div class="doctor-slider slider">
+							 <!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+									 <a href="specialist-profile.html">
+										<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-01.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html" style="color:#ff0a60">Ruby PERRIN</a> 
+											<img src="assets\icon\medicine.png" class="img-fluid doc-pics" alt="User Image">
+											 
+										</h3>
+										<p class="speciality">
+											
+                                           GNM & Naturopathy Practitioner
+                                           <br>
+                                           <a href="#">
+											Ayurveda
+										</a>
+										</p>
+
+
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<span class="d-inline-block average-rating">(17)</span>
+										</div>
+										<ul class="available-info">
+
+												<li>
+												<i class="far fa-money-bill-alt"></i> $300 - $1000 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Range price for all types of consultations"></i>
+												
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Florida, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+										
+
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="specialist-profile.html#avlcon" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="specialist-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-02.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Darren Elder</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">BDS, MDS - Oral & Maxillofacial Surgery</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(35)</span>
+										</div>
+										<ul class="available-info">
+											<li>
+												<i class="far fa-money-bill-alt"></i> $50 - $300 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Newyork, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+										
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="doctor-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-03.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Deborah Angel</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MBBS, MD - General Medicine, DNB - Cardiology</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(27)</span>
+										</div>
+										<ul class="available-info">
+											<li>
+												<i class="far fa-money-bill-alt"></i> $100 - $400 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Georgia, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+										
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="doctor-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-04.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Sofia Brient</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MBBS, MS - General Surgery, MCh - Urology</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(4)</span>
+										</div>
+										<ul class="available-info">
+                                            	<li>
+												<i class="far fa-money-bill-alt"></i> $150 - $250 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Louisiana, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+										
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="specialist-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-01.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="doctor-profile.html">Marvin Campbell</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MBBS, MD - Ophthalmology, DNB - Ophthalmology</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(66)</span>
+										</div>
+										<ul class="available-info">
+												<li>
+												<i class="far fa-money-bill-alt"></i> $50 - $700 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Michigan, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+										
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="specialist-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-02.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Katharine Berthold</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MS - Orthopaedics, MBBS, M.Ch - Orthopaedics</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(52)</span>
+										</div>
+										<ul class="available-info">
+											<li>
+												<i class="far fa-money-bill-alt"></i> $100 - $500 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Texas, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+											
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="specialist-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-03.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Linda Tobin</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MBBS, MD - General Medicine, DM - Neurology</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(43)</span>
+										</div>
+										<ul class="available-info">
+											
+                                         <li>
+												<i class="far fa-money-bill-alt"></i> $100 - $1000 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> Kansas, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+											
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="specialist-profile.html">
+											<img class="img-fluid" alt="User Image" src="assets/img/specialist/spc-04.jpg">
+										</a>
+										<a href="javascript:void(0)" class="fav-btn">
+											<i class="far fa-bookmark"></i>
+										</a>
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="specialist-profile.html">Paul Richard</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">MBBS, MD - Dermatology , Venereology & Lepros</p>
+										<div class="rating">
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star filled"></i>
+											<i class="fas fa-star"></i>
+											<span class="d-inline-block average-rating">(49)</span>
+										</div>
+										<ul class="available-info">
+											
+                                           <li>
+												<i class="far fa-money-bill-alt"></i> $100 - $400 
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+
+											<li>
+												<i class="fas fa-map-marker-alt"></i> California, USA
+											</li>
+											<li>
+												<i class="far fa-clock"></i> Available on Fri, 22 Mar
+											</li>
+											
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="specialist-profile.html" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="booking.html" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Doctor Widget -->
+							</div>	
+						</div>	
+					</div></div>
+			<div style="background-image:url(assets/images/seacr-book-mobile1.png);    background-size: cover;  height:250px; background-position: center center;
+    background-repeat: no-repeat;  width:100%; position: relative;" class="bg-img bg-img1 hidden-lg hidden-md ">
+  
+
+    </div>
+
+    <div id="carouselExampleSlidesOnly" class=" hidden-md hidden-lg hidden-sm carousel slide mb-3 pointer-event" data-ride="carousel" style="
+    position: absolute;
+    margin-top: -45%;
+    text-align: center;
+    width:100%;  
+    font-size:12px;
+    /* top: 33%; */
+">
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item">
+										    <p class="comment-content" style="color:white;">
+												"I was already planning private consultations by myself with health practitioners, by contacting and asking them for online sessions, but it took time and efforts…  MedAloha is exactly what I was waiting for." 
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:white;"><b>Elisa</b></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+                                          	
+										    <p class="comment-content" style="color:white;">
+												"Super intuitive and user-friendly.!"
+											</p>
+											<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:white;"><b>Andreas</b></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content" style="color:white;">
+											"Discovering here new stuff about holistics and cool specialists from all over the world, will try more sessions soon." 
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:white;"><b>Julie</b></span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item active">
+										    <p class="comment-content" style="color:white;">
+											"As a practitioner, MedAloha is the best way –especially in these covid times- to comfortably and easily connect from home with people from everywhere and to share my passion for holistic health."
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:white;"><b>Eros</b></span>
+											</div>
+                                        </div>
+                                      </div>
+                                    </div>
+			<footer class="footer">
+			
+			  <div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+							
+						
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="assets/img/footer-logo.png" alt="logo">
+										<p class="text-white">Follow us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+											 <li>
+													<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+												</li>
+											 
+											</ul>
+
+										</div>
+									</div>
+									</div>
+									<div class="footer-about-content">
+										<p class="text-white">Share us. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+													<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-messenger"></i> </a>
+												</li>
+                                                <li>
+													<a href="#" target="_blank"><i class="fab fa-whatsapp"></i> </a>
+												</li>
+											
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<!-- <li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li> -->
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<!--  <li>
+													<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+												</li> -->
+											</ul>
+										</div>
+										
+								</div>
+						
+								
+							</div>
+
+
+							
+							<div class="col-lg-6 col-md-6 mt-4 hidden-xs ">
+							    
+							    	
+							    	<div id="carouselExampleSlidesOnly" class="carousel slide mb-3" data-ride="carousel">
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+										    <p class="comment-content" style="color:#fffeec;">
+												"I was already planning private consultations by myself with health practitioners, by contacting and asking them for online sessions, but it took time and efforts…  MedAloha is exactly what I was waiting for." 
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:#fffeec;">Elisa</span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+                                          	
+										    <p class="comment-content" style="color:#fffeec;">
+												"Super intuitive and user-friendly.!"
+											</p>
+											<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:#fffeec;">Andreas</span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content"  style="color:#fffeec;">
+											"Discovering here new stuff about holistics and cool specialists from all over the world, will try more sessions soon." 
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:#fffeec;">Julie</span>
+											</div>
+                                        </div>
+                                        <div class="carousel-item">
+										    <p class="comment-content" style="color:#fffeec;">
+											"As a practitioner, MedAloha is the best way –especially in these covid times- to comfortably and easily connect from home with people from everywhere and to share my passion for holistic health."
+											</p>
+                                          	<div class="meta-data mb-0" style="text-align:right;margin-right:10px;">
+												<span class="comment-author font-italic" style="color:#fffeec;">Eros</span>
+											</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+							    </div>
+						  
+ 
+ 
+  
+							<div class="col-lg-3 col-md-3 mobile_footer_top">
+							
+							
+								<div class="footer-widget footer-contact float-right">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p class=""> 3556  Beech Street, San Francisco,<br> California, CA 94108 </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+1 315 369 5943
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											doccure@example.com
+										</p>
+									</div>
+								</div>
+							
+								
+							</div>
+							
+						</div>
+            
+                     <div class="row">
+                       <div class="col-md-12">
+
+                       	<div class="  text-center">
+								  <p class="text-white  footer-middle-text"  style="margin-bottom:0px;"> 
+								 	  Are you a Recognized Holistic Practitioner? <a href="http://medaloha.vipscollege.com/apply-specialist.html" class="text-success">Apply</a></p>
+							 </div> 
+                       </div>
+                     </div>
+
+					</div>
+				</div>
+				
+			
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+				
+						<div class="copyright">
+							<div class="row">
+
+								<!--<div class="col-lg-5 col-md-5">
+								<div class="  text-center">
+								  <p class="text-white " > 
+								 	  Are you a Recognized Holistic Practitioner? <a href="#" class="text-success">Apply</a></p>
+							 </div> 
+							</div>-->
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0 text-center-mobile">&copy; 2021 MedAloha. All rights reserved.</p>
+									</div>
+								</div>
+								
+								 
+								<div class="col-md-6 col-lg-6">
+								
+								
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href=" terms-and-conditions.html">Terms and Conditions</a></li>
+											
+											<li><a href="privacy-policy.html">Privacy Policy</a></li>
+											<li><a href="cookie-policy.html">Cookie Policy</a></li>
+										</ul>
+									</div>
+								
+									
+								</div>
+							</div>
+						</div>
+				 
+						
+					</div>
+				</div> 
+			 
+				
+			</footer>  
+		   
+	   </div>
+	   <!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets\js\jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets\js\popper.min.js"></script>
+		<script src="assets\js\bootstrap.min.js"></script>
+		
+		<!-- Slick JS -->
+		<script src="assets\js\slick.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets\js\script.js"></script>
+		
+	<script>
+		
+
+var ComboBox = function(container, customStyles) {
+  this.container = container;
+  this.container.className += ' cb--container';
+  this.input = container.getElementsByTagName('input')[0];
+  this.input.className += ' cb--input';
+  this.select = container.getElementsByTagName('select')[0];
+  this.select.className += ' cb--select';
+
+  this.value = this.input.value;
+
+  var optionZero = document.createElement('option');
+  optionZero.innerHTML = 'Select Tag';
+   optionZero.value = '';
+  this.select.insertBefore(optionZero, this.select.options[0]);
+
+  this.options = this.select.options;
+  for (var i = 0; i < this.options.length; i++) {
+    var element = this.options[i];
+    element.className += ' cb--option';
+  }
+
+  this.input.setAttribute('aria-label', 'Special inputfield with '+this.options.length+' prefilled options available, use the down/up arrow keys to chose one or write your own text.');
+  this.select.setAttribute('aria-hidden', 'true');
+
+  this.addEventListeners();
+  this.createVisualHint();
+
+  this.hideSelect();
+  if(!customStyles) this.setStyles();
+};
+
+ComboBox.prototype.addEventListeners = function() {
+  this.input.addEventListener('focus', this.showSelect.bind(this));
+  this.input.addEventListener('blur', this.hideSelect.bind(this));
+  this.input.addEventListener('keyup', this.handleInput.bind(this));
+
+  this.select.addEventListener('focus', this.showSelect.bind(this));
+  this.select.addEventListener('change', this.handleSelection.bind(this));
+  this.select.addEventListener('keydown', this.handleSelection.bind(this));
+  this.select.addEventListener('click', function(e) { this.handleSelection(e, 'click'); }.bind(this));
+
+ // this.input.addEventListener('dblclick', this.hideSelect.bind(this));
+  this.select.addEventListener('blur', function(e) {
+    this.hideSelect();
+
+    if(!this.preventTriggerSelection) {
+    this.triggerSelection();
+    } else { 
+      this.preventTriggerSelection = false;
+    }
+
+  }.bind(this));
+
+  return this;
+};
+
+ComboBox.prototype.handleInput = function(e) {
+  var code = this.getKey(e);
+  if(code === 'ArrowDown') {
+    this.handleWriting(e.target.value);
+    this.select.focus();
+  } else if(code === 'Escape') {
+    this.hideSelect();
+  } else if(code === 'Enter' && !this.preventDoubleEnter) {
+    this.setValue(this.select.value, 'hideSelect');
+    this.triggerSelection('force');
+  } else {
+    this.preventDoubleEnter = false;
+    this.handleWriting(this.input.value);
+  }
+
+  return this;
+};
+
+ComboBox.prototype.handleWriting = function(text) {
+  this.value = text;
+  var option = this.isTextInOptions(text, this.options);
+  if(option && text != '') {
+    this.setOptionZero('');
+    this.select.value = option;
+
+    // if the text is absolutely equal to the option, trigger a selection
+    if(text.length === option.length) this.triggerSelection();
+  } else {
+    this.select.value = this.setOptionZero('');
+  }
+
+  return this;
+};
+
+ComboBox.prototype.isTextInOptions = function(text, options) {
+  for(var i = 1, il = options.length; i < il; i++) {
+    if(text.toLowerCase() == options[i].value.substring(0, text.length).toLowerCase()) {
+      return options[i].innerHTML;
+    }
+  }
+  return false;
+};
+
+ComboBox.prototype.setOptionZero = function(text) {
+  var setText = (text != '') ? ' ' + text : '';
+  this.options[0].value('');
+  this.options[0].innerHTML = 'Please Select Tags';
+  return setText;
+};
+
+ComboBox.prototype.handleSelection = function(e, click) {
+  var code = this.getKey(e);
+  if(code === 'Escape') {
+    this.preventTriggerSelection = true;
+    this.setValue(this.options[0].value, 'hideSelect');
+    // the selection might have changed by user, so to reset
+    // the preselection we have to check the input text again
+    this.handleWriting(this.value);
+  } else if(code === 'Enter') {
+    this.preventDoubleEnter = true;
+    this.setValue(e.target.value, 'hideSelect');
+  } else {
+    this.setValue(e.target.value, false);
+  }
+
+  if(click) this.triggerSelection('force');
+
+  return this;
+};
+
+ComboBox.prototype.setValue = function(value, hideSelect) {
+  if(!value || value == '') return this;  // do nothing if value is empty
+
+  if(value.substring(0, 3) != '---') {  // check if value is not the fallback option
+    this.input.value = value;
+  } else {  // if it is, don’t add the '--- '
+    this.input.value = value.substring(4, value.length);
+  }
+
+  if(hideSelect) {
+    this.input.focus();
+    this.hideSelect();
+  }
+
+  this.value = this.input.value;
+
+  return this;
+};
+
+ComboBox.prototype.getKey = function(e) {
+  if(!e) return false;
+
+  if(e.key === 'Enter' || e.code === 'Enter' || e.keyCode === 13) {
+    return 'Enter';
+  } else if(e.key === 'Escape' || e.code === 'Escape' || e.keyCode === 27) {
+    return 'Escape';
+  } else if(e.key === 'ArrowDown' || e.code === 'ArrowDown' || e.keyCode === 40) {
+    return 'ArrowDown';
+  }
+};
+
+ComboBox.prototype.hideSelect = function() {
+  this.select.setAttribute('aria-hidden', 'true');
+  this.select.style.left = '-10000px';
+  this.select.style.pointerEvents = 'none';
+  this.select.style.opacity = 0;
+
+  return this;
+};
+
+ComboBox.prototype.showSelect = function() {
+  this.select.setAttribute('aria-hidden', 'false');
+  this.select.style.left = '0';
+  this.select.style.pointerEvents = 'all';
+  this.select.style.opacity = 1;
+
+  return this;
+};
+
+
+
+ComboBox.prototype.createVisualHint = function() {
+  this.hint = document.createElement('span');
+  this.hint.setAttribute('aria-hidden', 'true');
+  this.hint.className = 'cb--hint down icon_down';
+  this.hint.innerHTML = '▼';
+  this.container.insertBefore(this.hint, this.input);
+};
+
+ComboBox.prototype.setStyles = function() {
+  this.container.style.display = 'inline-block';
+  this.container.style.verticalAlign = 'top';
+  this.container.style.position = 'relative';
+  this.input.style.boxSizing = 'border-box';
+  this.input.style.height = '100%';
+  this.input.style.width = '100%';
+  this.select.style.border = '1px solid lightgrey';
+  this.select.style.borderTop = '0';
+  this.select.style.position = 'absolute';
+  this.select.style.top = '68%';
+  this.select.style.width = '100%';
+  this.hint.style.fontSize = '8px';
+  this.hint.style.pointerEvents = 'none';
+  this.hint.style.position = 'absolute';
+  this.hint.style.right = '9%';
+  this.hint.style.top = '50%';
+  this.hint.style.lineHeight = '0.1';
+
+  // this makes the down arrow key the only way to select the dropdown via keyboard
+  //this.select.tabIndex = -1;
+  // this is inportant to get a list instead of a dropdown
+  this.select.size = 4;
+};
+
+// setup the onSelect handler passed by user
+ComboBox.prototype.onSelect = function(cb) {
+  this.cb = cb;
+
+  
+  this.handleInput(this.value);
+  //return this;
+};
+
+ComboBox.prototype.triggerSelection = function(force) {
+  if(force || this.value !== this.previousValue) {
+  
+ 
+    this.cb(this);
+    this.previousValue = this.value;
+    
+  
+  }
+
+  return this;
+};
+
+
+
+//___
+var element = document.getElementById('ComboBox');
+var cb = new ComboBox(element, false);
+
+	</script>
+
+	<script>
+		
+$('#carouselExampleSlidesOnly').carousel({
+  interval: 1000 * 10
+});
+
+
+
+
+	</script>
+	<div id="google_translate_element" >
+    </div>
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+        }
+    </script>
+
+    <script>
+        function translateLanguage() {
+        	var lang = document.getElementById("lan_select").value;
+        	alert(lang)
+
+            var $frame = $('.goog-te-menu-frame:first');
+            if (!$frame.size()) {
+                alert("Error: Could not find Google translate frame.");
+                return false;
+            }
+            $frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
+            return false;
+        }
+    </script>
+
+	</body>
+</html>

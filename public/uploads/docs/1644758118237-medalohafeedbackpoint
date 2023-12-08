@@ -1,0 +1,77 @@
+suggestion when we send the alert should be DATA means d capital.
+the suggestion mail is not sent to nitesh@cresol.in.
+when we send suggestion second time its shows data inserted but its not coming in db.
+newsletter alert is also should be d captial .
+newsletter data is not sent to email nitesh@cresol.in
+newsletter data if inserted in db they why its shows data inserted second time it should say data allready inserted .
+frequently question is clickable but it should not be clickable according to test cases.
+point 14 when we add tag from admin panel it shows but when we deactivate that it also coming it should not come .
+point 17 when we add new categorie its not taking inverted commas and all  in description .
+when we add new categorie its comes in table but it shows deactivate but it should be actuvate when we add.
+when we see categorie in home page it shows categorie id not name  in englkish language .
+categorie shows deactivate but its shows at home page .
+when we deactivate categorie still it shows.
+point 19 . when we click on book now button then it goes to speicalist profile but when we slect any mode of contact then we clock go to booking it shows homepage .
+ SPECIALIST SLIDE 
+ register 
+ 1. first name alert spelling is wrong .
+ 2. confirm password spelling wrong in validation .
+ 3. when we enter mismatched passsword it should show password didn't matched .
+ 4. if we enter wrong email it takes with gmail .
+
+ LOGIN
+ 1. if we allready enter email then we click login it shows please enter valid email .
+ 2. when we not enter password then it should show please enyter password not email .
+ 3. when we login second time its not coming booking page .
+
+ SETTING EDIT PROFILE
+  1. whithout entering mobile no. when we update its updated but it should not be if its mandatory .
+  2. when we update language is not updating .
+  3. when we update image is not prieviing .
+  4. when we update file in healthcare degree we added html file its added but it should not be only those extend=sion which are mention not all .
+  5. when we update account detail the alert of IBAN is wrong .
+  6. change passwrod is not working .
+
+   7. public intro - some field are mandatory but when we save changes its not shows alert for mandatory .
+    which field are not mandatory those fields shows alert.
+    full name not updated its coming same if we can not updated it should be in grey box .
+    when we update 4th pic its not updating .
+    when we click next page it didn't tae me any page it shows blank .
+
+
+    8. public consultation- after decimal it should be 2 value not more than 2 value in public commission field when we enter but when we save changes it shows  .
+    when we add more than 2 session in mesage  its shows maximum 2 only but sometime its updated 3 its error .
+9 public overview - it not taking special character ,max 500 character condition in not wroking i updated more than 3k character there .
+
+10.booking when we chat with cilent we are unable to see my cilent pic.
+
+CUSTOMER 
+register -
+ 1 alert od first name spelling wrong .
+ 2 if password didn't match it should show alert paddword didn't match not confirm password
+login-
+ setting -
+ 1. when we add address then we update but still it shows undefined .
+
+ booking 
+ 1.when we book part session it checks full as well .
+ 2. in inoive after city it shows undefined .
+ 3. if we are booking for 6 pm it shows 6:02 pm why ?
+ 4. when we rebook it shows 0 price but in invoice it shows 4.4 price 
+
+ message
+ 1. when we click search box it takes  me blank screen 
+ 2. in specialist list it not showing profile icon of specialist its not priview.
+
+ favourite 
+ 1. we can cancel specialist when we click on X but it takes me seeting page it should be same page .
+
+ADMIN 
+1. poit no.5 we can deactivate user but when we login that user it shows password not matched alert and when we active again it agian shows ppassword not matched alert .
+2. point no. 8 status missing.
+
+
+
+
+
+

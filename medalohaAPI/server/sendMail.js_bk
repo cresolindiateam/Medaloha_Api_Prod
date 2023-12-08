@@ -1,0 +1,32 @@
+const nodemailer = require('nodemailer');
+
+// Use environment variables or a secure configuration file to store credentials.
+const EMAIL_USERNAME = 'ashwin46kumar@gmail.com';
+const EMAIL_PASSWORD = '@aA06052000'; // Use an App Password for Gmail
+
+// Create a transporter object
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // e.g., 'Gmail', 'Yahoo', etc.
+  auth: {
+    user:ashwin46kumar@gmail.com,
+    pass: @aA06052000,
+  },
+});
+
+// Email data
+const mailOptions = {
+  from: ashwin46kumar@gmail.com,
+  to: 'balamuruganm7313@gmail.com',
+  subject: 'Testing Nodemailer',
+  text: 'Hello from Nodemailer!',
+};
+
+// Send the email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.error('Error sending email:', error);
+  } else {
+    console.log('Email sent:', info.response);
+  }
+});
+
