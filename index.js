@@ -11,7 +11,7 @@ const corsOptions = {
 
 var multer = require('multer');
 const pool = require('./dbconfig/database.js'); // db connection file
-port = process.env.PORT || 2300;
+port = process.env.PORT || 2200;
 
 
 const app = express();
