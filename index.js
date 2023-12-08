@@ -100,7 +100,7 @@ app.use('/chatAPI/',chatRouter);
 app.get('/' , function (req, res) {
     
     var data ={
-        name:'Medaloha API Running Fast1234'
+        name:'Medaloha API Running Fast12345'
     }
     res.end(JSON.stringify(data)); 
 });
