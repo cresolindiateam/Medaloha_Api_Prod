@@ -43,7 +43,7 @@ router.post('/updatespecialistStatus', async (req, res) =>
      const count = results[0].count;
      if(count > 0) 
      {
-      const timestamp = Date.now();
+      var timestamp = Date.now();
        var sql1 = "update specialist_active set status = "+isOnline+",last_login_time  = "+timestamp+"  where specialist_id="+specilistID;
         pool.query(sql1, async function (err1, result1, fields) 
         {
@@ -108,9 +108,12 @@ router.post('/updateuserStatus', async (req, res) =>
      if(count > 0) 
      {
 
-      const timestamp = Date.now()+10;
+      var timestamp = Date.now()+10;
       
-       var sql1 = "update user_active set status = "+isOnline+", last_login_time = "+timestamp+"  where user_id="+userId;
+       var sql1 = "UPDATE user_active SET status = "+parseInt(isOnline)+", last_login_time = "+parseInt(timestamp)+"  where user_id = "+parseInt(userId);
+     
+
+
         pool.query(sql1, async function (err1, result1, fields) 
         {
             if(err1)
