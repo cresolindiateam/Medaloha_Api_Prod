@@ -25,7 +25,7 @@ const cors = require('cors'); // db connection file
 router.post('/updatespecialistStatus', async (req, res) =>
  {
     const {isOnline,specialistId } = req.body;
-    const checkSql = `SELECT COUNT(*) as count FROM specialist_active WHERE id = ${specialistId}`;
+    const checkSql = `SELECT COUNT(*) as count FROM specialist_active WHERE specialist_id = ${specialistId}`;
   
   pool.query(checkSql, async function (err, results) 
   {
@@ -89,7 +89,7 @@ router.post('/updatespecialistStatus', async (req, res) =>
 router.post('/updateuserStatus', async (req, res) =>
  {
     const {isOnline,userId } = req.body;
-    const checkSql = `SELECT COUNT(*) as count FROM user_active WHERE id = ${userId}`;
+    const checkSql = `SELECT COUNT(*) as count FROM user_active WHERE user_id = ${userId}`;
   
   pool.query(checkSql, async function (err, results) 
   {
