@@ -81,7 +81,7 @@ router.post('/updatespecialistStatus', async (req, res) =>
     }
 
  });
-}  
+});  
  
 
 router.post('/updateuserStatus', async (req, res) =>
@@ -143,8 +143,7 @@ router.post('/updateuserStatus', async (req, res) =>
     }
 
  });
-}  
-
+});  
 
 
 router.get('/GetAllCountry', async function (req, res) { 
