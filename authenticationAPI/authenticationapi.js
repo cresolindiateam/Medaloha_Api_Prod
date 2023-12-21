@@ -22,6 +22,130 @@ const cors = require('cors'); // db connection file
       res.end(JSON.stringify(data)); 
       }); 
 
+router.post('/updatespecialistStatus', async (req, res) =>
+ {
+    const {isOnline,specialistId } = req.body;
+    const checkSql = `SELECT COUNT(*) as count FROM specialist_active WHERE id = ${specialistId}`;
+  
+  pool.query(checkSql, async function (err, results) 
+  {
+    if (err) 
+    {
+      const data = 
+      {
+        Status: false,
+        Message: 'Error checking specialist existence.',
+        Error: err
+      };
+      return res.status(500).send(data);
+    }
+
+     const count = results[0].count;
+     if(count > 0) 
+     {
+       var sql1 = "update specialist_active set status = "+isOnline+"  where specialist_id="+specilistID;
+        pool.query(sql1, async function (err1, result1, fields) 
+        {
+            if(err1)
+            { 
+               var data = 
+               {
+                   Status: false, 
+                   Message: 'Something wroing in query.',
+                   Error:err1
+               }; 
+                res.end(JSON.stringify(data));
+                return false;
+               } 
+
+         return res.status(200).send('Status updated successfully');
+       });
+    }
+    else
+     {
+      const insertSql = `INSERT INTO specialist_active (specialist_id, status) VALUES (${specialistId}, 1)`;
+      
+      pool.query(insertSql, function (err2, result2)
+       {
+        if (err2) {
+          const data = {
+            Status: false,
+            Message: 'Error inserting new specialist record.',
+            Error: err2
+          };
+          return res.status(500).send(data);
+        }
+        return res.status(200).send('New record inserted successfully');
+      });
+
+    }
+
+ });
+}  
+
+
+router.post('/updateuserStatus', async (req, res) =>
+ {
+    const {isOnline,userId } = req.body;
+    const checkSql = `SELECT COUNT(*) as count FROM user_active WHERE id = ${userId}`;
+  
+  pool.query(checkSql, async function (err, results) 
+  {
+    if (err) 
+    {
+      const data = 
+      {
+        Status: false,
+        Message: 'Error checking user existence.',
+        Error: err
+      };
+      return res.status(500).send(data);
+    }
+
+     const count = results[0].count;
+     if(count > 0) 
+     {
+       var sql1 = "update user_active set status = "+isOnline+"  where user_id="+userId;
+        pool.query(sql1, async function (err1, result1, fields) 
+        {
+            if(err1)
+            { 
+               var data = 
+               {
+                   Status: false, 
+                   Message: 'Something wroing in query.',
+                   Error:err1
+               }; 
+                res.end(JSON.stringify(data));
+                return false;
+               } 
+
+         return res.status(200).send('Status updated successfully');
+       });
+    }
+    else
+     {
+      const insertSql = `INSERT INTO user_active (user_id, status) VALUES (${userId}, 1)`;
+      
+      pool.query(insertSql, function (err2, result2)
+       {
+        if (err2) {
+          const data = {
+            Status: false,
+            Message: 'Error inserting new user record.',
+            Error: err2
+          };
+          return res.status(500).send(data);
+        }
+        return res.status(200).send('New record inserted successfully');
+      });
+
+    }
+
+ });
+}  
+
+
 
 router.get('/GetAllCountry', async function (req, res) { 
      var  apiName  = 'GetAllCountry';  
