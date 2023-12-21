@@ -43,7 +43,8 @@ router.post('/updatespecialistStatus', async (req, res) =>
      const count = results[0].count;
      if(count > 0) 
      {
-       var sql1 = "update specialist_active set status = "+isOnline+"  where specialist_id="+specilistID;
+      const timestamp = Date.now();
+       var sql1 = "update specialist_active set status = "+isOnline+",last_login_time  = "+timestamp+"  where specialist_id="+specilistID;
         pool.query(sql1, async function (err1, result1, fields) 
         {
             if(err1)
@@ -63,7 +64,8 @@ router.post('/updatespecialistStatus', async (req, res) =>
     }
     else
      {
-      const insertSql = `INSERT INTO specialist_active (specialist_id, status) VALUES (${specialistId}, 1)`;
+      const timestamp = Date.now();
+      const insertSql = `INSERT INTO specialist_active (specialist_id, status,last_login_time) VALUES (${specialistId}, 1,${timestamp})`;
       
       pool.query(insertSql, function (err2, result2)
        {
@@ -105,7 +107,10 @@ router.post('/updateuserStatus', async (req, res) =>
      const count = results[0].count;
      if(count > 0) 
      {
-       var sql1 = "update user_active set status = "+isOnline+"  where user_id="+userId;
+
+      const timestamp = Date.now()+10;
+      
+       var sql1 = "update user_active set status = "+isOnline+", last_login_time = "+timestamp+"  where user_id="+userId;
         pool.query(sql1, async function (err1, result1, fields) 
         {
             if(err1)
@@ -125,7 +130,8 @@ router.post('/updateuserStatus', async (req, res) =>
     }
     else
      {
-      const insertSql = `INSERT INTO user_active (user_id, status) VALUES (${userId}, 1)`;
+       const timestamp = Date.now()+10;
+      const insertSql = `INSERT INTO user_active (user_id, status,last_login_time) VALUES (${userId}, 1,${timestamp})`;
       
       pool.query(insertSql, function (err2, result2)
        {
