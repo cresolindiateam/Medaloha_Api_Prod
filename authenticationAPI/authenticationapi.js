@@ -82,7 +82,7 @@ router.post('/updatespecialistStatus', async (req, res) =>
 
  });
 }  
-
+ 
 
 router.post('/updateuserStatus', async (req, res) =>
  {
