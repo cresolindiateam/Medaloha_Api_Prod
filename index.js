@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 
 // Enable CORS for specific origins
-const corsOptions = {
-  origin: 'https://medaloha.cresol.in',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-};
+// const corsOptions = {
+//   origin: 'https://medaloha.cresol.in',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+// };
 
 
 var multer = require('multer');
@@ -46,11 +46,11 @@ app.use(express.urlencoded({ extended: true }));
 //app.use(express.static('public')); 
 
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
   
 app.get('/token', (req, res) => {
