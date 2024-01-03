@@ -26,7 +26,7 @@ const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
 const twilioApiKeySID = process.env.TWILIO_API_KEY;
 const twilioApiKeySecret = process.env.TWILIO_API_SECRET;
 //const token = 'bfb10823f929563481faa69289310ef9' //'1f69bbb55b84f38d16ceda3fb7305e30'; //'3dc90b3bfcfcbbca34d75841f8548a20';
-const token = 'a06bc0fb5cad27191efaaa8c171682e6';
+const token = 'faddd5eedf9ecc7ce93e353eb4adb5dc';
 const client = require('twilio')(twilioAccountSid, token);
 // client.video.recordings
 //             .list({

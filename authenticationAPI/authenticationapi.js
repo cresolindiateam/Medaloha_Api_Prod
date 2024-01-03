@@ -22,6 +22,50 @@ const cors = require('cors'); // db connection file
       res.end(JSON.stringify(data)); 
       }); 
 
+router.get('/getspecialistStatus', async (req, res) =>
+ {
+    const {specialistId} = req.query;
+    const checkSql = `SELECT last_login_time FROM specialist_active WHERE specialist_id = ${specialistId}`;
+    pool.query(checkSql, async function (err, results) 
+    {
+      if (err) 
+      {
+        const data = 
+        {
+          Status: false,
+          Message: 'Error checking specialist existence.',
+          Error: err
+        };
+        
+        res.end(JSON.stringify(data));
+        return false; 
+      }
+       // return   res.status(200).send(results[0].last_login_time);
+
+   if (results && results.length > 0 && results[0].last_login_time !== undefined) 
+   {
+
+            //return res.status(200).send(results[0].last_login_time);
+              res.end(JSON.stringify(results[0].last_login_time));
+        
+
+        } else {
+            const data = {
+                Status: false,
+                Message: 'Specialist not found or last_login_time is undefined.',
+                Results: results // This can help you debug and see what's returned
+            };
+
+            res.end(JSON.stringify(data));
+        return false; 
+            // return res.status(404).send(data);
+        }
+
+
+
+    });
+});
+
 router.post('/updatespecialistStatus', async (req, res) =>
  {
     const {isOnline,specialistId } = req.body;
@@ -154,6 +198,42 @@ router.post('/updateuserStatus', async (req, res) =>
  });
 });  
 
+
+router.get('/getuserStatus', async (req, res) =>
+ {
+    const {userId} = req.query;
+    const checkSql = `SELECT last_login_time FROM user_active WHERE user_id = ${userId}`;
+    pool.query(checkSql, async function (err, results) 
+    {
+      if (err) 
+      {
+        const data = 
+        {
+          Status: false,
+          Message: 'Error checking user existence.',
+          Error: err
+        };
+        // return res.status(500).send(data);
+         res.end(JSON.stringify(data));
+            return false;
+      }
+          if (results && results.length > 0 && results[0].last_login_time !== undefined) {
+            //return res.status(200).send(results[0].last_login_time);
+
+             res.end(JSON.stringify(results[0].last_login_time));
+        } else {
+            const data = {
+                Status: false,
+                Message: 'Specialist not found or last_login_time is undefined.',
+                Results: results // This can help you debug and see what's returned
+            };
+             res.end(JSON.stringify(data));
+            return false;
+
+
+        }
+    });
+});
 
 router.get('/GetAllCountry', async function (req, res) { 
      var  apiName  = 'GetAllCountry';  
@@ -593,22 +673,21 @@ router.get('/Specilistconfirmation', async function (req, res) {
 
 
  
-router.post('/ClientLogin', async function (req, res) { 
+router.post('/ClientLogin', async function (req, res) 
+{ 
   var  apiName  = 'ClientLogin'; 
- 
   var email = req.body.email; 
   var password = req.body.password;
   
-    if(email==""){
+    if(email=="")
+    {
       var data = {
           Status: false, 
           Message: 'email is not blank.'
       };
-
       res.end(JSON.stringify(data));
       var logStatus = 0;
-     //globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
-     return false;
+       return false;
    }  
 
    if(password==""){
@@ -631,12 +710,9 @@ router.post('/ClientLogin', async function (req, res) {
   var sql2 = "SELECT users.id , users.first_name, users.last_name , users.status, countries.country_code ,users.mobile, users.user_image  , users.timezone from users join countries on (countries.id=users.country_id) where users.email='"+email+"' and users.password =md5('"+password+"')";
  } 
 
- console.log(sql2);
-
      pool.query(sql2, async function (err2, result2, fields) {
          if(err2)
          { 
-           console.log(err2); 
           var data = {
               Status: false, 
               Message: 'Something wroing in query.',
@@ -649,7 +725,8 @@ router.post('/ClientLogin', async function (req, res) {
           }
         var myJSON2 = JSON.stringify(result2);
         var memberArray2 = JSON.parse(myJSON2); 
-        if(memberArray2.length){ 
+        if(memberArray2.length)
+        { 
           var user_id = memberArray2[0]['id'];  
           var status = memberArray2[0]['status'];  
           console.log('status'); console.log(status);
@@ -662,10 +739,10 @@ router.post('/ClientLogin', async function (req, res) {
              var logStatus = 0;
            //  globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
             return false; 
-          } else {
-
+          } 
+          else 
+          {
             var LoginName = memberArray2[0]['first_name']+' '+memberArray2[0]['last_name'];
-            
             var profileImage = null;
             if(memberArray2[0]['user_image']!=null)
             profileImage = process.env.APIURL+"/public/uploads/profile/"+memberArray2[0]['user_image']
@@ -678,7 +755,7 @@ router.post('/ClientLogin', async function (req, res) {
               Mobile:memberArray2[0]['mobile'],
               UserImage:profileImage,
                 Timezone : memberArray2[0]['timezone']
-          };   
+              };   
           var logStatus = 1;
          // globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
           res.end(JSON.stringify(data));  
@@ -690,7 +767,7 @@ router.post('/ClientLogin', async function (req, res) {
 
          var data = {
                 Status: false, 
-                Message: 'password not matched.'
+                Message: 'incorrect credentials'
             };
             res.end(JSON.stringify(data));
             var logStatus = 0;
@@ -756,7 +833,8 @@ router.post('/SpecialistLogin', async function (req, res) {
           }
         var myJSON2 = JSON.stringify(result2);
         var memberArray2 = JSON.parse(myJSON2); 
-        if(memberArray2.length && (memberArray2[0]['status']==2 || memberArray2[0]['status']==4|| memberArray2[0]['status']==6)){ 
+        if(memberArray2.length && (memberArray2[0]['status'] == 2 || memberArray2[0]['status'] == 4 || memberArray2[0]['status'] == 6))
+        { 
           var user_id = memberArray2[0]['id'];  
           var LoginName = memberArray2[0]['first_name']+' '+memberArray2[0]['last_name'];  
 
@@ -781,7 +859,8 @@ router.post('/SpecialistLogin', async function (req, res) {
        // globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
         res.end(JSON.stringify(data));   
         }
-        else if (memberArray2[0]['status']==0){
+        elseif(memberArray2[0]['status'] == 0)
+        {
 
           var data = {
             Status: false, 
@@ -792,7 +871,9 @@ router.post('/SpecialistLogin', async function (req, res) {
     //  globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
        return false;
 
-      } else if (memberArray2[0]['status']==3){ 
+      } 
+      elseif(memberArray2[0]['status'] == 3)
+      { 
           var data = {
             Status: false, 
             Message: 'Your account canceled.'
@@ -802,10 +883,12 @@ router.post('/SpecialistLogin', async function (req, res) {
      //  globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
        return false;
 
-        } else {
+        } 
+
+        else {
               var data = {
                 Status: false, 
-                Message: 'password not matched.'
+                Message: 'incorrect credentials.'
             };
             res.end(JSON.stringify(data));
             var logStatus = 0;
@@ -822,18 +905,34 @@ router.get('/TwilioApi', async function(req,res) {
   var media = req.query.media;
   console.log(media);
 
+
   console.log('TwilioStart'); 
 
-  const response = await axios.get('https://mcs.us1.twilio.com/v1/Services/ISeb3282b10b4643fe86e33e4716b51ddb/Media/'+media, {
+//   const response = await axios.get('https://mcs.us1.twilio.com/v1/Services/ISeb3282b10b4643fe86e33e4716b51ddb/Media/'+media, {
+// // Axios looks for the `auth` option, and, if it is set, formats a
+// // basic auth header for you automatically.
+//   headers:{"Access-Control-Allow-Headers":true},
+// auth: {
+//   username: 'SKfc0d17524e8aebffa47f907fcd968cf2',
+//   password: 'B5DhpBRuMLOoC6nAnmO5aKNXuyCv262w'
+// }
+
+  const response = await axios.get('https://mcs.us1.twilio.com/v1/Services/IS226d862ac25c422da1e2e6f3b830f8ee/Media/'+media, {
 // Axios looks for the `auth` option, and, if it is set, formats a
 // basic auth header for you automatically.
   headers:{"Access-Control-Allow-Headers":true},
 auth: {
-  username: 'SKfc0d17524e8aebffa47f907fcd968cf2',
-  password: 'B5DhpBRuMLOoC6nAnmO5aKNXuyCv262w'
+  username: 'SK8d7d9ccd71bc799e09458cc5239d390d',
+  password: 'uUGYvZPzhwu6yLAkBusJBK1e9IGPtkmW'
 }
 
+//IS226d862ac25c422da1e2e6f3b830f8ee
+
 });
+
+
+
+
 console.log(response.data); 
 res.send(response.data);
 
