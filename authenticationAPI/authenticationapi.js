@@ -834,8 +834,8 @@ router.post('/SpecialistLogin', async function (req, res) {
         var myJSON2 = JSON.stringify(result2);
         var memberArray2 = JSON.parse(myJSON2);
         console.log("specialistlogin"); 
-        console.log(memberArray2[0]['status']);
-        if(memberArray2.length && (memberArray2[0]['status'] == 2 || memberArray2[0]['status'] == 4 || memberArray2[0]['status'] == 6))
+       
+        if(memberArray2.length && (memberArray2[0] !== undefined && memberArray2[0]['status'] == 2 || memberArray2[0]['status'] == 4 || memberArray2[0]['status'] == 6))
         { 
           var user_id = memberArray2[0]['id'];  
           var LoginName = memberArray2[0]['first_name']+' '+memberArray2[0]['last_name'];  
@@ -861,7 +861,7 @@ router.post('/SpecialistLogin', async function (req, res) {
        // globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
         res.end(JSON.stringify(data));   
         }
-        else if(memberArray2[0]['status'] == 0)
+        else if(memberArray2[0] !== undefined && memberArray2[0]['status'] == 0)
         {
 
           var data = {
@@ -874,7 +874,7 @@ router.post('/SpecialistLogin', async function (req, res) {
        return false;
 
       } 
-      else if(memberArray2[0]['status'] == 3)
+      else if(memberArray2[0] !== undefined && memberArray2[0]['status'] == 3)
       { 
           var data = {
             Status: false, 
