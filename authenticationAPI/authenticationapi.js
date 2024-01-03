@@ -832,7 +832,9 @@ router.post('/SpecialistLogin', async function (req, res) {
            return false;
           }
         var myJSON2 = JSON.stringify(result2);
-        var memberArray2 = JSON.parse(myJSON2); 
+        var memberArray2 = JSON.parse(myJSON2);
+        console.log("specialistlogin"); 
+        console.log(memberArray2[0]['status']);
         if(memberArray2.length && (memberArray2[0]['status'] == 2 || memberArray2[0]['status'] == 4 || memberArray2[0]['status'] == 6))
         { 
           var user_id = memberArray2[0]['id'];  
