@@ -859,7 +859,7 @@ router.post('/SpecialistLogin', async function (req, res) {
        // globalVar.data.dbLogs(req,data,logStatus,apiName,res); // DB Logs function 
         res.end(JSON.stringify(data));   
         }
-        elseif(memberArray2[0]['status'] == 0)
+        else if(memberArray2[0]['status'] == 0)
         {
 
           var data = {
@@ -872,7 +872,7 @@ router.post('/SpecialistLogin', async function (req, res) {
        return false;
 
       } 
-      elseif(memberArray2[0]['status'] == 3)
+      else if(memberArray2[0]['status'] == 3)
       { 
           var data = {
             Status: false, 
