@@ -239,9 +239,12 @@ router.get('/getuserStatus', async (req, res) =>
 router.post('/forgot-password', (req, res) => {
   const { email } = req.body;
   const token = crypto.randomBytes(20).toString('hex');
+
+
+
    var transporter = nodemailer.createTransport({
           service: 'gmail',
-          secure: false,
+        
           auth: {
             user: 'cresoluser@gmail.com', // here use your real email
             pass: 'gbhrsgnkuxevramp' // put your password correctly (not in this question please) // put your password correctly (not in this question please)
@@ -259,13 +262,124 @@ router.post('/forgot-password', (req, res) => {
         transporter.sendMail(mailOptions, function(error, info){
           if (error) {
             console.log(error);
-            res.status(500).send('Failed to send email.');
+          //  res.status(500).send('Failed to send email.');
           } else {
             console.log('Email sent: ' + info.response); 
-             res.status(200).send('Password reset email sent.');
+            // res.status(200).send('Password reset email sent.');
           }
-});
+            });
 
+              var sql2 = "update users set reset_token = '"+token+"'  where email='"+email+"'";
+                   console.log(sql2);
+                    pool.query(sql2, async function (err2, result2, fields) {
+                        if(err2)
+                        { 
+                          console.log(err2); 
+                         var data = {
+                             Status: false, 
+                             Message: 'Failed to send email.',
+                             Error:err2
+                         }; 
+                        
+                          res.end(JSON.stringify(data));
+                          return false;
+                         } 
+                     
+                         var data = {
+                           Status: true, 
+                           Message:'Password reset email sent' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data));  
+                     });  
+
+
+              var sql21 = "update specialist_private set reset_token = '"+token+"'  where email='"+email+"'";
+           console.log(sql21);
+            pool.query(sql21, async function (err21, result21, fields) {
+                if(err21)
+                { 
+                  console.log(err21); 
+                 var data = {
+                     Status: false, 
+                     Message: 'Failed to send email.',
+                     Error:err21
+                 }; 
+                
+                  res.end(JSON.stringify(data));
+                  return false;
+                 } 
+             
+                 var data = {
+                   Status: true, 
+                   Message:'Password reset email sent' 
+               };   
+               var logStatus = 1;
+               res.end(JSON.stringify(data));  
+             });  
+
+
+
+      }); 
+
+
+
+router.post('/reset-password', (req, res) => {
+  const { token,password } = req.body;
+ 
+
+              var sql2 = "update users set password=md5('"+password+"'), reset_token = ''  where reset_token='"+token+"'";
+                   console.log(sql2);
+                    pool.query(sql2, async function (err2, result2, fields) {
+                        if(err2)
+                        { 
+                          console.log(err2); 
+                         var data = {
+                             Status: false, 
+                             Message: 'Failed to update password.',
+                             Error:err2
+                         }; 
+                        
+                          res.end(JSON.stringify(data));
+                          return false;
+                         } 
+                     
+                         var data = {
+                           Status: true, 
+                           Message:'Password reset Update successfully' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data));  
+                     });  
+
+
+           var sql21 = "update specialist_private set password=md5('"+password+"'), reset_token = ''  where reset_token='"+token+"'";
+               console.log(sql21);
+            pool.query(sql21, async function (err21, result21, fields) {
+                if(err21)
+                { 
+                  console.log(err21); 
+                 var data = {
+                     Status: false, 
+                     Message: 'Failed to update passowrd.',
+                     Error:err21
+                 }; 
+                
+                  res.end(JSON.stringify(data));
+                  return false;
+                 } 
+             
+                 var data = {
+                   Status: true, 
+                   Message:'Password reset successfully' 
+               };   
+               var logStatus = 1;
+               res.end(JSON.stringify(data));  
+             });  
+
+
+
+      });
 
 router.get('/GetAllCountry', async function (req, res) { 
      var  apiName  = 'GetAllCountry';  
