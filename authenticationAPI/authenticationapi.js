@@ -252,7 +252,7 @@ router.post('/forgot-password', (req, res) => {
           from: 'cresoluser@gmail.com',
           to: email,
           subject: 'Password Reset Request',
-          text: 'Click on the link to reset your password:'+window.location.href+`/${token}`,
+          text: 'Click on the link to reset your password:'+process.env.WEBURL+`/${token}`,
 
         };
 
