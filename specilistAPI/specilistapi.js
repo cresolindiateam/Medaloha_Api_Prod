@@ -245,7 +245,7 @@ router.post('/SpecialistBooking', async function (req, res) {
   var  apiName  = 'SpecialistBooking';   
   var user_id = req.body.user_id;
   var specialist_id = req.body.specialist_id;
-  var session_date = req.body.session_date; 
+   var session_date = req.body.session_date; 
   var price = req.body.price;  
   var payment_stripe_id = req.body.payment_stripe_id;  
   var legend_id = req.body.legend_id; 
@@ -257,11 +257,23 @@ router.post('/SpecialistBooking', async function (req, res) {
   var clientSecretPaymentIndentId = req.body.clientSecretPaymentIndentId;  
   
   var event_id = req.body.event_id;  
-  var session_date = await globalVar.data.GetEventDatebyID(event_id); 
+var session_date='';
+if(legend_id==1 || legend_id==2 || legend_id==3)
+{
+ session_date = ''; 
+
+
+}
+else{
+
+   var session_date = await globalVar.data.GetEventDatebyID(event_id); 
   session_date = moment(session_date).format('YYYY-MM-DD HH:mm:ss');
  // session_date =  moment.utc(moment(session_date)).format(); //moment.utc(session_date).format();  // moment(session_date).format('YYYY-MM-DD HH:mm:ss');
-  
-  
+  }
+ 
+      
+
+
   await globalVar.data.UpdateEventBookedbyID(event_id , 2); // booked 
     
   var sql3 = "insert into booking_histories (payment_intent_id,user_id, specialist_id,session_date,booking_price,payment_stripe_id,legend_id,booking_date,craeted_at,specialist_query,twilio_chat_id1,twilio_chat_id2,card_type,last4) value ('"+clientSecretPaymentIndentId+"' , '"+user_id+"','"+specialist_id+"','"+session_date+"','"+price+"','"+payment_stripe_id+"','"+legend_id+"',now(),now(),'"+message_description+"','user1_"+payment_stripe_id+"','user2_"+payment_stripe_id+"' ,'"+brand+"','"+last4+"')";

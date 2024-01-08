@@ -235,6 +235,38 @@ router.get('/getuserStatus', async (req, res) =>
     });
 });
 
+
+router.post('/forgot-password', (req, res) => {
+  const { email } = req.body;
+  const token = crypto.randomBytes(20).toString('hex');
+   var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          secure: false,
+          auth: {
+            user: 'cresoluser@gmail.com', // here use your real email
+            pass: 'gbhrsgnkuxevramp' // put your password correctly (not in this question please) // put your password correctly (not in this question please)
+          }
+        }); 
+
+        var mailOptions = {
+          from: 'cresoluser@gmail.com',
+          to: email,
+          subject: 'Password Reset Request',
+          text: 'Click on the link to reset your password:'+window.location.href+`/${token}`,
+
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+            console.log(error);
+            res.status(500).send('Failed to send email.');
+          } else {
+            console.log('Email sent: ' + info.response); 
+             res.status(200).send('Password reset email sent.');
+          }
+});
+
+
 router.get('/GetAllCountry', async function (req, res) { 
      var  apiName  = 'GetAllCountry';  
 
