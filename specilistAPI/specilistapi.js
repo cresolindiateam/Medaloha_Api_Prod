@@ -1327,9 +1327,25 @@ router.post('/NoteForClients' , function (req, res, next) {
   
     var specialist_id =   req.body['specialist_id'];
     var public_intro_id = req.body['public_intro_id'];
-    var message ='';
-    var messsagepart  = '';
+    var message =req.body['messsage'];
+    var messsagepart  =   req.body['messsagepart'];
+    var messsagefull  =   req.body['messagefull'];
     var aboutme =  req.body['aboutme'];
+
+    var vivo =req.body['vivo'];
+    var vivopart  =   req.body['vivopart'];
+    var vivofull  =   req.body['vivofull'];
+
+    var video =req.body['video'];
+    var videopart  =   req.body['videopart'];
+    var videofull  =   req.body['videofull'];
+
+    var audio =req.body['audio'];
+    var audiopart  =   req.body['audiopart'];
+    var audiofull  =   req.body['audiofull'];
+    
+
+
     var holisticexperience = req.body['holisticexperience'];    
     var education =  req.body['education'];  
     var workexperience = req.body['workexperience'];    
@@ -1356,7 +1372,7 @@ router.post('/NoteForClients' , function (req, res, next) {
     
     if(public_intro_id==0){ 
       
-    var sql2 = "insert into specialist_public_intros ( specialist_id,language_id,consultation_description_message, consultation_description_message_part , about_me, holistic_expertise,education ,work_experience_detail  , presentation_video_url1 ,presentation_video_url2 , available_languages, other_contribution, mission , comments) values ('"+specialist_id+"','"+language_id+"','"+message+"', '"+messsagepart+"','"+aboutme+"','"+holisticexperience+"', '"+education+"','"+workexperience+"','"+videourl1+"','"+videourl2+"','"+languagedetails+"','"+othercontribution+"','"+mission+"','"+comment+"') ";
+    var sql2 = "insert into specialist_public_intros ( specialist_id,language_id,consultation_description_message, consultation_description_message_part ,consultation_description_message_full,consultation_description_vivo, consultation_description_vivo_part ,consultation_description_vivo_full,       consultation_description_audio, consultation_description_audio_part ,consultation_description_audio_full,     consultation_description_video, consultation_description_video_part ,consultation_description_video_full,   about_me, holistic_expertise,education ,work_experience_detail  , presentation_video_url1 ,presentation_video_url2 , available_languages, other_contribution, mission , comments) values ('"+specialist_id+"','"+language_id+"','"+message+"', '"+messsagepart+"','"+messsagefull+"','"+vivo+"', '"+vivopart+"','"+vivofull+"','"+audio+"', '"+audiopart+"','"+audiofull+"','"+video+"', '"+videopart+"','"+videofull+"','"+aboutme+"','"+holisticexperience+"', '"+education+"','"+workexperience+"','"+videourl1+"','"+videourl2+"','"+languagedetails+"','"+othercontribution+"','"+mission+"','"+comment+"') ";
     pool.query(sql2, async function (err2, result2, fields) {
       if(err2)
       { 
@@ -1475,7 +1491,7 @@ if(deletedone){
 }
       
        
-    var sql2 = "update specialist_public_intros set consultation_description_message='"+message+"' , consultation_description_message_part ='"+messsagepart+"', about_me='"+aboutme+"', holistic_expertise='"+holisticexperience+"',education= '"+education+"' ,work_experience_detail ='"+workexperience+"' , presentation_video_url1='"+videourl1+"' ,presentation_video_url2='"+videourl2+"' , available_languages='"+languagedetails+"', other_contribution='"+othercontribution+"', mission='"+mission+"' , comments='"+comment+"' where id="+public_intro_id;
+    var sql2 = "update specialist_public_intros set     consultation_description_video='"+video+"' ,consultation_description_video_part='"+videopart+"' ,consultation_description_video_full='"+videofull+"',  consultation_description_audio='"+audio+"' ,consultation_description_audio_part='"+audiopart+"' ,consultation_description_audio_full='"+audiofull+"',consultation_description_vivo='"+vivo+"' ,consultation_description_vivo_part='"+vivopart+"' ,consultation_description_vivo_full='"+vivofull+"' ,consultation_description_message='"+message+"' ,consultation_description_message_full ='"+messsagefull+"', consultation_description_message_part ='"+messsagepart+"', about_me='"+aboutme+"', holistic_expertise='"+holisticexperience+"',education= '"+education+"' ,work_experience_detail ='"+workexperience+"' , presentation_video_url1='"+videourl1+"' ,presentation_video_url2='"+videourl2+"' , available_languages='"+languagedetails+"', other_contribution='"+othercontribution+"', mission='"+mission+"' , comments='"+comment+"' where id="+public_intro_id;
     console.log(sql2);
     pool.query(sql2, async function (err2, result2, fields) {
         if(err2)
@@ -2668,7 +2684,7 @@ router.get('/GetFeaturedSpecialistFullDetails',async function (req, res) {
   var language_id = await globalVar.data.getLanguageIdByCode(language_code);
 
 //  var sql2 = "SELECT specialist_private.healthcare_university_degree , specialist_private.id as specialist_private_id,specialist_public_intros.id as intro_id,specialist_public_intros.your_title ,specialist_public_intros.your_studies,  specialist_public_intros.profile_photo, specialist_public_intros.working_time, specialist_private.first_name ,specialist_private.last_name , countries.country_name, cities.city_name , specialist_public_intros.work_experience , specialist_public_intros.activity_image1, specialist_public_intros.activity_image2, specialist_public_intros.activity_image3, specialist_public_intros.activity_image4 , specialist_public_intros.consultation_description_message , specialist_public_intros.consultation_description_message_part , specialist_public_intros.about_me,  specialist_public_intros.holistic_expertise , specialist_public_intros.education , specialist_public_intros.work_experience_detail ,specialist_public_intros.presentation_video_url1,specialist_public_intros.presentation_video_url2,specialist_public_intros.available_languages,specialist_public_intros.other_contribution,specialist_public_intros.comments,specialist_public_intros.mission ,specialist_public_intros.holistic_center,specialist_public_intros.holistic_location  FROM `specialist_public_intros`   LEFT JOIN specialist_private  on (specialist_public_intros.specialist_id=specialist_private.id) LEFT JOIN countries ON (countries.id=specialist_public_intros.country_id) LEFT JOIN cities  ON (cities.id=specialist_public_intros.city_id)  where specialist_public_intros.language_id='"+language_id+"' and specialist_private.id='"+specialist_id+"'";
-  var sql2 = "SELECT  specialist_private.timezone ,specialist_private.utc_offset_string ,specialist_public_intros.working_time, specialist_private.healthcare_university_degree , specialist_private.id as specialist_private_id,specialist_public_intros.id as intro_id,specialist_public_intros.your_title ,specialist_public_intros.your_studies,  specialist_public_intros.profile_photo, specialist_public_intros.working_time, specialist_private.first_name ,specialist_private.last_name , countries.country_name, cities.city_name , specialist_public_intros.work_experience , specialist_public_intros.activity_image1, specialist_public_intros.activity_image2, specialist_public_intros.activity_image3, specialist_public_intros.activity_image4 , specialist_public_intros.consultation_description_message , specialist_public_intros.consultation_description_message_part , specialist_public_intros.about_me,  specialist_public_intros.holistic_expertise , specialist_public_intros.education , specialist_public_intros.work_experience_detail ,specialist_public_intros.presentation_video_url1,specialist_public_intros.presentation_video_url2,specialist_public_intros.available_languages,specialist_public_intros.other_contribution,specialist_public_intros.comments,specialist_public_intros.mission ,specialist_public_intros.holistic_center,specialist_public_intros.holistic_location  FROM `specialist_public_intros` LEFT JOIN specialist_private  on (specialist_public_intros.specialist_id=specialist_private.id) LEFT JOIN countries ON (countries.id=specialist_public_intros.country_id) LEFT JOIN cities  ON (cities.id=specialist_public_intros.city_id)   where specialist_public_intros.language_id='"+language_id+"' and specialist_private.id='"+specialist_id+"'";
+  var sql2 = "SELECT  specialist_private.timezone ,specialist_private.utc_offset_string ,specialist_public_intros.working_time, specialist_private.healthcare_university_degree , specialist_private.id as specialist_private_id,specialist_public_intros.id as intro_id,specialist_public_intros.your_title ,specialist_public_intros.your_studies,  specialist_public_intros.profile_photo, specialist_public_intros.working_time, specialist_private.first_name ,specialist_private.last_name , countries.country_name, cities.city_name , specialist_public_intros.work_experience , specialist_public_intros.activity_image1, specialist_public_intros.activity_image2, specialist_public_intros.activity_image3, specialist_public_intros.activity_image4 , specialist_public_intros.consultation_description_message , specialist_public_intros.consultation_description_message_part,specialist_public_intros.consultation_description_message_full ,            specialist_public_intros.consultation_description_vivo , specialist_public_intros.consultation_description_vivo_part,specialist_public_intros.consultation_description_vivo_full ,        specialist_public_intros.consultation_description_audio , specialist_public_intros.consultation_description_audio_part,specialist_public_intros.consultation_description_audio_full,     specialist_public_intros.consultation_description_video , specialist_public_intros.consultation_description_video_part,specialist_public_intros.consultation_description_video_full,   specialist_public_intros.about_me,  specialist_public_intros.holistic_expertise , specialist_public_intros.education , specialist_public_intros.work_experience_detail ,specialist_public_intros.presentation_video_url1,specialist_public_intros.presentation_video_url2,specialist_public_intros.available_languages,specialist_public_intros.other_contribution,specialist_public_intros.comments,specialist_public_intros.mission ,specialist_public_intros.holistic_center,specialist_public_intros.holistic_location  FROM `specialist_public_intros` LEFT JOIN specialist_private  on (specialist_public_intros.specialist_id=specialist_private.id) LEFT JOIN countries ON (countries.id=specialist_public_intros.country_id) LEFT JOIN cities  ON (cities.id=specialist_public_intros.city_id)   where specialist_public_intros.language_id='"+language_id+"' and specialist_private.id='"+specialist_id+"'";
   console.log(sql2);
   console.log(sql2);
   pool.query(sql2,  async function (err2, result2, fields) {
@@ -2748,6 +2764,18 @@ router.get('/GetFeaturedSpecialistFullDetails',async function (req, res) {
               SpecialistActivityImg4:SpecialistActivityImg4,
               SpecialistMessage:memberArray2[i].consultation_description_message,
               SpecialistMessagePart:memberArray2[i].consultation_description_message_part,
+              SpecialistMessageFull:memberArray2[i].consultation_description_message_full,
+              SpecialistVivo:memberArray2[i].consultation_description_vivo,
+              SpecialistVivoPart:memberArray2[i].consultation_description_vivo_part,
+              SpecialistVivoFull:memberArray2[i].consultation_description_vivo_full,
+              SpecialistAudio:memberArray2[i].consultation_description_audio,
+              SpecialistAudioPart:memberArray2[i].consultation_description_audio_part,
+              SpecialistAudioFull:memberArray2[i].consultation_description_audio_full,
+
+               SpecialistVideo:memberArray2[i].consultation_description_video,
+              SpecialistVideoPart:memberArray2[i].consultation_description_video_part,
+              SpecialistVideoFull:memberArray2[i].consultation_description_video_full,
+
               SpecialistAbout:memberArray2[i].about_me,
               SpecialistStudy:memberArray2[i].your_studies,
               SpecialistHolesticExp:memberArray2[i].holistic_expertise,
@@ -3140,7 +3168,7 @@ pool.query(sql2, function (err2, result, fields) {
       console.log(language_id);
       
 
-      var sql2 = "SELECT specialist_private.timezone,specialist_private.utc_offset_string, specialist_public_intros.language_id,specialist_public_intros.id,specialist_public_intros.holistic_center,specialist_public_intros.holistic_location,specialist_public_intros.working_time, specialist_public_intros.consultation_description_message, specialist_public_intros.consultation_description_message_part , specialist_public_intros.about_me, specialist_public_intros.holistic_expertise, specialist_public_intros.education, work_experience, work_experience_detail, specialist_public_intros.presentation_video_url1, specialist_public_intros.presentation_video_url2, specialist_public_intros.available_languages, specialist_public_intros.other_contribution, specialist_public_intros.mission, specialist_public_intros.comments ,specialist_private.country_id,specialist_private.city_id , countries.country_name , cities.city_name from  specialist_public_intros left join  specialist_private  on (specialist_private.id=specialist_public_intros.specialist_id)  left join countries on (specialist_private.country_id=countries.id) left join cities on (specialist_private.city_id=cities.id)    where   specialist_public_intros.language_id = '"+language_id+"' and specialist_public_intros.specialist_id="+specialist_id;
+      var sql2 = "SELECT specialist_private.timezone,specialist_private.utc_offset_string, specialist_public_intros.language_id,specialist_public_intros.id,specialist_public_intros.holistic_center,specialist_public_intros.holistic_location,specialist_public_intros.working_time, specialist_public_intros.consultation_description_message, specialist_public_intros.consultation_description_message_part,specialist_public_intros.consultation_description_message_full,specialist_public_intros.consultation_description_vivo, specialist_public_intros.consultation_description_vivo_part,specialist_public_intros.consultation_description_vivo_full ,  specialist_public_intros.consultation_description_audio, specialist_public_intros.consultation_description_audio_part,specialist_public_intros.consultation_description_audio_full,  specialist_public_intros.consultation_description_video, specialist_public_intros.consultation_description_video_part,specialist_public_intros.consultation_description_video_full, specialist_public_intros.about_me, specialist_public_intros.holistic_expertise, specialist_public_intros.education, work_experience, work_experience_detail, specialist_public_intros.presentation_video_url1, specialist_public_intros.presentation_video_url2, specialist_public_intros.available_languages, specialist_public_intros.other_contribution, specialist_public_intros.mission, specialist_public_intros.comments ,specialist_private.country_id,specialist_private.city_id , countries.country_name , cities.city_name from  specialist_public_intros left join  specialist_private  on (specialist_private.id=specialist_public_intros.specialist_id)  left join countries on (specialist_private.country_id=countries.id) left join cities on (specialist_private.city_id=cities.id)    where   specialist_public_intros.language_id = '"+language_id+"' and specialist_public_intros.specialist_id="+specialist_id;
       console.log(sql2);
       pool.query(sql2,   function (err2, result2, fields) {
            if(err2)
