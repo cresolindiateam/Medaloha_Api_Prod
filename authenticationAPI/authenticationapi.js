@@ -88,7 +88,7 @@ router.post('/updatespecialistStatus', async (req, res) =>
      if(count > 0) 
      {
       var timestamp = Date.now();
-       var sql1 = "update specialist_active set status = "+isOnline+",last_login_time  = "+timestamp+"  where specialist_id="+specilistID;
+       var sql1 = "update specialist_active set status = "+isOnline+",last_login_time  = "+timestamp+"  where specialist_id="+specialistId;
         pool.query(sql1, async function (err1, result1, fields) 
         {
             if(err1)

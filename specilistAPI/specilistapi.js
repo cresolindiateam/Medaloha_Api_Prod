@@ -408,7 +408,7 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
 
 
   res.send({
-    clientSecret: paymentIntent.client_secret,
+    clientSecret: paymentent.client_secret,
     paymentIntentId:paymentIntent.id
   }); 
   
@@ -431,7 +431,10 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
   } ]), async function (req, res, next) {
  
     console.log('req.body --->');
-    console.log(req.body);
+    
+    console.log("radhe");
+ 
+    console.log(req.body['deleteactivityimage2']);
  
     var specialist_id =   req.body['specialist_id'];
     var title = req.body['title'];
@@ -655,6 +658,7 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
            }  
        });  
     }
+  
 
 
     if(req.files['activityimage2']){ 
@@ -721,12 +725,103 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
       }
 
 
+    if(req.body['deleteactivityimage1']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image1=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+console.log('rade');
+console.log(req.body['deleteactivityimage2']);
+
+    if(req.body['deleteactivityimage2']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image2=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+   if(req.body['deleteactivityimage3']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+   if(req.body['deleteactivityimage4']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
 
 
        var data = {
          Status: true, 
-         Message:'Done',
-         PublicIntro_id : public_intro_id
+         Message:'Done 123',
+         PublicIntro_id : public_intro_id,
+         test:req.body['deleteactivityimage2']
         };    
 
       var logStatus = 1;
@@ -983,6 +1078,95 @@ pool.query(sql2, async function (err2, result2, fields) {
       }
 
 
+
+    if(req.body['deleteactivityimage1']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image1=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+console.log('rade');
+console.log(req.body['deleteactivityimage2']);
+
+    if(req.body['deleteactivityimage2']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image2=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+   if(req.body['deleteactivityimage3']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+   if(req.body['deleteactivityimage4']=='true')
+{
+      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
 
 
       var data = {
