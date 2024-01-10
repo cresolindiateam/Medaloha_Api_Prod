@@ -261,13 +261,39 @@ router.post('/forgot-password', (req, res) => {
 
         transporter.sendMail(mailOptions, function(error, info){
           if (error) {
-            console.log(error);
+         //   console.log(error);
           //  res.status(500).send('Failed to send email.');
+       
+
+ var data = {
+                           Status: true, 
+                           Message:'Password reset email sent' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+
+
+
+
+
           } else {
             console.log('Email sent: ' + info.response); 
             // res.status(200).send('Password reset email sent.');
+
+
+
+      var data = {
+                           Status: true, 
+                           Message:'Password reset email sent' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+
+
           }
             });
+
+
 
               var sql2 = "update users set reset_token = '"+token+"'  where email='"+email+"'";
                    console.log(sql2);
@@ -285,12 +311,12 @@ router.post('/forgot-password', (req, res) => {
                           return false;
                          } 
                      
-                         var data = {
-                           Status: true, 
-                           Message:'Password reset email sent' 
-                       };   
-                       var logStatus = 1;
-                       res.end(JSON.stringify(data));  
+                       //   var data = {
+                       //     Status: true, 
+                       //     Message:'Password reset email sent' 
+                       // };   
+                       // var logStatus = 1;
+                       // res.end(JSON.stringify(data));  
                      });  
 
 

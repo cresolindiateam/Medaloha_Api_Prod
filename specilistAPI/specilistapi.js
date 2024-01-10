@@ -2191,9 +2191,16 @@ router.post('/UpdateCalendarEvents' , async function (req, res, next) {
          });  
     }
 
-    if(req.files['medicaldegree']){  
+
+
+
+
+    if(req.files['medicaldegree'])
+    {  
       var sql2 = "update specialist_private set healthcare_documents='"+req.files['medicaldegree'][0]['filename']+"' where id="+specialist_id;
-    //  console.log(sql2);
+     console.log(sql2);
+
+
       pool.query(sql2, async function (err2, result2, fields) {
           if(err2)
           { 
@@ -2207,9 +2214,21 @@ router.post('/UpdateCalendarEvents' , async function (req, res, next) {
             //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
             res.end(JSON.stringify(data));
             return false;
-           }  
+           } 
+
+            var data = {
+               Status: false, 
+               Message: sql2
+              
+           };
+
+
+            res.end(JSON.stringify(data));
+            return false; 
        });  
   }
+
+
 
   if(req.files['universitydegree']){  
     var sql2 = "update specialist_private set university_documents='"+req.files['universitydegree'][0]['filename']+"' where id="+specialist_id;
@@ -2229,6 +2248,72 @@ router.post('/UpdateCalendarEvents' , async function (req, res, next) {
           return false;
          }  
      });  
+}
+
+
+if(req.body['deleteuniversitydegree']=='true')
+{
+      var sql2 = "update specialist_private set university_documents=NULL where id="+specialist_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+if(req.body['deletemedicaldegree']=='true')
+{
+      var sql2 = "update specialist_private set healthcare_documents=NULL where id="+specialist_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
+}
+
+
+if(req.body['deletefileadditionaldegree']=='true')
+{
+      var sql2 = "update specialist_private set other_documents=NULL where id="+specialist_id;
+  //  console.log(sql2);
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+         var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+         }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }  
+     }); 
 }
 
 
