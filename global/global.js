@@ -127,27 +127,63 @@ console.log(sql2);
 
 methods.SpecialistExtraWorking = (specialist_id,daystring , startstring , endstring , language_id) => {
   return new Promise((resolve, reject) => {    
-       var sql2 = "DELETE FROM `specialist_working_hours` where specialist_id='"+specialist_id+"' and language_id='"+language_id+"'";
-       con.query(sql2, (err, result, fields) => {
-        if(err) {
-         return reject(err)
+       var sql21 = "DELETE FROM `specialist_working_hours` where specialist_id='"+specialist_id+"' and language_id='"+language_id+"'";
+       con.query(sql21, (err21, result21, fields21) => {
+        if(err21) {
+         return reject(err21)
         }
 
         var workingTime = false;
        
         if(daystring.length){
+
+
+
           daystring.forEach((days, index) => { 
+
              // workingString += days+'-'+startstring[index]+'-'+endstring[index]; 
-             var sql2 = "insert into `specialist_working_hours` (specialist_id,start_time,end_time,days,language_id)values('"+specialist_id+"','"+startstring[index]+"', '"+endstring[index]+"' , '"+days+"'  , '"+language_id+"'  )";
-             con.query(sql2, (err, result, fields) => { 
+           const sql22 = "SELECT COUNT(*) as count  FROM specialist_working_hours WHERE specialist_id = '"+specialist_id+"' AND days = '"+days+"' AND start_time = '"+startstring[index]+"' AND end_time = '"+endstring[index]+"'";
+         
+ 
+             con.query(sql22, (err22, result22, fields22) => {
+              if(err22)
+               {
+                 console.error('Error querying database:', err22);
+                 return reject(err22);
+                 }
+
+             var myJSON22 = JSON.stringify(result22);
+                var ocount = JSON.parse(myJSON22);
+                if(ocount.length) 
+         
+        
+        
+        // Now you can use the overlappingCount variable elsewhere in your code
+        if (ocount[0].count  > 0) 
+        {
+               workingTime = false;
+              return reject("multiple");
+
+        }
+        else{
+
+             var sql23 = "insert into `specialist_working_hours` (specialist_id,start_time,end_time,days,language_id)values('"+specialist_id+"','"+startstring[index]+"', '"+endstring[index]+"' , '"+days+"'  , '"+language_id+"'  )";
+             con.query(sql23, (err23, result23, fields23) => { 
                  workingTime = true;
+                 resolve(1);
               }); 
+           }
+
+
+         });
+
            });  
         }  
-        if(workingTime)
-          resolve(1); 
-        else 
-          resolve(0);  
+        // if(workingTime)
+        //   resolve(1); 
+        // else 
+        //   resolve(0);  
+        // return;
    }); 
  });
 }

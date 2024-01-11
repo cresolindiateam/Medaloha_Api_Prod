@@ -2254,11 +2254,16 @@ router.post('/UpdateCalendarEvents' , async function (req, res, next) {
          var myJSON = JSON.stringify(result2);
          var Result = JSON.parse(myJSON);
          var public_intro_id  = Result.insertId; 
-          await globalVar.data.SpecialistExtraWorking(specialist_id,daystring,startstring,endstring,language_id);
+      
+
+     var Test=   await globalVar.data.SpecialistExtraWorking(specialist_id,daystring,startstring,endstring,language_id);
+         
+
          var data = {
           Status: true, 
           Message:'Done' ,
-          PublicIntroId:public_intro_id
+          PublicIntroId:public_intro_id,
+          test:Test
   
       };   
       var logStatus = 1;
@@ -2284,11 +2289,13 @@ router.post('/UpdateCalendarEvents' , async function (req, res, next) {
           res.end(JSON.stringify(data));
           return false;
          } 
-        await globalVar.data.SpecialistExtraWorking(specialist_id,daystring,startstring,endstring,language_id);
+       var Test=  await globalVar.data.SpecialistExtraWorking(specialist_id,daystring,startstring,endstring,language_id);
          var data = {
            Status: true, 
            Message:'Done' ,
-           PublicIntroId:public_intro_id
+           PublicIntroId:public_intro_id,
+           test:Test
+           
        };   
        var logStatus = 1;
        res.end(JSON.stringify(data));  
