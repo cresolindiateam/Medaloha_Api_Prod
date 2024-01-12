@@ -1294,31 +1294,64 @@ router.get('/specialistWorkingRemoveByid', async function (req, res) {
 router.get('/removeEvent', async function (req, res) { 
   var  apiName  = 'removeEvent';  
   var eventId =  req.query.eventId; 
-  var sql2 = "delete from  events  where id  ="+eventId+"";
-  console.log('consultation sql'); console.log(sql2);
-  pool.query(sql2, async function (err2, result2, fields) {
-      if(err2)
-      { 
-        console.log(err2); 
-        var data = {
-           Status: false, 
-           Message: 'Something wroing in query.',
-           Error:err2
-        }; 
-        //var logStatus = 0;
-        //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
-        res.end(JSON.stringify(data));
-        return false;
-       }
+var sql21 = "SELECT booking_status from  events  where id="+eventId+"";
+  console.log(sql21);
+  pool.query(sql21,   function (err21, result21, fields21) {
+       if(err21)
+       { 
+         console.log(err21); 
+         var data = {
+            Status: false, 
+            Message: 'Something wroing in query.',
+            Error:err21
+         }; 
+         //var logStatus = 0;
+         //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+         res.end(JSON.stringify(data));
+         return false;
+        } 
+           var myJSON21 = JSON.stringify(result21);
+           var memberArray21 = JSON.parse(myJSON21);
 
-       var data = {
-        Status: true, 
-        Message:'Hipe profile' 
-    };   
-    var logStatus = 1;
-    res.end(JSON.stringify(data));  
-     
-   }); 
+            if(memberArray21[0]['booking_status']==1)
+            {
+
+           var sql2 = "delete from  events  where id  ="+eventId+"";
+        console.log('consultation sql'); console.log(sql2);
+        pool.query(sql2, async function (err2, result2, fields) {
+            if(err2)
+            { 
+              console.log(err2); 
+              var data = {
+                 Status: false, 
+                 Message: 'Something wroing in query.',
+                 Error:err2
+              }; 
+              //var logStatus = 0;
+              //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+              res.end(JSON.stringify(data));
+              return false;
+             }
+
+             var data = {
+              Status: true, 
+              Message:'Hipe profile' 
+          };   
+          var logStatus = 1;
+          res.end(JSON.stringify(data));  
+           
+         });
+            }
+
+
+
+            res.end(JSON.stringify(memberArray21));  
+            return false;
+});
+
+
+
+  
 }); 
 
 
