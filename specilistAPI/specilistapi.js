@@ -1544,7 +1544,7 @@ router.post('/NoteForClients' , function (req, res, next) {
   
     var specialist_id =   req.body['specialist_id'];
     var public_intro_id = req.body['public_intro_id'];
-    var message =req.body['messsage'];
+    var message =req.body['message'];
     var messsagepart  =   req.body['messsagepart'];
     var messsagefull  =   req.body['messagefull'];
     var aboutme =  req.body['aboutme'];
