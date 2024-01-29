@@ -375,7 +375,10 @@ var spec_id= req.body.spec_id;
        res.end(memberArray2); 
      }
 
-});
+})
+
+})
+    ;
 
 router.post('/reportTomedaloha', function (req, res) { 
   var  apiName  = 'reportTomedaloha';   
