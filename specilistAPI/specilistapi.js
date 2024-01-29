@@ -345,6 +345,37 @@ else{
 
 
 
+router.get('/EmailRegisterForNextSlotCheck', function (req, res) { 
+
+var spec_id= req.body.spec_id;
+
+ var sql2 = "SELECT email  from email_next_slot  where spec_id='"+spec_id+"'";
+    console.log('consultation query sql'); console.log(sql2);
+ 
+    pool.query(sql2, async function (err2, result2, fields) {
+        if(err2)
+        { 
+          console.log(err2); 
+          var data = {
+             Status: false, 
+             Message: 'Something wroing in query.',
+             Error:err2
+          }; 
+          //var logStatus = 0;
+          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+          res.end(JSON.stringify(data));
+          return false;
+         }
+       var myJSON2 = JSON.stringify(result2);
+       var memberArray2 = JSON.parse(myJSON2); 
+       console.log(memberArray2);
+
+       if(memberArray2.length){ 
+      // var data = [{"id":1,"name":"Gwalior"},{"id":2,"name":"Indore"}];
+       res.end(memberArray2); 
+     }
+
+});
 
 router.post('/reportTomedaloha', function (req, res) { 
   var  apiName  = 'reportTomedaloha';   
