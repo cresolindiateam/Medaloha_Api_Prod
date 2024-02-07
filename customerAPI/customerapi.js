@@ -29,8 +29,8 @@ router.post('/EmailRegisterForNextSlot', function (req, res, next)
 { 
     var  apiName  = 'EmailRegisterForNextSlot';   
     var specialist_id = req.body.specialist_id;
-    var email = req.body.email;
-    var sql3 = "insert into email_next_slot(spec_id,email) value('"+specialist_id+"','"+email+"')";
+    var user_id = req.body.user_id;
+    var sql3 = "insert into email_next_slot(spec_id,user_id) value('"+specialist_id+"','"+user_id+"')";
     pool.query(sql3,   function (err3, result, fields) {
      if(err3)
      { 

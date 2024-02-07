@@ -344,41 +344,102 @@ else{
 
 
 
+router.get('/EmailRegisterForNextSlotCheck', function (req, res) {
+    var specialist_id = req.query.spec_id;
+    var sql2 = "SELECT users.email FROM email_next_slot LEFT JOIN users ON users.id = email_next_slot.user_id WHERE email_next_slot.spec_id = ? AND email_next_slot.email_alert_status = 0";
+    
+    pool.query(sql2, [specialist_id], async function (err2, result2, fields) {
+        if (err2) {
+            console.log(err2);
+            var data = {
+                Status: false,
+                Message: 'Something went wrong in query.',
+                Error: err2
+            };
+            res.end(JSON.stringify(data));
+            return false;
+        }
 
-router.get('/EmailRegisterForNextSlotCheck', function (req, res) { 
+        if (result2.length > 0) {
+            var email = result2[0].email;
+          var transporter = nodemailer.createTransport({
+           service: 'gmail',
+            auth: {
+            user: 'cresoluser@gmail.com', // here use your real email
+            pass: 'gbhrsgnkuxevramp' // put your password correctly (not in this question please) // put your password correctly (not in this question please)
+            }
+        }); 
 
-var spec_id= req.body.spec_id;
+        var mailOptions = {
+          from: 'cresoluser@gmail.com',
+          to: email,
+          subject: 'Slot available',
+          text: 'We\'re pleased to inform you that a slot has been added by specialists. Please Check:',
 
- var sql2 = "SELECT email  from email_next_slot  where spec_id='"+spec_id+"'";
-    console.log('consultation query sql'); console.log(sql2);
- 
-    pool.query(sql2, async function (err2, result2, fields) {
-        if(err2)
-        { 
-          console.log(err2); 
-          var data = {
-             Status: false, 
-             Message: 'Something wroing in query.',
-             Error:err2
-          }; 
-          //var logStatus = 0;
-          //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
-          res.end(JSON.stringify(data));
-          return false;
-         }
-       var myJSON2 = JSON.stringify(result2);
-       var memberArray2 = JSON.parse(myJSON2); 
-       console.log(memberArray2);
+        };
 
-       if(memberArray2.length){ 
-      // var data = [{"id":1,"name":"Gwalior"},{"id":2,"name":"Indore"}];
-       res.end(memberArray2); 
-     }
+        transporter.sendMail(mailOptions, function(error, info)
+        {
+          if (error)
+          {
+            var data = {
+                           Status: true, 
+                           Message:'email not sent' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+          }
+          else
+          {
+           var data = {
+                           Status: true, 
+                           Message:'email sent to customer' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+          }
+        });
+            
+            
+            
+             var sql21 = "update email_next_slot set email_alert_status = 1  where spec_id='"+specialist_id+"'";
+                  
+                    pool.query(sql21, async function (err21, result21, fields) {
+                        if(err21)
+                        { 
+                         var data = {
+                             Status: false, 
+                             Message: 'Failed to update data.',
+                             Error:err21
+                         }; 
+                        
+                          res.end(JSON.stringify(data));
+                          return false;
+                         } 
+                     });  
+            
+            
+              var data = {
+                Status: true,
+                Message: 'Email And Update Done',
+                Email: email
+            };
 
-})
+            res.end(JSON.stringify(data));
+            
+          
+            
+        } else {
+            var data = {
+                Status: false,
+                Message: 'No email found for the specified specialist ID.'
+            };
+            res.end(JSON.stringify(data));
+        }
+    });
+});
 
-})
-    ;
+
 
 router.post('/reportTomedaloha', function (req, res) { 
   var  apiName  = 'reportTomedaloha';   
@@ -3722,7 +3783,7 @@ router.get('/GetConfirmCondition', async function (req, res) {
 
     console.log(language_id);
     
-       var sql2 = "SELECT id,  degree_title, institute , year, details , other_information , document_file	 from specialist_degrees   where specialist_degrees.specialist_id="+specialist_id+' and specialist_degrees.language_id='+language_id;
+       var sql2 = "SELECT id,  degree_title, institute , year, details , other_information , document_file   from specialist_degrees   where specialist_degrees.specialist_id="+specialist_id+' and specialist_degrees.language_id='+language_id;
        pool.query(sql2, async function (err2, result2, fields) {
            if(err2)
            { 
