@@ -113,6 +113,8 @@ var storage = multer.diskStorage({
     });  
     
     
+   
+    
     
 router.get('/IsSpecialistExpireSession', async function (req, res) { 
   var  apiName  = 'IsSpecialistExpireSession';  
@@ -344,101 +346,6 @@ else{
 
 
 
-router.get('/EmailRegisterForNextSlotCheck', function (req, res) {
-    var specialist_id = req.query.spec_id;
-    var sql2 = "SELECT users.email FROM email_next_slot LEFT JOIN users ON users.id = email_next_slot.user_id WHERE email_next_slot.spec_id = ? AND email_next_slot.email_alert_status = 0";
-    
-    pool.query(sql2, [specialist_id], async function (err2, result2, fields) {
-        if (err2) {
-            console.log(err2);
-            var data = {
-                Status: false,
-                Message: 'Something went wrong in query.',
-                Error: err2
-            };
-            res.end(JSON.stringify(data));
-            return false;
-        }
-
-        if (result2.length > 0) {
-            var email = result2[0].email;
-          var transporter = nodemailer.createTransport({
-           service: 'gmail',
-            auth: {
-            user: 'cresoluser@gmail.com', // here use your real email
-            pass: 'gbhrsgnkuxevramp' // put your password correctly (not in this question please) // put your password correctly (not in this question please)
-            }
-        }); 
-
-        var mailOptions = {
-          from: 'cresoluser@gmail.com',
-          to: email,
-          subject: 'Slot available',
-          text: 'We\'re pleased to inform you that a slot has been added by specialists. Please Check:',
-
-        };
-
-        transporter.sendMail(mailOptions, function(error, info)
-        {
-          if (error)
-          {
-            var data = {
-                           Status: true, 
-                           Message:'email not sent' 
-                       };   
-                       var logStatus = 1;
-                       res.end(JSON.stringify(data)); 
-          }
-          else
-          {
-           var data = {
-                           Status: true, 
-                           Message:'email sent to customer' 
-                       };   
-                       var logStatus = 1;
-                       res.end(JSON.stringify(data)); 
-          }
-        });
-            
-            
-            
-             var sql21 = "update email_next_slot set email_alert_status = 1  where spec_id='"+specialist_id+"'";
-                  
-                    pool.query(sql21, async function (err21, result21, fields) {
-                        if(err21)
-                        { 
-                         var data = {
-                             Status: false, 
-                             Message: 'Failed to update data.',
-                             Error:err21
-                         }; 
-                        
-                          res.end(JSON.stringify(data));
-                          return false;
-                         } 
-                     });  
-            
-            
-              var data = {
-                Status: true,
-                Message: 'Email And Update Done',
-                Email: email
-            };
-
-            res.end(JSON.stringify(data));
-            
-          
-            
-        } else {
-            var data = {
-                Status: false,
-                Message: 'No email found for the specified specialist ID.'
-            };
-            res.end(JSON.stringify(data));
-        }
-    });
-});
-
 
 
 router.post('/reportTomedaloha', function (req, res) { 
@@ -529,7 +436,7 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
     
     console.log("radhe");
  
-    console.log(req.body['deleteactivityimage2']);
+    
  
     var specialist_id =   req.body['specialist_id'];
     var title = req.body['title'];
@@ -842,8 +749,6 @@ const stripe = require("stripe")("sk_test_1LHuYRF7KNv2C7oU3y3a7b3Y");
 }
 
 
-console.log('rade');
-console.log(req.body['deleteactivityimage2']);
 
     if(req.body['deleteactivityimage2']=='true')
 {
@@ -914,9 +819,9 @@ console.log(req.body['deleteactivityimage2']);
 
        var data = {
          Status: true, 
-         Message:'Done 123',
+         Message:'Done 1234 ajay testing',
          PublicIntro_id : public_intro_id,
-         test:req.body['deleteactivityimage2']
+         test:"test"
         };    
 
       var logStatus = 1;
@@ -1196,8 +1101,7 @@ pool.query(sql2, async function (err2, result2, fields) {
 }
 
 
-console.log('rade');
-console.log(req.body['deleteactivityimage2']);
+
 
     if(req.body['deleteactivityimage2']=='true')
 {
@@ -1244,7 +1148,7 @@ console.log(req.body['deleteactivityimage2']);
 
    if(req.body['deleteactivityimage4']=='true')
 {
-      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+      var sql2 = "update specialist_public_intros set activity_image4=NULL where id="+public_intro_id;
   //  console.log(sql2);
     pool.query(sql2, async function (err2, result2, fields) {
         if(err2)
@@ -1266,7 +1170,7 @@ console.log(req.body['deleteactivityimage2']);
 
       var data = {
         Status: true, 
-        Message:'Done' ,
+        Message:'Done12 ajay testing2 hello i am ajay hello ajay hello rahul hello testing 15feb' ,
         PublicIntro_id : public_intro_id
       };   
       
@@ -2743,6 +2647,40 @@ console.log(req.files['idfront']);
 
 
 
+
+ router.get('/deletePublicDegreeImageById', function (req, res) { 
+    var  apiName  = 'deletePublicDegreeImageById'; 
+    console.log(req);
+
+    var degree_id = req.query.degree_id; 
+    var sql2 =  "UPDATE specialist_degrees SET document_file='' WHERE id="+degree_id;
+    console.log(sql2);
+     pool.query(sql2, async function (err2, result2, fields) {
+                if(err2)
+                { 
+                  console.log(err2); 
+                 var data = {
+                     Status: false, 
+                     Message: 'Something wroing in query.',
+                     Error:err2
+                 }; 
+                  //var logStatus = 0;
+                  //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+                  res.end(JSON.stringify(data));
+                  return false;
+                 } 
+             
+                 var data = {
+                   Status: true, 
+                   Message:'Done' 
+               };   
+               var logStatus = 1;
+               res.end(JSON.stringify(data));  
+             });   
+    });
+
+
+
   router.get('/deletePublicDegreeById', function (req, res) { 
     var  apiName  = 'deletePublicDegreeById'; 
     console.log(req);
@@ -4019,6 +3957,8 @@ router.post('/Updatepayment', function (req, res) {
 
 
  router.get('/GetCalendarEvents', async function (req, res) { 
+     
+     //alert("hello1");
          var  apiName  = 'GetCalendarEvents';  
          var specialist_id =  req.query.specialist_id; 
          var legend_id =  req.query.legend;
@@ -4075,6 +4015,82 @@ router.post('/Updatepayment', function (req, res) {
             }
           }); 
     }); 
+    
+    
+    
+ router.get('/EmailRegisterForNextSlotCheck', async function (req, res) { 
+         var  apiName  = 'EmailRegisterForNextSlotCheck';  
+         var specialist_id =  req.query.spec_id; 
+         
+         //var sql2 = "SELECT id,title, event_date as start FROM events where specialist_id="+specialist_id;
+        var sql2 = "SELECT users.email  from email_next_slot  left join users on users.id=email_next_slot.user_id  where spec_id='"+specialist_id+"'";
+         console.log(sql2);
+         pool.query(sql2, async function (err2, result2, fields) {
+             if(err2)
+             { 
+               console.log(err2); 
+              var data = {
+                  Status: false, 
+                  Message: 'Something wroing in query.',
+                  Error:err2
+              }; 
+              
+               res.end(JSON.stringify(data));
+               return false;
+              }
+            var myJSON2 = JSON.stringify(result2);
+            var memberArray2 = JSON.parse(myJSON2); 
+            if(memberArray2.length){ 
+                
+              
+              res.end(JSON.stringify(memberArray2)); 
+            } else {
+              memberArray2 = [{}];
+              res.end(JSON.stringify(memberArray2)); 
+            }
+          }); 
+    }); 
+    
+    
+    
+    
+     router.get('/EmailRegisterForNextSlotCheck1', function (req, res) { 
+
+var  apiName  = 'EmailRegisterForNextSlotCheck1';  
+var spec_id= req.query.spec_id;
+
+ var sql2 = "SELECT email  from email_next_slot  where spec_id='"+spec_id+"'";
+    console.log('consultation query sql'); console.log(sql2);
+ 
+ res.end(JSON.stringify(sql2)); 
+//     pool.query(sql2, async function (err2, result2, fields) {
+//         if(err2)
+//         { 
+//           console.log(err2); 
+//           var data = {
+//              Status: false, 
+//              Message: 'Something wroing in query.',
+//              Error:err2
+//           }; 
+//           //var logStatus = 0;
+//           //globalVar.data.dbLogs(req,data,logStatus,apiName); // DB Logs function 
+//           res.end(JSON.stringify(data));
+//           return false;
+//          }
+//       var myJSON2 = JSON.stringify(result2);
+//       var memberArray2 = JSON.parse(myJSON2); 
+//       console.log(memberArray2);
+
+//       if(memberArray2.length){ 
+//       // var data = [{"id":1,"name":"Gwalior"},{"id":2,"name":"Indore"}];
+//       res.end(JSON.stringify(memberArray2)); 
+//      }
+
+// })
+
+});
+    
+    
  
 // router.get('/GetSpecialistChatChannel', async function (req, res) { 
 //   var  apiName  = 'GetSpecialistChatChannel';  
