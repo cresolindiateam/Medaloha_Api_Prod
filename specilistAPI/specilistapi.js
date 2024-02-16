@@ -890,7 +890,7 @@ console.log(req.body['deleteactivityimage2']);
 
    if(req.body['deleteactivityimage4']=='true')
 {
-      var sql2 = "update specialist_public_intros set activity_image3=NULL where id="+public_intro_id;
+      var sql2 = "update specialist_public_intros set activity_image4=NULL where id="+public_intro_id;
   //  console.log(sql2);
     pool.query(sql2, async function (err2, result2, fields) {
         if(err2)
