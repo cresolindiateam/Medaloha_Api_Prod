@@ -4023,7 +4023,7 @@ router.post('/Updatepayment', function (req, res) {
          var specialist_id =  req.query.spec_id; 
          
          //var sql2 = "SELECT id,title, event_date as start FROM events where specialist_id="+specialist_id;
-        var sql2 = "SELECT users.email  from email_next_slot  left join users on users.id=email_next_slot.user_id  where spec_id='"+specialist_id+"'";
+        var sql2 = "SELECT users.email  from email_next_slot  left join users on users.id=email_next_slot.user_id  where email_next_slot.email_alert_status=0 and spec_id='"+specialist_id+"'";
          console.log(sql2);
          pool.query(sql2, async function (err2, result2, fields) {
              if(err2)
@@ -4043,7 +4043,97 @@ router.post('/Updatepayment', function (req, res) {
             if(memberArray2.length){ 
                 
               
+
+
+   var transporter = nodemailer.createTransport({
+          service: 'gmail',
+        
+          auth: {
+            user: 'cresoluser@gmail.com', // here use your real email
+            pass: 'gbhrsgnkuxevramp' // put your password correctly (not in this question please) // put your password correctly (not in this question please)
+          }
+        }); 
+
+
+memberArray2.forEach(member => {
+        var mailOptions = {
+          from: 'cresoluser@gmail.com',
+          to: member.email,
+          subject: 'Slot Availablity email',
+          text: 'slot available email',
+
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+                    var data = {
+                           Status: true, 
+                           Message:'slot available email not sent' 
+                       };   
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+
+
+          } 
+          else 
+          {
+                        var data = {
+                                       Status: true, 
+                                       Message:'slot available email sent' 
+                                   };   
+
+
+             
+
+
+
+
+                       var logStatus = 1;
+                       res.end(JSON.stringify(data)); 
+          }
+            });
+
+});
+
+
+ var sql2 = "update email_next_slot set email_alert_status=1 where spec_id="+specialist_id;
+                        pool.query(sql2, async function (err2, result2, fields) {
+                            if(err2)
+                            { 
+                              console.log(err2); 
+                             var data = {
+                                 Status: false, 
+                                 Message: 'Something wroing in query.',
+                                 Error:err2
+                             }; 
+                              res.end(JSON.stringify(data));
+                              return false;
+                             } 
+
+
+                                   var logStatus = 1;
+                                  
+
+                  });
+
+
+
               res.end(JSON.stringify(memberArray2)); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             } else {
               memberArray2 = [{}];
               res.end(JSON.stringify(memberArray2)); 
