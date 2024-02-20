@@ -329,7 +329,7 @@ router.get('/UserFavouriteSpecialistListing', async function (req, res) {
   var  apiName  = 'UserFavouriteSpecialistListing';   
   var UserID = req.query.user_id;  //connect to the database
    
-var sql2 = "SELECT user_favourite_specialists.id AS Fid,specialist_private.healthcare_university_degree, specialist_private.id as specialist_private_id,specialist_private.first_name , countries.country_name, cities.city_name,specialist_public_intros.profile_photo,specialist_public_intros.id as specialist_public_intro_id,specialist_public_intros.your_title,specialist_public_intros.your_studies FROM `specialist_private` LEFT JOIN specialist_public_intros on (specialist_public_intros.specialist_id=specialist_private.id) LEFT JOIN specialist_tags on (specialist_tags.specialist_public_intro_id=specialist_public_intros.id) LEFT JOIN tags on(tags.id=specialist_tags.tags) LEFT JOIN specialist_holistics on  (specialist_holistics.specialist_public_intro_id=specialist_public_intros.id) LEFT JOIN categories on(categories.id=specialist_holistics.holistic_name) LEFT JOIN countries ON (countries.id=specialist_public_intros.country_id)  LEFT JOIN cities ON (cities.id=specialist_public_intros.city_id) left join user_favourite_specialists on (specialist_private.id =user_favourite_specialists.specialist_id) where user_favourite_specialists.user_id='"+UserID+"' group by  user_favourite_specialists.specialist_id"; 
+var sql2 = "SELECT GROUP_CONCAT(DISTINCT specialist_public_consultations.provided_type) AS provided_type,user_favourite_specialists.id AS Fid,specialist_private.healthcare_university_degree, specialist_private.id as specialist_private_id,specialist_private.first_name , countries.country_name, cities.city_name,specialist_public_intros.profile_photo,specialist_public_intros.id as specialist_public_intro_id,specialist_public_intros.your_title,specialist_public_intros.your_studies FROM `specialist_private` left join specialist_public_consultations on (specialist_public_consultations.specialist_id=specialist_private.id) LEFT JOIN specialist_public_intros on (specialist_public_intros.specialist_id=specialist_private.id) LEFT JOIN specialist_tags on (specialist_tags.specialist_public_intro_id=specialist_public_intros.id) LEFT JOIN tags on(tags.id=specialist_tags.tags) LEFT JOIN specialist_holistics on  (specialist_holistics.specialist_public_intro_id=specialist_public_intros.id) LEFT JOIN categories on(categories.id=specialist_holistics.holistic_name) LEFT JOIN countries ON (countries.id=specialist_public_intros.country_id)  LEFT JOIN cities ON (cities.id=specialist_public_intros.city_id) left join user_favourite_specialists on (specialist_private.id =user_favourite_specialists.specialist_id) where user_favourite_specialists.user_id='"+UserID+"' group by  user_favourite_specialists.specialist_id"; 
 console.log('sql2');
 console.log(sql2);
 console.log(UserID);
@@ -363,6 +363,10 @@ pool.query(sql2, async function (err2, result, fields) {
             var RatingData =   await globalVar.data.GetSpecialistRatingCountAvg(Result[i].specialist_private_id); 
             console.log(Tabs);
 
+          var MessageData =   await globalVar.data.GetSpecialistMessageData(Result[i].specialist_private_id);
+           var OthersData =   await globalVar.data.GetSpecialistOthersData(Result[i].specialist_private_id);
+
+
             princestring = '';
             if(PriceArray[0]['HighestPrice']!=null){
               princestring = '$'+PriceArray[0]['LowPrice']+'-$'+PriceArray[0]['HighestPrice']
@@ -393,7 +397,10 @@ pool.query(sql2, async function (err2, result, fields) {
                   Fid:Result[i].Fid,
                    SpecilistRatingCount : RatingData.Count,
                   SpecilistRatingAvg : RatingData.Avg,
-                  SpecilistRatingAvgPer : RatingData.AvgPer
+                  SpecilistRatingAvgPer : RatingData.AvgPer,
+                  LengendId:Result[i].provided_type,
+                  MessageData : MessageData,
+                  OthersData : OthersData 
                  
                  })
   
