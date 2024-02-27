@@ -642,7 +642,7 @@ router.get('/Customerconfirmation', async function (req, res) {
   var  apiName  = 'Customerconfirmation';  
   var specialist_id =  req.query.str; 
 
- var sql2 = "SELECT id from users where  md5(id) =  '"+specialist_id+"' ";
+ var sql2 = "SELECT id,first_name,email,newsletter_trigger from users where  md5(id) =  '"+specialist_id+"' ";
  console.log(sql2);
      pool.query(sql2, async function (err2, result2, fields) {
          if(err2)
@@ -663,7 +663,10 @@ router.get('/Customerconfirmation', async function (req, res) {
         if(memberArray2.length){ 
           
          var specilistID  = memberArray2[0]['id'];  
- 
+         var specilistNAME  = memberArray2[0]['first_name'];
+         var specilistEMAIL  = memberArray2[0]['email']; 
+         var specilistNLT   = memberArray2[0]['newsletter_trigger'];
+
         var sql2 = "update users set status = 2  where id="+specilistID;
        console.log(sql2);
         pool.query(sql2, async function (err2, result2, fields) {
@@ -688,6 +691,37 @@ router.get('/Customerconfirmation', async function (req, res) {
            var logStatus = 1;
            res.end(JSON.stringify(data));  
          });  
+
+
+
+  if(specilistNLT==1)
+{
+       const insertSql = `INSERT INTO signup_newsletter(name, email) VALUES ('${specilistNAME}', '${specilistEMAIL}')`;
+
+        pool.query(insertSql, function (err2, result2)
+       {
+        if (err2) {
+          const data = {
+            Status: false,
+            Message: 'Error inserting new newsltter record.',
+            Error: err2
+          };
+           res.end(JSON.stringify(data));
+              return false;
+        }
+      
+   var data = {
+               Status: true, 
+               Message:'New record inserted successfully' 
+           };   
+           var logStatus = 1;
+           res.end(JSON.stringify(data));  
+
+
+      });
+
+}
+
 
 
          
@@ -775,11 +809,11 @@ router.get('/SpecilistBookingconfirmation', async function (req, res) {
 router.get('/Specilistconfirmation', async function (req, res) { 
   var  apiName  = 'Specilistconfirmation';  
   var specialist_id =  req.query.str; 
- var sql2 = "SELECT id from specialist_private where  md5(id) =  '"+specialist_id+"' ";
+ var sql2 = "SELECT id,first_name,email,newsletter_trigger from specialist_private where  md5(id) =  '"+specialist_id+"' ";
  console.log(sql2);
      pool.query(sql2, async function (err2, result2, fields) {
          if(err2)
-         { 
+         {  
            console.log(err2); 
           var data = {
               Status: false, 
@@ -796,7 +830,9 @@ router.get('/Specilistconfirmation', async function (req, res) {
         if(memberArray2.length){ 
           
          var specilistID  = memberArray2[0]['id'];  
- 
+         var specilistNAME  = memberArray2[0]['first_name'];
+         var specilistEMAIL  = memberArray2[0]['email'];
+         var specilistNLT  = memberArray2[0]['newsletter_trigger']; 
         var sql2 = "update specialist_private set status = 2  where id="+specilistID;
        console.log(sql2);
         pool.query(sql2, async function (err2, result2, fields) {
@@ -822,6 +858,36 @@ router.get('/Specilistconfirmation', async function (req, res) {
            res.end(JSON.stringify(data));  
          });  
 
+if(specilistNLT==1)
+{
+       const insertSql = `INSERT INTO signup_newsletter(name, email) VALUES ('${specilistNAME}', '${specilistEMAIL}')`;
+
+        pool.query(insertSql, function (err2, result2)
+       {
+        if (err2) {
+          const data = {
+            Status: false,
+            Message: 'Error inserting new newsltter record.',
+            Error: err2
+          };
+           res.end(JSON.stringify(data));
+              return false;
+        }
+      
+   var data = {
+               Status: true, 
+               Message:'New record inserted successfully' 
+           };   
+           var logStatus = 1;
+           res.end(JSON.stringify(data));  
+
+
+      });
+
+}
+
+
+    
 
          
         } else {
@@ -1510,7 +1576,7 @@ router.post('/SpecialistRegistraion', async function (req, res) {
     var myJSON2 = JSON.stringify(result2);
     var memberArray2 = JSON.parse(myJSON2); 
     if(memberArray2.length==0){ 
-          var sql3 = "insert into specialist_private (first_name, last_name,email,country_id,city_id,password,std_code,mobile,created_at,timezone,utc_offset_string) value ('"+name+"','"+surname+"','"+email+"','"+country+"','"+city+"', md5('"+password+"'),'"+stdcode+"','"+mobilenumber+"',now(),'"+tz+"','"+utc_offset+"')";
+          var sql3 = "insert into specialist_private (first_name, last_name,email,country_id,city_id,newsletter_trigger,password,std_code,mobile,created_at,timezone,utc_offset_string) value ('"+name+"','"+surname+"','"+email+"','"+country+"','"+city+"','"+newsletter+"',md5('"+password+"'),'"+stdcode+"','"+mobilenumber+"',now(),'"+tz+"','"+utc_offset+"')";
           console.log('insert');
           console.log(sql3);
 

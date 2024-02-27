@@ -197,6 +197,49 @@ router.get('/SpecialistFilterData', async function (req, res) {
 
 
 
+router.get('/GetTestimonialListing', function (req, res) 
+ { 
+   
+    var  apiName  = 'GetTestimonialListing';   
+    var sql2 = "SELECT  text_author,text_comment,status from  testimonial  where  1 and status=1";
+    pool.query(sql2, function (err2, result, fields) 
+    {
+       if(err2)
+         { 
+           console.log(err2); 
+           var data = {
+              Status: false, 
+              Message: 'Something wroing in query.'+sql2,
+              Error:err2,
+    
+            }; 
+           res.end(JSON.stringify(data));
+           return false;
+          } 
+    
+          var myJSON = JSON.stringify(result);
+          var memberArray2 = JSON.parse(myJSON); 
+          TestimonialFeatured=[];
+          if(memberArray2.length)
+          {    
+              for(var i =0 ;i<memberArray2.length;i++) 
+              {   
+            
+                 TestimonialFeatured.push({  
+                  TextAuthor:memberArray2[i].text_author, 
+                  TextComment:memberArray2[i].text_comment, 
+                  Status: memberArray2[i].status,  
+                             })
+              }
+            var data = {
+              Status: true, 
+              Data: TestimonialFeatured 
+            };  
+            res.end(JSON.stringify(data)); 
+          } 
+     })
+ });
+
 
 router.post('/UserFavSpecialist', function (req, res) { 
   var  apiName  = 'UserFavSpecialist';   
@@ -513,57 +556,6 @@ pool.query(sql2, async function (err2, result, fields) {
      
   });
   
-
-
-
- router.get('/GetTestimonialListing', function (req, res) { 
-   
-    var  apiName  = 'GetTestimonialListing';   
-    var sql2 = "SELECT  text_author,text_comment,status from  testimonial  where  1 and status=1";
-    
-  pool.query(sql2, function (err2, result, fields) {
-     if(err2)
-       { 
-         console.log(err2); 
-         var data = {
-            Status: false, 
-            Message: 'Something wroing in query.'+sql2,
-            Error:err2,
-  
-          }; 
-         res.end(JSON.stringify(data));
-         return false;
-        } 
-  
-        var myJSON = JSON.stringify(result);
-        var memberArray2 = JSON.parse(myJSON); 
-
-
-        TestimonialFeatured=[];
-        if(memberArray2.length){    
-            for(var i =0 ;i<memberArray2.length;i++) 
-            {   
-          
-               TestimonialFeatured.push({  
-                TextAuthor:memberArray2[i].text_author, 
-                TextComment:memberArray2[i].text_comment, 
-                Status: memberArray2[i].status,  
-                
-            })
-         }
-
-         // console.log(SepcialistFeatured);
-          var data = {
-            Status: true, 
-            Data: TestimonialFeatured 
-          };  
-          res.end(JSON.stringify(data)); 
-        } 
-   })
- }); 
-
-
-
 
   router.get('/userpastSpecialistReviewListing', function (req, res) { 
     console.log(req.query.user_id);
